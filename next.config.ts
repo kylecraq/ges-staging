@@ -1,8 +1,14 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+import { NextConfig } from "next";
+
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    createMessagesDeclaration: './messages/en.json'
+  }
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'export'
+  output: "export", // static export
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
