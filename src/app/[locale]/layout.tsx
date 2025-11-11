@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import { Header } from '@/components/layout/header';
 
 const robotoSans = Roboto({
   variable: '--font-roboto-sans',
@@ -45,7 +46,10 @@ export default async function RootLayout({ children, params }: Props) {
       <body
         className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,5 +1,14 @@
 {
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Header": {
+    "LanguageLabels": {
+      "en": "English (EN)",
+      "it": "Italiano (IT)"
+    },
+    "Buttons": {
+      "download": "download app"
+    }
   }
 }
