@@ -9,12 +9,10 @@ import { setRequestLocale } from 'next-intl/server';
 import { Header } from '@/components/layout/header';
 
 const robotoSans = Roboto({
-  variable: '--font-roboto-sans',
   subsets: ['latin'],
 });
 
 const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
   subsets: ['latin'],
 });
 
@@ -44,7 +42,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body
-        className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
+        className={`${robotoSans.className} ${robotoMono.className} antialiased`}
       >
         <NextIntlClientProvider>
           <Header />
