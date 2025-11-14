@@ -21,25 +21,24 @@ export function Header() {
 
   const headerClassname = cn(
     { '-translate-y-20': scrollDirection === 'down' },
-    'fixed top-4 z-50 flex h-14 w-full items-center justify-between px-4 transition duration-700'
+    'fixed top-4 z-50 flex h-14 w-full items-center justify-between pl-3 transition duration-700 md:px-9'
   );
 
   const navbarClassname = cn(
-    'font-medium uppercase bg-neutral-0 py-navbar-3 pr-navbar-3 flex items-center justify-end gap-6 rounded-full pl-10 text-neutral-100 transition duration-700'
+    'bg-neutral-0 py-navbar-3 md:pr-navbar-3 flex h-full items-center justify-end gap-6 rounded-l-full pr-3 pl-6 font-medium text-neutral-100 uppercase transition duration-700 md:rounded-full md:px-10'
   );
 
   return (
     <header className={headerClassname}>
       <Logo />
       <div className={navbarClassname}>
-        <Link
-          href="#faq"
-          className="text-sm transition-colors"
-        >
+        <Link href="#faq" className="text-sm transition-colors">
           faq
         </Link>
         <LanguageSelector />
-        <PrimaryButtonWithIcon icon={<Download />} label={t('download')} />
+        <div className="hidden md:block">
+          <PrimaryButtonWithIcon icon={<Download />} label={t('download')} />
+        </div>
       </div>
     </header>
   );

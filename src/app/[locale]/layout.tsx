@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/Footer';
 
 const robotoSans = Roboto({
   subsets: ['latin'],
@@ -47,6 +48,7 @@ export default async function RootLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <Header />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

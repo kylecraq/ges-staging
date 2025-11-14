@@ -1,20 +1,37 @@
 import {
+  NextChargeCompleteLogo,
   NextChargeIcon,
   NextChargeIconText,
-} from '@/components/nextcharge-ui/icons/Logo';
+} from '@/components/nextcharge-ui/icons/icon-logo';
 import { Link } from '@/i18n/navigation';
+import { cva, VariantProps } from 'class-variance-authority';
+import { buttonVariants } from '@/components/ui/button';
 
-export const Logo = () => {
+const logoVariants = cva(
+  'flex items-center text-sm font-medium',
+  {
+    variants: {
+      variant: {
+        default: 'text-neutral-0',
+        primary: 'text-primary',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+);
+
+export type LogoProps = VariantProps<typeof logoVariants>;
+export const Logo = (props: LogoProps) => {
+  const { variant } = props;
   return (
     <Link
       href={'/'}
-      className="flex duration-700 items-center space-x-3 text-sm font-medium transition"
+      className={logoVariants({ variant })}
     >
       <span aria-hidden="true">
-        <NextChargeIcon />
-      </span>
-      <span>
-        <NextChargeIconText />
+        <NextChargeCompleteLogo className={"size-28 md:size-32"}/>
       </span>
     </Link>
   );
