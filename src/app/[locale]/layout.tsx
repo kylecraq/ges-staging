@@ -7,7 +7,7 @@ import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/Footer';
+import { Footer } from '@/components/layout/footer';
 
 const robotoSans = Roboto({
   subsets: ['latin'],
