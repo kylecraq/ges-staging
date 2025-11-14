@@ -3,6 +3,7 @@ import {use} from "react";
 import {setRequestLocale} from "next-intl/server";
 import {useTranslations} from "next-intl";
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
+import { Hero } from '@/components/section/hero';
 
 export default function Home({params}: { params: Promise<{ locale: string }> }) {
     const {locale} = use(params);
@@ -14,18 +15,13 @@ export default function Home({params}: { params: Promise<{ locale: string }> }) 
 
     return (
         <main>
-          <HeroGeometric
-            badge="shadcn.io"
-            title1= {t('title')}
-            title2="Digital Vision"
-            description="A custom shadcn registry with beautiful, reusable components for modern web development."
-          />
-          <HeroGeometric
-            badge="shadcn.io"
-            title1= {t('title')}
-            title2="Digital Vision"
-            description="A custom shadcn registry with beautiful, reusable components for modern web development."
-          />
+          <Hero />
+          {/*<HeroGeometric*/}
+          {/*  badge="shadcn.io"*/}
+          {/*  title1= {t('title')}*/}
+          {/*  title2="Digital Vision"*/}
+          {/*  description="A custom shadcn registry with beautiful, reusable components for modern web development."*/}
+          {/*/>*/}
         </main>
     );
 }

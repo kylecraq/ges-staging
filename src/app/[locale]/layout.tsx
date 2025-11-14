@@ -41,13 +41,13 @@ export default async function RootLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${robotoSans.className} ${robotoMono.className}`}>
       <body
-        className={`${robotoSans.className} ${robotoMono.className} antialiased`}
+        className="antialiased"
       >
         <NextIntlClientProvider>
           <Header />
-          {children}
+          <div className="mt-32">{children}</div>
           <Footer />
         </NextIntlClientProvider>
       </body>

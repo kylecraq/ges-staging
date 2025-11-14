@@ -31,7 +31,7 @@ export function Header() {
   return (
     <header className={headerClassname}>
       <Logo />
-      <div className={navbarClassname}>
+      <nav className={navbarClassname}>
         <Link href="#faq" className="text-sm transition-colors">
           faq
         </Link>
@@ -39,7 +39,7 @@ export function Header() {
         <div className="hidden md:block">
           <PrimaryButtonWithIcon icon={<Download />} label={t('download')} />
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
