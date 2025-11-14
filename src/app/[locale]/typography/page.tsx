@@ -1,8 +1,12 @@
 import { Heading, BodyText, MenuLabel } from '@/components/typography';
 import { PrimaryButtonWithIcon } from '@/components/nextcharge-ui/buttons/primary-with-icon';
 import { DownloadIcon } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export default function Page() {
+  if (process.env.NODE_ENV === 'production') {
+    notFound();
+  }
   return (
     <div className="bg-background min-h-screen p-6 md:p-12">
       <div className="mx-auto max-w-7xl space-y-16">
