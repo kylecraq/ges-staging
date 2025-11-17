@@ -36,7 +36,7 @@ export const LanguageSelector = () => {
   return (
     <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger
-        className="font-medium uppercase flex cursor-pointer items-center gap-1 text-sm transition-colors outline-none">
+        className="font-semibold uppercase flex cursor-pointer items-center gap-1 text-sm transition-colors outline-none focus-visible:underline underline-offset-4">
         {locale}
         <svg
           className="h-4 w-4"

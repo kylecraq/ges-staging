@@ -1,18 +1,16 @@
 'use client';
 
 import { Download } from 'lucide-react';
-import { PrimaryButtonWithIcon } from '@/components/nextcharge-ui/buttons/primary-with-icon';
 import { useTranslations } from 'next-intl';
 import { LanguageSelector } from '@/components/nextcharge-ui/language-selector';
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/navigation';
 import { Logo } from '@/components/layout/logo';
+import { LinkButtonWithIcon } from '@/components/nextcharge-ui/links/link-with-icon';
+import { Button } from '@/components/ui/button';
 
-gsap.registerPlugin(ScrollTrigger);
 
 export function Header() {
   const t = useTranslations('Header.Buttons');
@@ -32,12 +30,17 @@ export function Header() {
     <header className={headerClassname}>
       <Logo />
       <nav className={navbarClassname}>
-        <Link href="#faq" className="text-sm transition-colors">
-          faq
-        </Link>
+        <Button asChild variant={'link'} className="text-sm transition-colors">
+          <Link href="#faq">faq</Link>
+        </Button>
         <LanguageSelector />
         <div className="hidden md:block">
-          <PrimaryButtonWithIcon icon={<Download />} label={t('download')} />
+          <LinkButtonWithIcon
+            icon={<Download />}
+            label={t('download')}
+            href={'https://apps.apple.com/it/app/nextcharge/id614946715'}
+            target={"_blank"}
+          />
         </div>
       </nav>
     </header>

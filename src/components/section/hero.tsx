@@ -10,12 +10,12 @@ export const Hero = () => {
   return (
     <header className="min-h-screen px-3 md:px-9">
       <article className="grid grid-cols-[1fr_51%] grid-rows-1">
-        <div className="col-start-1 col-end-3 row-start-1 relative aspect-[460/327]">
+        <div className="col-start-1 col-end-3 row-start-1 relative aspect-[460/327] object-center object-cover">
           <Image
             src="/hero/next-charge-hero.png"
             alt="Next charge hero"
+            loading="eager"
             fill={true}
-            objectFit="cover"
           />
         </div>
         <div className="col-start-1 row-start-1 z-10 flex flex-col items-start gap-8">
