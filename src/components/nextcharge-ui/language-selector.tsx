@@ -56,10 +56,10 @@ export const LanguageSelector = () => {
         align="end"
         className={'bg-neutral-0 text-neutral-100'}
       >
-        <DropdownMenuItem className="cursor-pointer hover:bg-neutral-40" onClick={() => handleChange('en')}>
+        <DropdownMenuItem className="cursor-pointer focus-visible:bg-neutral-20 hover:bg-neutral-20" onClick={() => handleChange('en')}>
           {t('en')}
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer hover:bg-neutral-40" onClick={() => handleChange('it')}>
+        <DropdownMenuItem className="cursor-pointer focus-visible:bg-neutral-20 hover:bg-neutral-20" onClick={() => handleChange('it')}>
           {t('it')}
         </DropdownMenuItem>
       </DropdownMenuContent>
