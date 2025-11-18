@@ -47,7 +47,7 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider>
           <Header />
-          <div className="mt-32">{children}</div>
+          {children}
           <Footer />
         </NextIntlClientProvider>
       </body>

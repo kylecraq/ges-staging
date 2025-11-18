@@ -13,7 +13,7 @@ export default function Home({params}: { params: Promise<{ locale: string }> }) 
     const t = useTranslations('HomePage');
 
     return (
-        <main>
+        <main className="mt-28">
           <Hero />
           <FancyCarousel />
         </main>

@@ -15,9 +15,9 @@ export const Hero = () => {
     if (bgHero.current) {
       gsap.fromTo(
         bgHero.current,
-        { y: -30 },
+        { y: -100 },
         {
-          y: 30,
+          y: 100,
           ease: 'none',
           scrollTrigger: {
             trigger: bgHero.current,
@@ -45,7 +45,7 @@ export const Hero = () => {
             />
           </div>
         </div>
-        <div className="z-10 col-start-1 row-start-1 mt-40 w-[44%] px-3 md:pr-0 md:pl-36">
+        <div className="z-10 col-start-1 row-start-1 mt-40 w-[49.4%] px-3 md:pr-0 md:pl-36">
           <HeroContent />
         </div>
       </article>

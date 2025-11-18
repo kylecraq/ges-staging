@@ -19,9 +19,9 @@ export const HeroDecorations = () => {
     if (userStatus.current && container.current) {
       gsap.fromTo(
         userStatus.current,
-        { y: -150 },
+        { y: -200 },
         {
-          y: 150,
+          y: 200,
           ease: 'none',
           scrollTrigger: {
             trigger: container.current,
@@ -35,9 +35,9 @@ export const HeroDecorations = () => {
     if (userReviews.current && container.current) {
       gsap.fromTo(
         userReviews.current,
-        { y: -100 },
+        { y: -150 },
         {
-          y: 100,
+          y: 150,
           ease: 'none',
           scrollTrigger: {
             trigger: container.current,
@@ -59,7 +59,7 @@ export const HeroDecorations = () => {
             rotate: 0,
             delay: 0,
             duration: 1,
-            ease: 'power3.out',
+            ease: "sine.inOut",
           }
         );
         gsap.to(blob.current, {
@@ -67,7 +67,7 @@ export const HeroDecorations = () => {
           duration: 2.7,
           repeat: -1,
           yoyo: true,
-          ease: 'sine.inOut',
+          ease: "sine.inOut",
         });
       }
     });
