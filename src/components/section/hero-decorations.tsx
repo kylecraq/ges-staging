@@ -1,6 +1,5 @@
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
 import Image from 'next/image';
-import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,12 +15,44 @@ export const HeroDecorations = () => {
 
   useEffect(() => {
     const blobs = [blobSquare1, blobSquare2];
-    const images = [userStatus, userReviews];
+
+    if (userStatus.current && container.current) {
+      gsap.fromTo(
+        userStatus.current,
+        { y: -150 },
+        {
+          y: 150,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: container.current,
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
+    }
+
+    if (userReviews.current && container.current) {
+      gsap.fromTo(
+        userReviews.current,
+        { y: -100 },
+        {
+          y: 100,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: container.current,
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
+    }
+
     blobs.forEach((blob) => {
       if (blob.current && container.current) {
         gsap.fromTo(
           blob.current,
-          { autoAlpha: 0, y: -30, rotate: -15 },
+          { autoAlpha: 0, y: -15, rotate: -15 },
           {
             autoAlpha: 0.9,
             y: 0,
@@ -32,29 +63,12 @@ export const HeroDecorations = () => {
           }
         );
         gsap.to(blob.current, {
-          y: 10,
+          y: 0,
           duration: 2.7,
           repeat: -1,
           yoyo: true,
           ease: 'sine.inOut',
         });
-      }
-    });
-    images.forEach((image) => {
-      if (image.current && container.current) {
-        gsap.fromTo(
-          image.current,
-          { y: -100 },
-          {
-            y: 100,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: container.current,
-              scrub: true,
-              markers: false,
-            },
-          }
-        );
       }
     });
   }, []);
