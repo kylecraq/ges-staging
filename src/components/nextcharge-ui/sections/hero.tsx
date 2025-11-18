@@ -44,13 +44,14 @@ export const Hero = (props: HeroProps) => {
         <div className="col-start-1 col-end-3 row-start-1 overflow-hidden px-3 md:px-9">
           <div
             ref={bgHero}
-            className="relative aspect-[460/327] object-cover object-center"
+            className="relative aspect-[460/327]"
           >
             <Image
               src={imgSrc}
               alt="Next charge hero"
               loading="eager"
               fill={true}
+              className="object-cover object-center"
             />
           </div>
         </div>

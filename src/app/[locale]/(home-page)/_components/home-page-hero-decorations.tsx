@@ -75,7 +75,7 @@ export const HomePageHeroDecorations = () => {
   }, []);
 
   return (
-    <div className="relative h-full" ref={container}>
+    <div className="relative h-full pointer-events-none" ref={container}>
       <span className="absolute mt-[53px] ml-[87px]" ref={blobSquare1}>
         <BlobSquare />
       </span>
@@ -91,7 +91,7 @@ export const HomePageHeroDecorations = () => {
         alt={'Decoration user status'}
         height={183}
         width={213}
-        className="absolute right-0 mt-[77px] h-fit w-fit object-cover object-center"
+        className="absolute right-0 mt-[77px] w-32 max-h-[213px] xl:h-fit xl:w-fit object-cover object-center"
       />
       <Image
         ref={userReviews}
@@ -99,7 +99,7 @@ export const HomePageHeroDecorations = () => {
         alt={'Decoration user reviews'}
         height={383}
         width={115}
-        className="absolute bottom-0 mb-[103px] ml-[299px] h-fit w-fit object-cover object-center"
+        className="absolute bottom-0 mb-[103px] w-64 max-h-[115px] ml-[299px] xl:h-fit xl:w-fit object-cover object-center"
       />
     </div>
   );
