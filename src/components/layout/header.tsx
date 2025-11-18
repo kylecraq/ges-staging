@@ -7,7 +7,7 @@ import { LanguageSelector } from '@/components/nextcharge-ui/language-selector';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/navigation';
-import { Logo } from '@/components/layout/logo';
+import { Logo } from '@/components/nextcharge-ui/logo';
 import { LinkButtonWithIcon } from '@/components/nextcharge-ui/links/link-with-icon';
 import { Button } from '@/components/ui/button';
 

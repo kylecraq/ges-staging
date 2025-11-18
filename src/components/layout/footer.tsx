@@ -1,4 +1,4 @@
-import { Logo } from '@/components/layout/logo';
+import { Logo } from '@/components/nextcharge-ui/logo';
 import { Link } from '@/i18n/navigation';
 
 export const Footer = () => {

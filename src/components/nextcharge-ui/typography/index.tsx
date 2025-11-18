@@ -2,6 +2,9 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { ComponentProps } from 'react';
 
+export type HeadingSizes = "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs"
+export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
 const headingVariants = cva('', {
   variants: {
     size: {
@@ -20,9 +23,9 @@ const headingVariants = cva('', {
 })
 
 interface HeadingProps
-  extends ComponentProps<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
+  extends ComponentProps<HeadingTags>,
     VariantProps<typeof headingVariants> {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  as?: HeadingTags;
 }
 
 export function Heading({
