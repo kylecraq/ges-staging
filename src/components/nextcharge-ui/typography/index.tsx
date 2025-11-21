@@ -1,9 +1,12 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
-import { ComponentProps } from 'react';
+import { ComponentProps, useEffect, useRef } from 'react';
+import { SplitText } from 'gsap/SplitText';
+import gsap from 'gsap';
 
-export type HeadingSizes = "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs"
-export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+export type HeadingSizes = 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs' | 'xxs';
+export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type HeadingEffects = 'text-wave-reveal' | 'text-fade-in-reveal';
 
 const headingVariants = cva('', {
   variants: {
@@ -20,23 +23,64 @@ const headingVariants = cva('', {
   defaultVariants: {
     size: 'l',
   },
-})
+});
 
 interface HeadingProps
   extends ComponentProps<HeadingTags>,
     VariantProps<typeof headingVariants> {
   as?: HeadingTags;
+  effect?: HeadingEffects;
 }
 
 export function Heading({
   size,
   as: Tag = 'h2',
+  effect,
   className,
   children,
   ...props
 }: HeadingProps) {
+  const ref = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (!ref.current || effect !== 'text-wave-reveal') return;
+    const element = ref.current;
+
+    const splitTexts = new SplitText(element, {
+      type: 'words, chars',
+      wordsClass: 'word',
+      charsClass: 'char',
+    });
+    gsap.set(splitTexts.words, {
+      overflow: 'clip',
+    });
+    const fontSize = parseFloat(getComputedStyle(element).fontSize);
+    const yOffset = fontSize * 1.2;
+    const animation = gsap.from(splitTexts.chars, {
+      y: yOffset,
+      duration: 0.8,
+      ease: 'power2.out',
+      stagger: 0.02,
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 85%',
+      },
+      onComplete: () => {
+        splitTexts.revert();
+      },
+    });
+    return () => {
+      animation.kill();
+      splitTexts.revert();
+    };
+  }, []);
+
   return (
-    <Tag className={cn(headingVariants({ size }), className)} {...props}>
+    <Tag
+      className={cn(headingVariants({ size }), className)}
+      ref={ref}
+      {...props}
+    >
       {children}
     </Tag>
   );
@@ -55,7 +99,7 @@ const bodyTextVariants = cva('', {
   defaultVariants: {
     variant: 'text',
   },
-})
+});
 
 interface BodyTextProps
   extends ComponentProps<'p'>,
@@ -85,7 +129,7 @@ const menuLabelVariants = cva('', {
   defaultVariants: {
     variant: 'body',
   },
-})
+});
 
 interface MenuLabelProps
   extends ComponentProps<'span'>,

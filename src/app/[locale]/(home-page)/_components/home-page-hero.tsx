@@ -1,3 +1,4 @@
+"use client";
 import { Hero } from '@/components/nextcharge-ui/sections/hero';
 import { useTranslations } from 'next-intl';
 import { HomePageHeroDecorations } from '@/app/[locale]/(home-page)/_components/home-page-hero-decorations';
@@ -21,6 +22,7 @@ export const HomePageHero = () => {
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}
+        titleEffect="text-wave-reveal"
         description={t.rich('description', {
           primary: (chunks) => <span className="font-semibold">{chunks}</span>,
         })}

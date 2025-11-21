@@ -20,9 +20,9 @@ export const HomePageHeroDecorations = () => {
     if (userStatus.current && container.current) {
       gsap.fromTo(
         userStatus.current,
-        { y: -200 },
+        { y: -180 },
         {
-          y: 200,
+          y: 180,
           ease: 'none',
           scrollTrigger: {
             trigger: container.current,
@@ -36,9 +36,9 @@ export const HomePageHeroDecorations = () => {
     if (userReviews.current && container.current) {
       gsap.fromTo(
         userReviews.current,
-        { y: -150 },
+        { y: -120 },
         {
-          y: 150,
+          y: 120,
           ease: 'none',
           scrollTrigger: {
             trigger: container.current,
