@@ -17,7 +17,7 @@ export default function Home({
       <div className="absolute inset-0">
         {/*<HomePageDecorations />*/}
       </div>
-      <main className="relative pt-32">
+      <main className="relative px-3 md:px-9 pt-32">
         <HomePageHero />
       </main>
     </>

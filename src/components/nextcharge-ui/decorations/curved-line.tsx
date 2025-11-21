@@ -1,6 +1,6 @@
-import { SVGProps } from 'react';
+import { HTMLAttributes } from 'react';
 
-export const CurvedLine = (props: SVGProps<SVGSVGElement>) => {
+export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
   return <svg
     xmlns="http://www.w3.org/2000/svg"
     width={175}

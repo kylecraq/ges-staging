@@ -17,7 +17,7 @@ export const HomePageHero = () => {
     <div className="grid grid-cols-1 grid-rows-1">
       <Hero
         className="col-start-1 row-start-1"
-        imgSrc="/hero/next-charge-hero.png"
+        imgSrc="/hero/next-charge-hero-dsk.png"
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}

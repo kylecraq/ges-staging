@@ -1,6 +1,6 @@
-import { SVGProps } from 'react';
+import { HTMLAttributes } from 'react';
 
-export const BlobSquare = (props: SVGProps<SVGSVGElement>) => {
+export const BlobSquare = (props: HTMLAttributes<SVGSVGElement>) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

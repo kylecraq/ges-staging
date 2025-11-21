@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { ReactNode, useEffect, useRef } from 'react';
 import { PrimaryButtonWithIconProps } from '@/components/nextcharge-ui/buttons/primary-with-icon';
+import { cn } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,22 +40,23 @@ export const Hero = (props: HeroProps) => {
   }, []);
 
   return (
-    <header className={className}>
-      <article className="grid grid-cols-1 grid-rows-1">
-        <div className="col-start-1 col-end-3 row-start-1 overflow-hidden px-3 md:px-9">
-          <div
-            ref={bgHero}
-            className="relative aspect-[460/327]"
-          >
-            <Image
-              src={imgSrc}
-              alt="Next charge hero"
-              loading="eager"
-              fill={true}
-              className="object-cover object-center"
-            />
-          </div>
-        </div>
+    <header
+      className={cn(
+        'grid grid-cols-1 grid-rows-1',
+        className
+      )}
+    >
+      <div className="col-start-1 row-start-1">
+        <img
+            src={imgSrc}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Next charge hero"
+            loading="eager"
+            decoding="async"
+            className="aspect-[460/327] object-cover object-center w-full h-full"
+        />
+      </div>
+      <article className="col-start-1 row-start-1 grid grid-cols-1 grid-rows-1">
         <div className="z-10 col-start-1 row-start-1 mt-40 w-[49.4%] px-3 md:pr-0 md:pl-36">
           <ContentBlock
             title={title}
