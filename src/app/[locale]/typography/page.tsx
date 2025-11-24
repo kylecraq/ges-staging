@@ -1,3 +1,4 @@
+"use client";
 import { Heading, BodyText, MenuLabel } from '@/components/nextcharge-ui/typography';
 import { PrimaryButtonWithIcon } from '@/components/nextcharge-ui/buttons/primary-with-icon';
 import { DownloadIcon } from 'lucide-react';

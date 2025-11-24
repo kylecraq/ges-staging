@@ -18,7 +18,7 @@ export type LogoProps = VariantProps<typeof logoVariants>;
 export const Logo = (props: LogoProps) => {
   const { variant } = props;
   return (
-    <Link href={'/public'} className={logoVariants({ variant })}>
+    <Link href={'/'} className={logoVariants({ variant })}>
       <div aria-hidden="true">
         <NextChargeCompleteLogo className={'w-28 md:w-32'} />
       </div>

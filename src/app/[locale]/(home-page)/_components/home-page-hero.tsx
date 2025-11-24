@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { Hero } from '@/components/nextcharge-ui/sections/hero';
 import { useTranslations } from 'next-intl';
 import { HomePageHeroDecorations } from '@/app/[locale]/(home-page)/_components/home-page-hero-decorations';

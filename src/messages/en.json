@@ -7,6 +7,10 @@
       "title": "Un’unica rete, una sola esperienza di ricarica, un’unica <primary>app</primary>.",
       "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici."
     },
+    "SectionMap": {
+      "title": "Diversi operatori per un solo sistema di autenticazione",
+      "kicker": "rete di ricarica"
+    },
     "Buttons": {
       "download": "download app"
     }
