@@ -99,7 +99,7 @@ export const HomePageHeroDecorations = () => {
         alt={'Decoration user reviews'}
         height={383}
         width={115}
-        className="absolute bottom-0 mb-[103px] w-64 max-h-[115px] ml-[299px] xl:h-fit xl:w-fit object-cover object-center"
+        className="absolute bottom-0 mb-[203px] w-64 max-h-[115px] ml-[299px] xl:h-fit xl:w-fit object-cover object-center"
       />
     </div>
   );

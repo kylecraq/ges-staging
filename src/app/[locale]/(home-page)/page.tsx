@@ -18,7 +18,7 @@ export default function Home(props: HomeProps) {
   return (
     <>
       <div className="absolute inset-0">{/*<HomePageDecorations />*/}</div>
-      <main className="relative flex flex-col gap-32 px-3 pt-32 md:px-9">
+      <main className="relative flex flex-col gap-32 px-3 pt-24 xl:pt-32 md:px-9">
         <HomePageHero />
         <HomePageSection1 />
         <NextChargeMap />

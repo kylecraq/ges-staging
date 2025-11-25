@@ -18,7 +18,8 @@ export const HomePageHero = () => {
     <div className="grid grid-cols-1 grid-rows-1">
       <Hero
         className="col-start-1 row-start-1"
-        imgSrc="/hero/next-charge-hero-dsk.png"
+        imgSrcDsk="/hero/next-charge-hero-dsk.png"
+        imgSrcMbl={"/hero/next-charge-hero-mbl.png"}
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}
@@ -28,7 +29,7 @@ export const HomePageHero = () => {
         })}
         buttons={buttons}
       />
-      <div className="col-start-1 row-start-1 px-3 md:px-9">
+      <div className="col-start-1 row-start-1 px-3 md:px-9 hidden md:block">
         <HomePageHeroDecorations />
       </div>
     </div>

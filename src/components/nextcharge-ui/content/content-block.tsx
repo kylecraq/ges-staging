@@ -24,13 +24,14 @@ export const ContentBlock = (props: HeroContentProps) => {
   const { title, titleTag, titleSize, titleEffect, description, buttons } =
     props;
   return (
-    <section className="flex flex-col items-start gap-8">
+    <section className="h-full flex flex-col items-start gap-8">
       <Heading as={titleTag} size={titleSize} effect={titleEffect}>
         {title}
       </Heading>
       {description ? <BodyText>{description}</BodyText> : null}
-      {buttons
-        ? buttons.map((buttonProps, index) => {
+      <div className="mt-auto md:mt-0 mb-8 mx-auto md:mx-0">
+        {buttons
+          ? buttons.map((buttonProps, index) => {
             return (
               <PrimaryButtonWithIcon
                 key={index}
@@ -39,7 +40,8 @@ export const ContentBlock = (props: HeroContentProps) => {
               />
             );
           })
-        : null}
+          : null}
+      </div>
     </section>
   );
 };
