@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { CurvedLine } from '@/components/nextcharge-ui/decorations/curved-line';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -10,26 +10,29 @@ export const HomePageDecorations = () => {
     if (curvedLine1 && curvedLine1.current) {
       gsap.fromTo(
         curvedLine1.current,
-        { y: -100 },
         {
-          y: 100,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: curvedLine1.current,
-            scrub: true,
-            markers: false,
-          },
-        }
+          autoAlpha: 0,
+          // yPercent: -100,
+          rotate: -15,
+        },
+        {
+          autoAlpha: 1,
+          xPercent: 100,
+          yPercent: 0,
+          rotate: 0,
+          duration: 1,
+          ease: 'sine.inOut',
+        },
       );
     }
   }, []);
 
   return <>
-    <span className="absolute top-0" ref={curvedLine1}>
+    <span className="absolute top-[55%]">
       <CurvedLine />
     </span>
-    <span className="absolute bottom-0" ref={curvedLine1}>
-      <CurvedLine />
-    </span>
-  </>
-}
+    {/*<span className="absolute bottom-0" ref={curvedLine1}>*/}
+    {/*  <CurvedLine />*/}
+    {/*</span>*/}
+  </>;
+};
