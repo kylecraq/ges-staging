@@ -79,7 +79,7 @@ export const Hero = (props: HeroProps) => {
           <ContentBlock
             title={title}
             titleTag="h1"
-            titleSize="xl"
+            titleSize="xxl"
             titleEffect={titleEffect}
             description={description}
             buttons={buttons}

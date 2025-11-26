@@ -24,7 +24,7 @@ export const ContentBlock = (props: HeroContentProps) => {
   const { title, titleTag, titleSize, titleEffect, description, buttons } =
     props;
   return (
-    <section className="h-full flex flex-col items-start gap-8">
+    <section className="h-full flex flex-col items-start gap-8 w-[90%]">
       <Heading as={titleTag} size={titleSize} effect={titleEffect}>
         {title}
       </Heading>
