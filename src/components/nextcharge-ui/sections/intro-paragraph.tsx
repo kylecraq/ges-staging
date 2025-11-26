@@ -4,7 +4,7 @@ import { BodyText, Heading } from '@/components/nextcharge-ui/typography';
 import { ReactNode } from 'react';
 import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
 
-type IntroParagraphProps = {
+export type IntroParagraphProps = {
   kicker?: string;
   title: ReactNode;
   description?: string;

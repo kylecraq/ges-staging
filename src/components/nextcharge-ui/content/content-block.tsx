@@ -29,7 +29,7 @@ export const ContentBlock = (props: HeroContentProps) => {
         {title}
       </Heading>
       {description ? <BodyText>{description}</BodyText> : null}
-      <div className="mt-auto md:mt-0 mb-8 mx-auto md:mx-0">
+      <div className="mt-auto md:mt-0 mb-8 mx-auto md:mx-0 flex items-center gap-2.5">
         {buttons
           ? buttons.map((buttonProps, index) => {
             return (
