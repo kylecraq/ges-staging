@@ -3,12 +3,22 @@ import { HTMLAttributes, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
+  const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
-    if (pathRef.current) {
+    if (pathRef.current && svgRef.current) {
       const path = pathRef.current;
-      const length = path.getTotalLength();
+
+      const length = path.getTotalLength() * 2;
+
+      gsap.to(svgRef.current, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: svgRef.current,
+          start: 'top 50%',
+        },
+      });
 
       path.style.strokeDasharray = length.toString();
       path.style.strokeDashoffset = length.toString();
@@ -17,10 +27,10 @@ export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
         strokeDashoffset: 0,
         ease: "none",
         scrollTrigger: {
-          trigger: path,
+          trigger: pathRef.current,
           start: 'top 80%',
           end: 'bottom 20%',
-          markers: false,
+          markers: true,
           scrub: true,
         },
       });
@@ -32,11 +42,11 @@ export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
     width={175}
     height={733}
     fill="none"
+    ref={svgRef}
+    opacity={0}
     {...props}
   >
     <path
-      strokeDasharray={2920}
-      strokeDashoffset={2615}
       ref={pathRef}
       stroke="#06EF00"
       strokeWidth={25}
