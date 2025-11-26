@@ -11,10 +11,12 @@ import { Footer } from '@/components/layout/footer';
 
 const robotoSans = Roboto({
   subsets: ['latin'],
+  variable: '--font-sans'
 });
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
+  variable: '--font-mono'
 });
 
 export const metadata: Metadata = {
@@ -41,7 +43,7 @@ export default async function RootLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={robotoSans.className}>
+    <html lang={locale} className={`${robotoSans.variable} ${robotoMono.variable}`}>
       <body
         className="antialiased"
       >

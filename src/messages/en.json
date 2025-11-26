@@ -15,6 +15,18 @@
       "title": "Download now",
       "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
     },
+    "SectionFeature" : {
+      "title": "Borsellino elettronico ricaricabile per monitorare la tua spesa",
+      "kicker": "nextcharge wallet",
+      "chips": {
+        "badge-1":"Smartphone",
+        "description-1": "Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.",
+        "badge-2": "Smartcard Rfid",
+        "description-2": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.",
+        "badge": "Plug&charge",
+        "description": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone."
+      }
+    },
     "SectionFaq": {
       "kicker": "faq",
       "title": "Domande Frequenti",

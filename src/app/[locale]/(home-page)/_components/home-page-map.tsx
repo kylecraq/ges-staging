@@ -3,7 +3,7 @@
 import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
 
-export const NextChargeMap = () => {
+export const HomePageMap = () => {
   const t = useTranslations('HomePage.SectionMap');
 
   return (
