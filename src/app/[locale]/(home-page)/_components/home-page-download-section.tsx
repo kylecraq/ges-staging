@@ -3,11 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { BoxParagraph } from '@/components/nextcharge-ui/sections/box-paragraph';
 import { PrimaryButtonWithIconProps } from '@/components/nextcharge-ui/buttons/primary-with-icon';
-import {
-  AppleIcon,
-  ArrowUpRightIcon,
-  BotIcon,
-} from 'lucide-react';
+import { AppleIcon, ArrowUpRightIcon, BotIcon } from 'lucide-react';
 
 export const HomePageDownloadSection = () => {
   const t = useTranslations('HomePage.SectionDownload');
@@ -30,9 +26,8 @@ export const HomePageDownloadSection = () => {
       <BoxParagraph
         title={t('title')}
         description={t('description')}
-        className="bg-neutral-100"
         buttons={buttons}
-        imgSrcDsk="/hero/ges-hero.png"
+        className="bg-[url(/hero/ges-hero.png)] bg-cover bg-center bg-no-repeat xl:bg-[url(/hero/ges-hero.png)]"
       />
     </section>
   );

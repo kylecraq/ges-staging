@@ -8,7 +8,9 @@ export const NextChargeMap = () => {
 
   return (
     <section>
-      <IntroParagraph title={t('title')} kicker={'kicker'} />
+      <div className="max-w-4/6 mx-auto">
+        <IntroParagraph title={t('title')} kicker={'kicker'} />
+      </div>
       <div className="relative mt-20 h-[675px] w-full overflow-hidden rounded-4xl shadow-md">
         <iframe
           className=""

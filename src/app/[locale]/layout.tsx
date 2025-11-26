@@ -41,7 +41,7 @@ export default async function RootLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${robotoSans.className} ${robotoMono.className}`}>
+    <html lang={locale} className={robotoSans.className}>
       <body
         className="antialiased"
       >
