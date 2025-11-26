@@ -23,7 +23,7 @@ export const BoxParagraph = (
 
     const actualClassname = cn(
         className,
-        'flex flex-col items-center justify-center gap-8 rounded-4xl p-8 px-3 md:p-12 xl:p-24'
+        'flex flex-col items-center justify-center rounded-4xl p-8 px-3 md:p-12 xl:p-24'
     );
 
     return (

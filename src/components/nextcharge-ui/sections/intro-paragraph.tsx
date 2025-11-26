@@ -14,7 +14,7 @@ export const IntroParagraph = (props: IntroParagraphProps) => {
   const { title, kicker, description } = props;
 
   return (
-    <div className="flex flex-col items-center text-center gap-8">
+    <div className="flex flex-col items-center text-center gap-8 pb-8">
       {kicker ? <Kicker text={kicker} /> : null}
       <Heading as="h2" size="xxl">
         {title}

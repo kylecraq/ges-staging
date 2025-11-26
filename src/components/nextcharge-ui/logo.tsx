@@ -20,7 +20,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <Link href={'/'} className={logoVariants({ variant })}>
       <div aria-hidden="true">
-        <NextChargeCompleteLogo className={'w-28 md:w-32'} />
+        <NextChargeCompleteLogo className="w-28 md:w-32 drop-shadow-sm drop-shadow-neutral-100" />
       </div>
     </Link>
   );

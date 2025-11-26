@@ -15,6 +15,15 @@
       "title": "Download now",
       "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
     },
+    "SectionFaq": {
+      "kicker": "faq",
+      "title": "Domande Frequenti",
+      "question-1": "1. Come ricaricare?",
+      "question-2": "2. Posso ricaricare sia con carta Rfid che con App?",
+      "question-3": "3. Che cosa faccio se non riesco a fermare la ricarica da App?",
+      "question-4": "4. Se non fosse possibile terminare la ricarica da App, ad esempio perche il tuo telefonino e' scarico, \u2028puoi usare la card NextCharge",
+      "question-5": "5. Posso ricaricare sia con carta Rfid che con App?"
+    },
     "Buttons": {
       "download": "download app"
     }

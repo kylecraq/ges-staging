@@ -5,6 +5,7 @@ import { HomePageSection1 } from '@/app/[locale]/(home-page)/_components/home-pa
 import { NextChargeMap } from '@/components/nextcharge-ui/sections/next-charge-map';
 import { HomePageDecorations } from './_components/home-page-decorations';
 import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/home-page-download-section';
+import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';
 
 type HomeProps = {
   params: Promise<{ locale: string }>;
@@ -19,12 +20,15 @@ export default function Home(props: HomeProps) {
 
   return (
     <>
-      <div className="absolute inset-0"><HomePageDecorations /></div>
-      <main className="relative flex flex-col gap-32 px-3 pt-24 xl:pt-32 md:px-9">
+      <div className="absolute inset-0">
+        <HomePageDecorations />
+      </div>
+      <main className="relative flex flex-col gap-32 px-3 pt-24 md:px-9 xl:pt-32">
         <HomePageHero />
         <HomePageSection1 />
         <NextChargeMap />
         <HomePageDownloadSection />
+        <HomePageFaqSection />
       </main>
     </>
   );
