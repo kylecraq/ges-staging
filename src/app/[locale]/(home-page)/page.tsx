@@ -4,6 +4,7 @@ import { HomePageHero } from '@/app/[locale]/(home-page)/_components/home-page-h
 import { HomePageSection1 } from '@/app/[locale]/(home-page)/_components/home-page-section-1';
 import { NextChargeMap } from '@/components/nextcharge-ui/sections/next-charge-map';
 import { HomePageDecorations } from './_components/home-page-decorations';
+import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/home-page-download-section';
 
 type HomeProps = {
   params: Promise<{ locale: string }>;
@@ -23,6 +24,7 @@ export default function Home(props: HomeProps) {
         <HomePageHero />
         <HomePageSection1 />
         <NextChargeMap />
+        <HomePageDownloadSection />
       </main>
     </>
   );
