@@ -30,7 +30,7 @@ export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
           trigger: pathRef.current,
           start: 'top 80%',
           end: 'bottom 20%',
-          markers: true,
+          markers: false,
           scrub: true,
         },
       });
