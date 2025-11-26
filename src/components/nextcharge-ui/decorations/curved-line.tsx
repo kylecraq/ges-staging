@@ -11,6 +11,8 @@ export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
       const path = pathRef.current;
 
       const length = path.getTotalLength() * 2;
+      path.style.strokeDasharray = length.toString();
+      path.style.strokeDashoffset = length.toString();
 
       gsap.to(svgRef.current, {
         opacity: 1,
@@ -20,16 +22,12 @@ export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
         },
       });
 
-      path.style.strokeDasharray = length.toString();
-      path.style.strokeDashoffset = length.toString();
-
       gsap.to(path, {
         strokeDashoffset: 0,
         ease: "none",
         scrollTrigger: {
           trigger: pathRef.current,
           start: 'top 80%',
-          end: 'bottom 20%',
           markers: false,
           scrub: true,
         },
