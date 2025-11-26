@@ -2,7 +2,7 @@ import { use } from 'react';
 import { setRequestLocale } from 'next-intl/server';
 import { HomePageHero } from '@/app/[locale]/(home-page)/_components/home-page-hero';
 import { HomePageSection1 } from '@/app/[locale]/(home-page)/_components/home-page-section-1';
-import { NextChargeMap } from '@/components/nextcharge-ui/sections/next-charge-map';
+import { NextChargeMap } from '@/app/[locale]/(home-page)/_components/next-charge-map';
 import { HomePageDecorations } from './_components/home-page-decorations';
 import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/home-page-download-section';
 import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';

@@ -27,7 +27,7 @@ export const HomePageDownloadSection = () => {
         title={t('title')}
         description={t('description')}
         buttons={buttons}
-        className="bg-[url(/hero/ges-hero.png)] bg-cover bg-center bg-no-repeat xl:bg-[url(/hero/ges-hero.png)]"
+        className="bg-neutral-100"
       />
     </section>
   );

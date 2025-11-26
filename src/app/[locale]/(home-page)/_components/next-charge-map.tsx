@@ -8,10 +8,10 @@ export const NextChargeMap = () => {
 
   return (
     <section>
-      <div className="max-w-4/6 mx-auto">
+      <div className="md:max-w-4/6 md:mx-auto">
         <IntroParagraph title={t('title')} kicker={'kicker'} />
       </div>
-      <div className="relative mt-20 aspect-3/4 xl:aspect-2/1 w-full overflow-hidden rounded-4xl shadow-md">
+      <div className="relative aspect-3/4 xl:aspect-2/1 w-full overflow-hidden rounded-4xl shadow-md">
         <iframe
           className=""
           src="https://nextcharge.app/map?nextcharge=only&isHeaderLogo=false&isNEXTCHARGEnetworkWebsite=true"
