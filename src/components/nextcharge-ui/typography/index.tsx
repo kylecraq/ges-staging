@@ -64,10 +64,9 @@ export function Heading({
       scrollTrigger: {
         trigger: element,
         start: 'top 85%',
-      },
-      onComplete: () => {
-        splitTexts.revert();
-      },
+        onLeave: () => splitTexts.revert(),
+        onLeaveBack: () => splitTexts.revert()
+      }
     });
     return () => {
       animation.kill();

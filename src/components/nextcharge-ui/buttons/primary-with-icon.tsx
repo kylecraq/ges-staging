@@ -18,11 +18,11 @@ export const PrimaryButtonWithIcon = (props:PrimaryButtonWithIconProps ) => {
       </span>
       <span className="h-5 overflow-hidden">
         <span
-          className="block transition-transform duration-500 ease-sine-in-out group-hover:-translate-y-full">
+          className="block transition-transform duration-200 ease-sine-in-out group-hover:-translate-y-full">
           {label}
         </span>
         <span
-          className="block transition-transform duration-500 ease-sine-in-out group-hover:-translate-y-full">
+          className="block transition-transform duration-200 ease-sine-in-out group-hover:-translate-y-full">
           {label}
         </span>
       </span>

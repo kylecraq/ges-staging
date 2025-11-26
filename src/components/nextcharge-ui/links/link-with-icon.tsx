@@ -8,23 +8,18 @@ export const LinkButtonWithIcon = (props: {
   href: string;
   target?: HTMLAttributeAnchorTarget;
 }) => {
-  const { icon, label, href, target = "_self" } = props;
+  const { icon, label, href, target = '_self' } = props;
   return (
-    <Button
-      asChild
-      className="group"
-    >
+    <Button asChild className="group">
       <Link href={href} target={target}>
         <span className="grid h-10 w-10 place-items-center rounded-full bg-white">
           {icon}
         </span>
         <span className="h-5 overflow-hidden">
-          <span
-            className="block transition-transform duration-500 ease-sine-in-out group-hover:-translate-y-full">
+          <span className="ease-sine-in-out block transition-transform duration-200 group-hover:-translate-y-full">
             {label}
           </span>
-          <span
-            className="block transition-transform duration-500 ease-sine-in-out group-hover:-translate-y-full">
+          <span className="ease-sine-in-out block transition-transform duration-200 group-hover:-translate-y-full">
             {label}
           </span>
         </span>
