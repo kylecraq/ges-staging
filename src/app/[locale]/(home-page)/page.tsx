@@ -20,18 +20,14 @@ export default function Home(props: HomeProps) {
   setRequestLocale(locale);
 
   return (
-    <>
-      <div className="absolute inset-0">
-        <HomePageDecorations />
-      </div>
-      <main className="relative flex flex-col gap-32">
-        <HomePageHero />
-        <HomePageChargeSystemSection />
-        <HomePageMapSection />
-        <HomePageFeatureSection />
-        <HomePageDownloadSection />
-        <HomePageFaqSection />
-      </main>
-    </>
+    <main className="relative flex flex-col gap-32">
+      <HomePageDecorations />
+      <HomePageHero />
+      <HomePageChargeSystemSection />
+      <HomePageMapSection />
+      <HomePageFeatureSection />
+      <HomePageDownloadSection />
+      <HomePageFaqSection />
+    </main>
   );
 }

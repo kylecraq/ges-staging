@@ -53,7 +53,7 @@ export const Hero = (props: HeroProps) => {
     <div
       className={cn(className, 'grid grid-cols-1 grid-rows-1 xl:min-h-screen')}
     >
-      <div className="col-start-1 row-start-1 overflow-hidden pt-80 md:pt-40 xl:pt-32 pb-2 md:pb-0">
+      <div className="col-start-1 row-start-1 overflow-hidden pt-80 pb-2 md:pt-40 md:pb-0 xl:pt-32">
         <img
           ref={bgHero}
           src={imgSrcDsk}
@@ -61,7 +61,7 @@ export const Hero = (props: HeroProps) => {
           alt="Next charge hero"
           loading="eager"
           decoding="async"
-          className="hidden aspect-4/3 xl:aspect-[460/327] h-full w-full object-contain object-top xl:object-cover xl:object-center md:block"
+          className="hidden aspect-4/3 h-full w-full object-contain object-top md:block xl:aspect-[460/327] xl:object-cover xl:object-center"
         />
         <img
           ref={bgHero}
@@ -74,7 +74,7 @@ export const Hero = (props: HeroProps) => {
         />
       </div>
       <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1 pt-28 md:pt-32">
-        <div className="z-10 col-start-1 row-start-1 md:pr-0 xl:mt-40 md:w-1/2 xl:w-[50.5%] xl:pl-36">
+        <div className="z-10 col-start-1 row-start-1 md:w-7/12 md:pr-0 md:pl-12 lg:mt-16 lg:w-6/12 lg:pl-16 xl:mt-40 xl:w-[50.5%] xl:pl-36">
           <ContentLeftBlock
             title={title}
             titleTag="h1"
