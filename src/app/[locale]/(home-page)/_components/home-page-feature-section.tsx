@@ -26,7 +26,7 @@ export const HomePageFeatureSection = () => {
   ];
 
   return (
-    <article className="px-wide md:px-main flex flex-col">
+    <article className="px-wide md:px-main xl:px-central flex flex-col">
       <IntroParagraph title={t('title')} kicker={t('kicker')} />
       <FeatureListWithImage
         chips={chips}
