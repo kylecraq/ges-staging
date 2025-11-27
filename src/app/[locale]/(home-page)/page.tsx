@@ -26,8 +26,8 @@ export default function Home(props: HomeProps) {
       <HomePageChargeSystemSection />
       <HomePageMapSection />
       <HomePageFeatureSection />
-      <HomePageDownloadSection />
       <HomePageFaqSection />
+      <HomePageDownloadSection />
     </main>
   );
 }
