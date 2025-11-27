@@ -15,10 +15,10 @@
     --spacing-navbar-3: 3px;
     --ease-sine-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
-    --width-wide: 73.5rem;
-    --spacing-wide-sm: 0.75rem;
-    --spacing-wide: 2.25rem;
-    --spacing-main: 14.75rem;
+    --width-wide: 95%;
+    --spacing-wide: 2.5%;
+    --spacing-main: 10%;
+    --spacing-central: 18%
 }
 
 
@@ -38,7 +38,7 @@
         font-size: 32px;
         line-height: 38px;
         /* Tablet */
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) {
             font-size: 50px;
             line-height: 60px;
         }
@@ -53,7 +53,7 @@
         font-size: 24px;
         line-height: 29px;
         /* Tablet */
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) {
             font-size: 40px;
             line-height: 42px;
         }
@@ -83,7 +83,7 @@
         font-size: 21px;
         line-height: 32px;
         /* Tablet */
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) {
             font-size: 28px;
             line-height: 34px;
         }
@@ -98,7 +98,7 @@
         font-size: 18px;
         line-height: 27px;
         /* Tablet */
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) {
             font-size: 24px;
             line-height: 29px;
         }
@@ -108,7 +108,7 @@
         font-size: 16px;
         line-height: 24px;
         /* Tablet */
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) {
             font-size: 21px;
             line-height: 25px;
         }
@@ -126,7 +126,7 @@
         font-size: 14px;
         line-height: 24px;
         /*margin-bottom: 32px;*/
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) {
             font-size: 18px;
             line-height: 27px;
         }

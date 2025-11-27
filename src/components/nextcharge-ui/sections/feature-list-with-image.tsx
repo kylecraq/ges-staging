@@ -22,7 +22,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
 
   return (
     <section className="grid gap-10 md:grid-cols-2">
-      <div className="mx-auto flex flex-col gap-10 xl:w-8/12">
+      <div className="mx-auto flex flex-col gap-10">
         {chips.map((chip, index) => {
           return (
             <div key={index} className="flex flex-col items-start gap-4">
@@ -42,12 +42,12 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
           />
         ) : null}
       </div>
-      <div className="order-first grid place-items-center md:order-last">
+      <div className="order-first grid place-items-center md:order-last md:place-items-end">
         {imgDsk ? (
           <img
             src={imgDsk}
             alt={imgAlt || 'Image'}
-            className="hidden aspect-4/4 h-full w-full object-contain object-center md:block"
+            className="hidden aspect-4/4 h-full w-full object-contain object-center md:block md:object-right"
           />
         ) : null}
 

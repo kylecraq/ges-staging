@@ -19,7 +19,7 @@ export function Header() {
 
   const headerClassname = cn(
     { '-translate-y-20': scrollDirection === 'down' },
-    'fixed top-4 z-50 flex h-14 w-full items-center justify-between pl-wide-sm transition duration-700 md:px-wide'
+    'fixed top-4 z-50 flex h-14 w-full items-center justify-between pl-wide-sm transition duration-700 xl:px-wide'
   );
 
   const navbarClassname = cn(

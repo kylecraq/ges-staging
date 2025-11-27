@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -36,9 +36,9 @@ export const HomePageHeroDecorations = () => {
     if (userReviews.current && container.current) {
       gsap.fromTo(
         userReviews.current,
-        { y: -120 },
+        { y: -90 },
         {
-          y: 120,
+          y: 90,
           ease: 'none',
           scrollTrigger: {
             trigger: container.current,
@@ -51,31 +51,31 @@ export const HomePageHeroDecorations = () => {
 
     blobs.forEach((blob) => {
       if (blob.current && container.current) {
-        gsap.fromTo(
+        const tl = gsap.timeline();
+        tl.fromTo(
           blob.current,
           { autoAlpha: 0, y: -15, rotate: -15 },
           {
             autoAlpha: 0.9,
             y: 0,
             rotate: 0,
-            delay: 0,
             duration: 1,
-            ease: "sine.inOut",
+            ease: 'sine.inOut',
           }
         );
-        gsap.to(blob.current, {
-          y: 0,
+        tl.to(blob.current, {
+          y: '+=15',
           duration: 2.7,
           repeat: -1,
           yoyo: true,
-          ease: "sine.inOut",
+          ease: 'sine.inOut',
         });
       }
     });
   }, []);
 
   return (
-    <div className="relative h-full pointer-events-none pt-32" ref={container}>
+    <div className="pointer-events-none relative h-full pt-32" ref={container}>
       <span className="absolute mt-[53px] ml-[87px]" ref={blobSquare1}>
         <BlobSquare />
       </span>
@@ -91,7 +91,7 @@ export const HomePageHeroDecorations = () => {
         alt={'Decoration user status'}
         height={183}
         width={213}
-        className="absolute right-0 mt-[77px] w-32 max-h-[213px] xl:h-fit xl:w-fit object-cover object-center"
+        className="absolute right-0 mt-[77px] max-h-[213px] w-32 object-cover object-center xl:h-fit xl:w-fit"
       />
       <Image
         ref={userReviews}
@@ -99,7 +99,7 @@ export const HomePageHeroDecorations = () => {
         alt={'Decoration user reviews'}
         height={383}
         width={115}
-        className="absolute bottom-0 mb-[203px] w-64 max-h-[115px] ml-[299px] xl:h-fit xl:w-fit object-cover object-center"
+        className="absolute bottom-0 mb-[103px] ml-[299px] max-h-[115px] w-64 object-cover object-center xl:h-fit xl:w-fit"
       />
     </div>
   );
