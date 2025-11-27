@@ -8,10 +8,11 @@ export const CurvedLeftLinesDsk = (props: HTMLAttributes<SVGSVGElement>) => {
 
   useEffect(() => {
     if (pathRef.current && svgRef.current) {
-      gsap.to(svgRef.current, {
+      const svg = svgRef.current;
+      gsap.to(svg, {
         opacity: 1,
         scrollTrigger: {
-          trigger: svgRef.current,
+          trigger: svg,
           start: 'top 50%',
         },
       });
@@ -21,18 +22,24 @@ export const CurvedLeftLinesDsk = (props: HTMLAttributes<SVGSVGElement>) => {
 
       gsap.set(path, {
         strokeDasharray: length,
-        strokeDashoffset: length
       });
-      gsap.to(path, {
-        strokeDashoffset: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: pathRef.current,
-          start: 'top 80%',
-          markers: false,
-          scrub: true,
+
+      gsap.fromTo(
+        path,
+        {
+          strokeDashoffset: length,
         },
-      });
+        {
+          strokeDashoffset: 0,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: svg,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: 1,
+          },
+        },
+      );
     }
   }, []);
 
@@ -63,31 +70,36 @@ export const CurvedRightLineDsk = (props: HTMLAttributes<SVGSVGElement>) => {
 
   useEffect(() => {
     if (pathRef.current && svgRef.current) {
-      gsap.to(svgRef.current, {
+      const svg = svgRef.current;
+      gsap.to(svg, {
         opacity: 1,
         scrollTrigger: {
-          trigger: svgRef.current,
+          trigger: svg,
           start: 'top 50%',
         },
       });
 
       const path = pathRef.current;
-      const length = path.getTotalLength() * 2;
+      const length = path.getTotalLength();
 
       gsap.set(path, {
         strokeDasharray: length,
-        strokeDashoffset: 0
+        strokeDashoffset: length
       });
-      gsap.to(path, {
-        strokeDashoffset: length,
-        ease: "none",
-        scrollTrigger: {
-          trigger: svgRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: true
+
+      gsap.to(
+        path,
+        {
+          strokeDashoffset: length * 2,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: svg,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: true,
+          },
         },
-      });
+      );
     }
   }, []);
 
@@ -98,13 +110,11 @@ export const CurvedRightLineDsk = (props: HTMLAttributes<SVGSVGElement>) => {
       height={1029}
       fill="none"
       ref={svgRef}
-      opacity={0}
+      opacity={1}
       {...props}
     >
       <path
-        // ref={pathRef}
-        strokeDasharray={3000}
-        strokeDashoffset={1000}
+        ref={pathRef}
         stroke="#06EF00"
         strokeWidth={20}
         strokeLinecap="round"
