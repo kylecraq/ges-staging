@@ -2,12 +2,14 @@ import { Button } from '@/components/ui/button';
 import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import { Link } from '@/i18n/navigation';
 
-export const LinkButtonWithIcon = (props: {
+export type LinkPrimaryButtonWithIconProps = {
   icon: ReactNode;
   label: string;
   href: string;
   target?: HTMLAttributeAnchorTarget;
-}) => {
+};
+
+export const LinkPrimaryButtonWithIcon = (props: LinkPrimaryButtonWithIconProps) => {
   const { icon, label, href, target = '_self' } = props;
   return (
     <Button asChild className="group">

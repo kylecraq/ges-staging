@@ -8,7 +8,7 @@ import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/navigation';
 import { Logo } from '@/components/nextcharge-ui/logo';
-import { LinkButtonWithIcon } from '@/components/nextcharge-ui/links/link-with-icon';
+import { LinkPrimaryButtonWithIcon } from '@/components/nextcharge-ui/links/link-with-icon';
 import { Button } from '@/components/ui/button';
 
 
@@ -35,7 +35,7 @@ export function Header() {
         </Button>
         <LanguageSelector />
         <div className="hidden md:block">
-          <LinkButtonWithIcon
+          <LinkPrimaryButtonWithIcon
             icon={<Download />}
             label={t('download')}
             href={'https://apps.apple.com/it/app/nextcharge/id614946715'}

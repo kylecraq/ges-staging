@@ -75,7 +75,7 @@ export const HomePageHeroDecorations = () => {
   }, []);
 
   return (
-    <div className="relative h-full pointer-events-none" ref={container}>
+    <div className="relative h-full pointer-events-none pt-32" ref={container}>
       <span className="absolute mt-[53px] ml-[87px]" ref={blobSquare1}>
         <BlobSquare />
       </span>

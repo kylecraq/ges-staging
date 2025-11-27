@@ -22,7 +22,7 @@ export const HomePageDownloadSection = () => {
     },
   ];
   return (
-    <section className="px-wide-sm">
+    <section className="px-wide-sm md:px-wide">
       <BoxParagraph
         title={t('title')}
         description={t('description')}
