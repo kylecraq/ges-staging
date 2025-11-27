@@ -32,8 +32,8 @@
         "description-1": "Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.",
         "badge-2": "Smartcard Rfid",
         "description-2": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.",
-        "badge": "Plug&charge",
-        "description": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone."
+        "badge-3": "Plug&charge",
+        "description-3": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone."
       }
     },
     "Buttons": {

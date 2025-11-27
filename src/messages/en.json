@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "title": "Enter in the <primary>NextCharge</primary> community",
+    "title": "Entra anche tu nella community <primary>NextCharge</primary>",
     "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito <primary>NextCharge</primary>. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio",
     "SectionChargeSystem": {
       "kicker": "Sistemi di ricarica",
@@ -15,18 +15,6 @@
       "title": "Download now",
       "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
     },
-    "SectionFeature" : {
-      "title": "Borsellino elettronico ricaricabile per monitorare la tua spesa",
-      "kicker": "nextcharge wallet",
-      "chips": {
-        "badge-1":"Smartphone",
-        "description-1": "Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.",
-        "badge-2": "Smartcard Rfid",
-        "description-2": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.",
-        "badge": "Plug&charge",
-        "description": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone."
-      }
-    },
     "SectionFaq": {
       "kicker": "faq",
       "title": "Domande Frequenti",
@@ -36,17 +24,29 @@
       "question-4": "4. Se non fosse possibile terminare la ricarica da App, ad esempio perche il tuo telefonino e' scarico, \u2028puoi usare la card NextCharge",
       "question-5": "5. Posso ricaricare sia con carta Rfid che con App?"
     },
+    "SectionFeature" : {
+      "title": "Borsellino elettronico ricaricabile per monitorare la tua spesa",
+      "kicker": "nextcharge wallet",
+      "chips": {
+        "badge-1":"Smartphone",
+        "description-1": "Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.",
+        "badge-2": "Smartcard Rfid",
+        "description-2": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.",
+        "badge-3": "Plug&charge",
+        "description-3": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone."
+      }
+    },
     "Buttons": {
       "download": "download app"
     }
   },
-  "Header": {
+  "Header" : {
     "LanguageLabels": {
       "en": "English (EN)",
       "it": "Italiano (IT)"
     },
     "Buttons": {
-      "download": "download app"
+      "download" : "scarica app"
     }
   }
 }

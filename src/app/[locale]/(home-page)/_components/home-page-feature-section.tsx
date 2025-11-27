@@ -12,26 +12,28 @@ export const HomePageFeatureSection = () => {
 
   const chips: Chip[] = [
     {
-      badge: 'Smartphone',
-      description:
-        'Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.',
+      badge: t('chips.badge-1'),
+      description: t('chips.description-1'),
     },
     {
-      badge: 'Smartcard Rfid',
-      description:
-        'La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.',
+      badge: t('chips.badge-2'),
+      description: t('chips.description-2'),
     },
     {
-      badge: 'Plug&charge',
-      description:
-        'La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.',
+      badge: t('chips.badge-3'),
+      description: t('chips.description-3'),
     },
   ];
 
   return (
-    <article className="px-wide md:px-central flex flex-col">
+    <article className="px-wide md:px-main flex flex-col">
       <IntroParagraph title={t('title')} kicker={t('kicker')} />
-      <FeatureListWithImage chips={chips} imgAlt="Iphone" imgMbl="/hero/feature-phone.png" imgDsk="/hero/feature-phone.png" />
+      <FeatureListWithImage
+        chips={chips}
+        imgAlt="Iphone"
+        imgMbl="/hero/feature-phone.png"
+        imgDsk="/hero/feature-phone.png"
+      />
     </article>
   );
 };
