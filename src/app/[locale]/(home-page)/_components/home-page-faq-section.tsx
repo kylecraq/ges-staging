@@ -19,7 +19,6 @@ export const HomePageFaqSection = () => {
         type="single"
         collapsible
         className="w-full mx-auto"
-        defaultValue="item-1"
       >
         <AccordionItem value="item-1" className="bg-neutral-100">
           <AccordionTrigger>{t('question-1')}</AccordionTrigger>
