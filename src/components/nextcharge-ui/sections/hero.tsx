@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { ContentBlock } from '@/components/nextcharge-ui/content/content-block';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
@@ -52,9 +51,9 @@ export const Hero = (props: HeroProps) => {
 
   return (
     <div
-      className={cn(className, 'grid grid-cols-1 grid-rows-1 md:min-h-screen')}
+      className={cn(className, 'grid grid-cols-1 grid-rows-1 xl:min-h-screen')}
     >
-      <div className="col-start-1 row-start-1 overflow-hidden pt-48 pb-2 md:pt-0 md:pb-0">
+      <div className="col-start-1 row-start-1 overflow-hidden pt-80 md:pt-40 xl:pt-32 pb-2 md:pb-0">
         <img
           ref={bgHero}
           src={imgSrcDsk}
@@ -62,7 +61,7 @@ export const Hero = (props: HeroProps) => {
           alt="Next charge hero"
           loading="eager"
           decoding="async"
-          className="hidden aspect-[460/327] h-full w-full object-cover object-center md:block"
+          className="hidden aspect-4/3 xl:aspect-[460/327] h-full w-full object-contain object-top xl:object-cover xl:object-center md:block"
         />
         <img
           ref={bgHero}
@@ -74,8 +73,8 @@ export const Hero = (props: HeroProps) => {
           className="h-full w-full object-contain object-bottom md:hidden"
         />
       </div>
-      <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1">
-        <div className="z-10 col-start-1 row-start-1 md:pr-0 xl:mt-40 xl:w-[49.4%] xl:pl-36">
+      <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1 pt-28 md:pt-32">
+        <div className="z-10 col-start-1 row-start-1 md:pr-0 xl:mt-40 md:w-1/2 xl:w-[49.4%] xl:pl-36">
           <ContentBlock
             title={title}
             titleTag="h1"

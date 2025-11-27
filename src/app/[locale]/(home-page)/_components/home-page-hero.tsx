@@ -15,7 +15,7 @@ export const HomePageHero = () => {
   ]
 
   return (
-    <section className="grid grid-cols-1 grid-rows-1 pt-28 px-wide-sm md:px-wide">
+    <section className="grid grid-cols-1 grid-rows-1 px-wide-sm md:px-wide">
       <Hero
         className="col-start-1 row-start-1"
         imgSrcDsk="/hero/next-charge-hero-dsk.png"
@@ -29,7 +29,7 @@ export const HomePageHero = () => {
         })}
         buttons={buttons}
       />
-      <div className="col-start-1 row-start-1 px-3 md:px-9 hidden md:block">
+      <div className="col-start-1 row-start-1 px-3 md:px-9 hidden xl:block">
         <HomePageHeroDecorations />
       </div>
     </section>
