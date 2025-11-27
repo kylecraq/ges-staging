@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export const HomePageChargeSystemSection = () => {
   const t = useTranslations('HomePage.SectionChargeSystem');
   return (
-    <section className="px-wide-sm md:px-main xl:px-central">
+    <section className="px-main xl:px-central">
       <IntroParagraph
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,

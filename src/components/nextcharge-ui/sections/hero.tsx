@@ -1,5 +1,5 @@
 'use client';
-import { ContentBlock } from '@/components/nextcharge-ui/content/content-block';
+import { ContentLeftBlock } from '@/components/nextcharge-ui/content/content-left-block';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { ReactNode, useEffect, useRef } from 'react';
@@ -74,8 +74,8 @@ export const Hero = (props: HeroProps) => {
         />
       </div>
       <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1 pt-28 md:pt-32">
-        <div className="z-10 col-start-1 row-start-1 md:pr-0 xl:mt-40 md:w-1/2 xl:w-[49.4%] xl:pl-36">
-          <ContentBlock
+        <div className="z-10 col-start-1 row-start-1 md:pr-0 xl:mt-40 md:w-1/2 xl:w-[50.5%] xl:pl-36">
+          <ContentLeftBlock
             title={title}
             titleTag="h1"
             titleSize="xxl"

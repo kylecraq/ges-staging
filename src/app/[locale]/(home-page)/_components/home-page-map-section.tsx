@@ -11,7 +11,7 @@ export const HomePageMapSection = () => {
       <IntroParagraph
         title={t('title')}
         kicker={'kicker'}
-        className="md:px-main xl:px-main"
+        className="px-main"
       />
       <div className="w-wide relative mx-auto aspect-3/4 overflow-hidden rounded-4xl shadow-md md:aspect-4/3 xl:aspect-2/1">
         <iframe

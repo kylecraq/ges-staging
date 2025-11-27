@@ -15,7 +15,7 @@ export const HomePageHero = () => {
   ]
 
   return (
-    <section className="grid grid-cols-1 grid-rows-1 px-wide-sm md:px-wide">
+    <section className="grid grid-cols-1 grid-rows-1 px-wide">
       <Hero
         className="col-start-1 row-start-1"
         imgSrcDsk="/hero/next-charge-hero-dsk.png"

@@ -20,7 +20,7 @@ type HeroContentProps = {
   description?: ReactNode;
   buttons?: PrimaryButtonWithIconProps[];
 };
-export const ContentBlock = (props: HeroContentProps) => {
+export const ContentLeftBlock = (props: HeroContentProps) => {
   const { title, titleTag, titleSize, titleEffect, description, buttons } =
     props;
   return (
