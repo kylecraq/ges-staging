@@ -14,12 +14,12 @@ export const IntroParagraph = (props: IntroParagraphProps) => {
   const { title, kicker, description } = props;
 
   return (
-    <div className="flex flex-col items-center text-center gap-8 pb-8">
+    <article className="flex flex-col items-center text-center gap-6 pb-8">
       {kicker ? <Kicker text={kicker} /> : null}
-      <Heading as="h2" size="xxl">
+      <Heading as="h2" size="l">
         {title}
       </Heading>
       {description ? <BodyText className="md:max-w-7/12">{description}</BodyText> : null}
-    </div>
+    </article>
   );
 };

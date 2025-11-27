@@ -15,7 +15,7 @@ export const HomePageHero = () => {
   ]
 
   return (
-    <div className="grid grid-cols-1 grid-rows-1">
+    <section className="grid grid-cols-1 grid-rows-1 pt-28 px-wide-sm md:px-wide">
       <Hero
         className="col-start-1 row-start-1"
         imgSrcDsk="/hero/next-charge-hero-dsk.png"
@@ -32,6 +32,6 @@ export const HomePageHero = () => {
       <div className="col-start-1 row-start-1 px-3 md:px-9 hidden md:block">
         <HomePageHeroDecorations />
       </div>
-    </div>
+    </section>
   );
 };

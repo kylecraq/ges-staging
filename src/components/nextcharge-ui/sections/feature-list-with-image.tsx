@@ -17,7 +17,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
 
   return (
     <section className="grid md:grid-cols-2 gap-10">
-      <div className="flex md:w-8/12 flex-col gap-10">
+      <div className="flex md:w-8/12 flex-col gap-10 mx-auto">
         {chips.map((chip, index) => {
           return (
             <div key={index} className="flex flex-col items-start gap-4">

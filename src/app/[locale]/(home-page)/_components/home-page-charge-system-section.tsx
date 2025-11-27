@@ -2,10 +2,10 @@
 import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
 
-export const HomePageSection1 = () => {
-  const t = useTranslations('HomePage.Section1');
+export const HomePageChargeSystemSection = () => {
+  const t = useTranslations('HomePage.SectionChargeSystem');
   return (
-    <article className="md:max-w-3/6 md:mx-auto">
+    <section className="px-wide-sm md:max-w-3/6 md:mx-auto">
       <IntroParagraph
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
@@ -13,6 +13,6 @@ export const HomePageSection1 = () => {
         kicker={t('kicker')}
         description={t('description')}
       />
-    </article>
+    </section>
   );
 };

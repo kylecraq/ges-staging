@@ -1,5 +1,5 @@
 'use client';
-import { CurvedLine } from '@/components/nextcharge-ui/decorations/curved-line';
+import { CurvedLineDsk } from '@/components/nextcharge-ui/decorations/curved-line-dsk';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
@@ -29,7 +29,7 @@ export const HomePageDecorations = () => {
 
   return <>
     <span className="absolute top-[55%]">
-      <CurvedLine />
+      <CurvedLineDsk/>
     </span>
     {/*<span className="absolute bottom-0" ref={curvedLine1}>*/}
     {/*  <CurvedLine />*/}

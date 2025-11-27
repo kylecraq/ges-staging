@@ -14,6 +14,11 @@
 
     --spacing-navbar-3: 3px;
     --ease-sine-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    --width-wide: 73.5rem;
+    --spacing-wide-sm: 0.75rem;
+    --spacing-wide: 2.25rem;
+    --spacing-main: 14.75rem;
 }
 
 
@@ -44,8 +49,8 @@
     }
 
     .heading-xl {
-        font-size: 32px;
-        line-height: 48px;
+        font-size: 24px;
+        line-height: 29px;
         /* Tablet */
         @media (min-width: 768px) and (max-width: 1023px) {
             font-size: 40px;

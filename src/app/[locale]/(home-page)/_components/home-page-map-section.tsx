@@ -3,14 +3,12 @@
 import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
 
-export const HomePageMap = () => {
+export const HomePageMapSection = () => {
   const t = useTranslations('HomePage.SectionMap');
 
   return (
-    <section>
-      <div className="md:max-w-4/6 md:mx-auto">
-        <IntroParagraph title={t('title')} kicker={'kicker'} />
-      </div>
+    <section className="px-wide-sm">
+      <IntroParagraph title={t('title')} kicker={'kicker'} />
       <div className="relative aspect-3/4 xl:aspect-2/1 w-full overflow-hidden rounded-4xl shadow-md">
         <iframe
           className=""

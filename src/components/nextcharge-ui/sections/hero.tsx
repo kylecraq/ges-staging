@@ -51,10 +51,10 @@ export const Hero = (props: HeroProps) => {
   }, []);
 
   return (
-    <header
-      className={cn('grid min-h-screen grid-cols-1 grid-rows-1', className)}
+    <div
+      className={cn(className, 'grid grid-cols-1 grid-rows-1 md:min-h-screen')}
     >
-      <div className="col-start-1 row-start-1 overflow-hidden pt-64 pb-2 md:pt-0 md:pb-0">
+      <div className="col-start-1 row-start-1 overflow-hidden pt-48 pb-2 md:pt-0 md:pb-0">
         <img
           ref={bgHero}
           src={imgSrcDsk}
@@ -62,7 +62,7 @@ export const Hero = (props: HeroProps) => {
           alt="Next charge hero"
           loading="eager"
           decoding="async"
-          className="md:block hidden aspect-[460/327] h-full w-full object-cover object-center"
+          className="hidden aspect-[460/327] h-full w-full object-cover object-center md:block"
         />
         <img
           ref={bgHero}
@@ -74,8 +74,8 @@ export const Hero = (props: HeroProps) => {
           className="h-full w-full object-contain object-bottom md:hidden"
         />
       </div>
-      <article className="col-start-1 row-start-1 grid h-full grid-cols-1 grid-rows-1">
-        <div className="z-10 col-start-1 row-start-1 px-3 md:pr-0 md:pl-36 xl:mt-40 xl:w-[49.4%]">
+      <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1">
+        <div className="z-10 col-start-1 row-start-1 md:pr-0 xl:mt-40 xl:w-[49.4%] xl:pl-36">
           <ContentBlock
             title={title}
             titleTag="h1"
@@ -85,7 +85,7 @@ export const Hero = (props: HeroProps) => {
             buttons={buttons}
           />
         </div>
-      </article>
-    </header>
+      </div>
+    </div>
   );
 };

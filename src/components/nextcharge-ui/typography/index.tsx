@@ -8,7 +8,7 @@ export type HeadingSizes = 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs' | 'xxs';
 export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type HeadingEffects = 'text-wave-reveal' | 'text-fade-in-reveal';
 
-const headingVariants = cva('', {
+const headingVariants = cva('font-mono', {
   variants: {
     size: {
       xxl: 'heading-xxl',

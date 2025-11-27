@@ -2,7 +2,7 @@
 import { HTMLAttributes, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-export const CurvedLine = (props: HTMLAttributes<SVGSVGElement>) => {
+export const CurvedLineDsk = (props: HTMLAttributes<SVGSVGElement>) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 

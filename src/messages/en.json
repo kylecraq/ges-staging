@@ -2,7 +2,7 @@
   "HomePage": {
     "title": "Enter in the <primary>NextCharge</primary> community",
     "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito <primary>NextCharge</primary>. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio",
-    "Section1": {
+    "SectionChargeSystem": {
       "kicker": "Sistemi di ricarica",
       "title": "Un’unica rete, una sola esperienza di ricarica, un’unica <primary>app</primary>.",
       "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici."

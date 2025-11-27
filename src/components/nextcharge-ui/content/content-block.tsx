@@ -24,11 +24,11 @@ export const ContentBlock = (props: HeroContentProps) => {
   const { title, titleTag, titleSize, titleEffect, description, buttons } =
     props;
   return (
-    <section className="h-full flex flex-col items-start gap-8 w-[90%]">
+    <article className="h-full flex flex-col items-start gap-6 w-full">
       <Heading as={titleTag} size={titleSize} effect={titleEffect}>
         {title}
       </Heading>
-      {description ? <BodyText>{description}</BodyText> : null}
+      {description ? <p className="text-[15px] leading-[24px]">{description}</p> : null}
       <div className="mt-auto md:mt-0 mb-8 mx-auto md:mx-0 flex items-center gap-2.5">
         {buttons
           ? buttons.map((buttonProps, index) => {
@@ -42,6 +42,6 @@ export const ContentBlock = (props: HeroContentProps) => {
           })
           : null}
       </div>
-    </section>
+    </article>
   );
 };

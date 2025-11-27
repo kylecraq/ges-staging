@@ -1,8 +1,8 @@
 import { use } from 'react';
 import { setRequestLocale } from 'next-intl/server';
 import { HomePageHero } from '@/app/[locale]/(home-page)/_components/home-page-hero';
-import { HomePageSection1 } from '@/app/[locale]/(home-page)/_components/home-page-section-1';
-import { HomePageMap } from '@/app/[locale]/(home-page)/_components/home-page-map';
+import { HomePageChargeSystemSection } from '@/app/[locale]/(home-page)/_components/home-page-charge-system-section';
+import { HomePageMapSection } from '@/app/[locale]/(home-page)/_components/home-page-map-section';
 import { HomePageDecorations } from './_components/home-page-decorations';
 import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/home-page-download-section';
 import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';
@@ -24,10 +24,10 @@ export default function Home(props: HomeProps) {
       <div className="absolute inset-0">
         <HomePageDecorations />
       </div>
-      <main className="relative flex flex-col gap-32 px-3 pt-24 md:px-9 xl:pt-32">
+      <main className="relative flex flex-col gap-32">
         <HomePageHero />
-        <HomePageSection1 />
-        <HomePageMap />
+        <HomePageChargeSystemSection />
+        <HomePageMapSection />
         <HomePageFeatureSection />
         <HomePageDownloadSection />
         <HomePageFaqSection />
