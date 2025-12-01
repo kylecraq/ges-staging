@@ -1,5 +1,9 @@
 {
   "HomePage": {
+    "Seo": {
+      "title": "Entra anche tu nella community NextCharge",
+      "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito NextCharge. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio."
+    },
     "title": "Entra anche tu nella community <primary>NextCharge</primary>",
     "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito <primary>NextCharge</primary>. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio",
     "SectionChargeSystem": {

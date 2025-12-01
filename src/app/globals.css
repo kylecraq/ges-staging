@@ -2,8 +2,8 @@
 @import 'tw-animate-css';
 
 @theme {
-    --color-primary: #124C37;
-    /*--color-primary-variant: #18634a;*/
+    --color-primary: #06ef00;
+    --color-primary-variant: #18634a;
 
     --color-neutral-0: #ffffff;
     --color-neutral-20: #fafafa;

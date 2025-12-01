@@ -1,6 +1,6 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps } from 'react';
 
-export const NextChargeIcon = (props: HTMLAttributes<SVGSVGElement>) => {
+export const NextChargeIcon = (props: ComponentProps<'svg'>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export const NextChargeIcon = (props: HTMLAttributes<SVGSVGElement>) => {
   );
 };
 
-export const NextChargeIconText = (props: HTMLAttributes<SVGSVGElement>) => {
+export const NextChargeIconText = (props: ComponentProps<'svg'>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export const NextChargeIconText = (props: HTMLAttributes<SVGSVGElement>) => {
   );
 };
 
-export const NextChargeCompleteLogo = (props: HTMLAttributes<SVGSVGElement>) => (
+export const NextChargeCompleteLogo = (props: ComponentProps<'svg'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 150 58"
@@ -136,4 +136,3 @@ export const NextChargeCompleteLogo = (props: HTMLAttributes<SVGSVGElement>) => 
     />
   </svg>
 );
-

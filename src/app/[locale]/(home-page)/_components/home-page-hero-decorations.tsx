@@ -2,7 +2,7 @@
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
 import Image from 'next/image';
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,64 +14,67 @@ export const HomePageHeroDecorations = () => {
   const userStatus = useRef<HTMLImageElement>(null);
   const userReviews = useRef<HTMLImageElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const blobs = [blobSquare1, blobSquare2];
 
-    if (userStatus.current && container.current) {
-      gsap.fromTo(
-        userStatus.current,
-        { y: -180 },
-        {
-          y: 180,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: container.current,
-            scrub: true,
-            markers: false,
-          },
-        }
-      );
-    }
-
-    if (userReviews.current && container.current) {
-      gsap.fromTo(
-        userReviews.current,
-        { y: -90 },
-        {
-          y: 90,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: container.current,
-            scrub: true,
-            markers: false,
-          },
-        }
-      );
-    }
-
-    blobs.forEach((blob) => {
-      if (blob.current && container.current) {
-        const tl = gsap.timeline();
-        tl.fromTo(
-          blob.current,
-          { autoAlpha: 0, y: -15, rotate: -15 },
+    const context = gsap.context(() => {
+      if (userStatus.current && container.current) {
+        gsap.fromTo(
+          userStatus.current,
+          { y: -180 },
           {
-            autoAlpha: 0.9,
-            y: 0,
-            rotate: 0,
-            duration: 1,
-            ease: 'sine.inOut',
-          }
+            y: 180,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: container.current,
+              scrub: true
+            },
+          },
         );
-        tl.to(blob.current, {
-          y: '+=15',
-          duration: 2.7,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-        });
       }
+
+      if (userReviews.current && container.current) {
+        gsap.fromTo(
+          userReviews.current,
+          { y: -90 },
+          {
+            y: 90,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: container.current,
+              scrub: true
+            },
+          },
+        );
+      }
+
+      blobs.forEach((blob) => {
+        if (blob.current && container.current) {
+          const tl = gsap.timeline();
+          tl.fromTo(
+            blob.current,
+            { autoAlpha: 0, y: -15, rotate: -15 },
+            {
+              autoAlpha: 0.9,
+              y: 0,
+              rotate: 0,
+              duration: 1,
+              ease: 'slow',
+            },
+          );
+          tl.to(blob.current, {
+            y: '+=15',
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'slow',
+          });
+        }
+      });
     });
+    return () => {
+      context.revert();
+    };
   }, []);
 
   return (

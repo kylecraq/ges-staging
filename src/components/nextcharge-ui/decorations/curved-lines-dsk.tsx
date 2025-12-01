@@ -1,8 +1,14 @@
 'use client';
-import { HTMLAttributes, useEffect, useRef } from 'react';
+import {
+  ComponentProps,
+  HTMLAttributes,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from 'react';
 import gsap from 'gsap';
 
-export const CurvedLeftLinesDsk = (props: HTMLAttributes<SVGSVGElement>) => {
+export const CurvedLeftLinesDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
@@ -13,33 +19,27 @@ export const CurvedLeftLinesDsk = (props: HTMLAttributes<SVGSVGElement>) => {
         opacity: 1,
         scrollTrigger: {
           trigger: svg,
-          start: 'top 50%',
+          start: 'top center',
         },
       });
 
       const path = pathRef.current;
-      const length = path.getTotalLength() * 2;
+      const length = path.getTotalLength();
 
       gsap.set(path, {
         strokeDasharray: length,
+        strokeDashoffset: length / 2,
       });
 
-      gsap.fromTo(
-        path,
-        {
-          strokeDashoffset: length,
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        ease: 'slow',
+        scrollTrigger: {
+          trigger: svg,
+          start: 'top center',
+          scrub: true,
         },
-        {
-          strokeDashoffset: 0,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: svg,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: 1,
-          },
-        },
-      );
+      });
     }
   }, []);
 
@@ -64,43 +64,42 @@ export const CurvedLeftLinesDsk = (props: HTMLAttributes<SVGSVGElement>) => {
     </svg>
   );
 };
-export const CurvedRightLineDsk = (props: HTMLAttributes<SVGSVGElement>) => {
+export const CurvedRightLineDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
-  useEffect(() => {
-    if (pathRef.current && svgRef.current) {
-      const svg = svgRef.current;
-      gsap.to(svg, {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: svg,
-          start: 'top 50%',
-        },
-      });
-
-      const path = pathRef.current;
-      const length = path.getTotalLength();
-
-      gsap.set(path, {
-        strokeDasharray: length,
-        strokeDashoffset: length
-      });
-
-      gsap.to(
-        path,
-        {
-          strokeDashoffset: length * 2,
-          ease: 'none',
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      if (pathRef.current && svgRef.current) {
+        const svg = svgRef.current;
+        gsap.to(svg, {
+          opacity: 1,
           scrollTrigger: {
             trigger: svg,
-            start: 'top 80%',
-            end: 'bottom 20%',
+            start: 'top center',
+          },
+        });
+
+        const path = pathRef.current;
+        const length = path.getTotalLength();
+
+        gsap.set(path, {
+          strokeDasharray: length,
+          strokeDashoffset: length,
+        });
+
+        gsap.to(path, {
+          strokeDashoffset: length * 1.6,
+          ease: 'slow',
+          scrollTrigger: {
+            trigger: svg,
+            start: 'top center',
             scrub: true,
           },
-        },
-      );
-    }
+        });
+      }
+    });
+    return () => context.revert();
   }, []);
 
   return (
