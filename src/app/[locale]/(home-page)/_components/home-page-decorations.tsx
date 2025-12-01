@@ -55,13 +55,15 @@ const BubblesDecoration = () => {
         { y: 0, opacity: 1, duration: 1, ease: 'none' },
         0
       );
-      tl.to(
+      tl.fromTo(
         internalBlob2,
-        { y: 0, opacity: 0.5, duration: 0 , ease: 'none'},
+        { y: -15, opacity: 0 },
+        { y: -7.5, opacity: 0.5, duration: 0 , ease: 'none'},
         '<0.5',
       );
-      tl.to(
+      tl.fromTo(
         internalBlob2,
+        { y: -7.5, opacity: 0.5 },
         { y: 0, opacity: 1, duration: 0.5 , ease: 'none' },
         '<',
       );
