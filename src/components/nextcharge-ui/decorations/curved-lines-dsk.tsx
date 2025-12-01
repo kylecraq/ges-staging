@@ -19,33 +19,27 @@ export const CurvedLeftLinesDsk = (props: ComponentProps<'svg'>) => {
         opacity: 1,
         scrollTrigger: {
           trigger: svg,
-          start: 'top 50%',
+          start: 'top center',
         },
       });
 
       const path = pathRef.current;
-      const length = path.getTotalLength() * 2;
+      const length = path.getTotalLength();
 
       gsap.set(path, {
         strokeDasharray: length,
+        strokeDashoffset: length / 2,
       });
 
-      gsap.fromTo(
-        path,
-        {
-          strokeDashoffset: length,
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        ease: 'slow',
+        scrollTrigger: {
+          trigger: svg,
+          start: 'top center',
+          scrub: true,
         },
-        {
-          strokeDashoffset: 0,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: svg,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: true,
-          },
-        }
-      );
+      });
     }
   }, []);
 
@@ -82,7 +76,7 @@ export const CurvedRightLineDsk = (props: ComponentProps<'svg'>) => {
           opacity: 1,
           scrollTrigger: {
             trigger: svg,
-            start: 'top 50%',
+            start: 'top center',
           },
         });
 
@@ -95,12 +89,11 @@ export const CurvedRightLineDsk = (props: ComponentProps<'svg'>) => {
         });
 
         gsap.to(path, {
-          strokeDashoffset: length * 2,
-          ease: 'none',
+          strokeDashoffset: length * 1.6,
+          ease: 'slow',
           scrollTrigger: {
             trigger: svg,
-            start: 'top 80%',
-            end: 'bottom 20%',
+            start: 'top center',
             scrub: true,
           },
         });
