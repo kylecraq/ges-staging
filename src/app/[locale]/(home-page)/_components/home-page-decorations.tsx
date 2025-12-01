@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   CurvedLeftLinesDsk,
   CurvedRightLineDsk,
@@ -25,47 +25,59 @@ export const HomePageDecorations = () => {
 };
 
 const BubblesDecoration = () => {
-  const containerRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const blob1 = useRef<SVGSVGElement>(null);
   const blob2 = useRef<SVGSVGElement>(null);
 
-
   useLayoutEffect(() => {
     const context = gsap.context(() => {
-      if(!containerRef.current) return;
-      if(!blob1.current || !blob2.current) return;
+      if (!containerRef.current || !blob1.current || !blob2.current) return;
       const internalBlob1 = blob1.current;
       const internalBlob2 = blob2.current;
-      gsap.set('.blob-square', { opacity: 0 });
+
+      gsap.set([internalBlob1, internalBlob2], { y: -15, opacity: 0 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top center',
           end: 'bottom center',
-          scrub: 1,
+          scrub: true,
+          markers: true,
         },
+        ease: 'none',
       });
 
-      // 3. Define the animation steps
+      tl.fromTo(
+        internalBlob1,
+        { y: -15, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: 'none' },
+        0
+      );
+      tl.to(
+        internalBlob2,
+        { y: 0, opacity: 0.5, duration: 0 , ease: 'none'},
+        '<0.5',
+      );
+      tl.to(
+        internalBlob2,
+        { y: 0, opacity: 1, duration: 0.5 , ease: 'none' },
+        '<',
+      );
 
-      // The first BlobSquare fades in from 0 to 1 over the first 30% of the scroll
-      tl.to(internalBlob1, { opacity: 1, ease: 'none' }, 0.0) // 0.0 position
-        .to(internalBlob1, { opacity: 0, ease: 'none' }, 0.7); // Fades out starting at 70%
-
-      // The second BlobSquare starts fading in slightly later and stays opaque longer
-      tl.to(internalBlob2, { opacity: 1, ease: 'none' }, 0.3) // Starts fading in at 30%
-        .to(internalBlob2, { opacity: 0, ease: 'none' }, 0.9); // Fades out starting at 90%
     }, containerRef);
 
-    return () => context.revert(); // <- cleanup
+    return () => context.revert();
   }, []);
 
   return (
-    <span ref={containerRef} className="absolute top-[34%] right-8">
-      <BlobSquare className="-translate-x-1/2 scale-50" ref={blob1} />
-      <BlobSquare ref={blob2}/>
-    </span>
+    <div
+      ref={containerRef}
+      className="absolute top-[34%] right-8 -z-10 flex flex-col justify-center"
+    >
+      <BlobSquare ref={blob1} className="-translate-x-1/2 scale-50" />
+      <BlobSquare ref={blob2} />
+    </div>
   );
 };
