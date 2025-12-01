@@ -6,25 +6,34 @@ import {
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { cn } from '@/lib/utils';
 
 export const HomePageDecorations = () => {
   return (
-    <div className="pointer-events-none absolute inset-0 h-full">
+    <div className="pointer-events-none absolute inset-0 -z-10 h-full">
       <span className="absolute top-[13%]">
         <CurvedLeftLinesDsk />
       </span>
       <span className="absolute top-[35%]">
         <CurvedLeftLinesDsk />
       </span>
-      <span className="absolute top-[55%] right-0 -z-10">
+      <span className="absolute top-[55%] right-0">
         <CurvedRightLineDsk />
       </span>
-      <BubblesDecoration />
+      <BlobsDecoration className="absolute top-[34%] right-8" />
+      <BlobsDecoration hide="small" className="absolute top-[56%] left-24" />
+      <BlobsDecoration className="absolute top-[81.5%] right-4" />
     </div>
   );
 };
 
-const BubblesDecoration = () => {
+type BlobsDecorationProps = {
+  className?: string;
+  hide?: 'big' | 'small';
+};
+
+const BlobsDecoration = (props: BlobsDecorationProps) => {
+  const { className, hide = '' } = props;
   const containerRef = useRef<HTMLDivElement>(null);
 
   const blob1 = useRef<SVGSVGElement>(null);
@@ -77,23 +86,30 @@ const BubblesDecoration = () => {
         { autoAlpha: 0.4, duration: 0.1, ease: 'slow' },
         0.3
       );
-      tl.to(
-        internalBlob2,
-        { autoAlpha: 1, duration: 0.6, ease: 'none' },
-        '>'
-      );
+      tl.to(internalBlob2, { autoAlpha: 1, duration: 0.6, ease: 'none' }, '>');
     }, containerRef);
 
     return () => context.revert();
   }, []);
 
   return (
-    <div
+    <span
       ref={containerRef}
-      className="absolute top-[34%] right-8 -z-10 flex flex-col justify-center"
+      className={cn(className, 'flex flex-col justify-center')}
     >
-      <BlobSquare ref={blob1} className="-translate-x-1/2 scale-50 opacity-0" />
-      <BlobSquare ref={blob2} className="opacity-0" />
-    </div>
+      <BlobSquare
+        ref={blob1}
+        className={cn(
+          {
+            hidden: hide === 'small',
+          },
+          '-translate-x-1/2 scale-50 opacity-0'
+        )}
+      />
+      <BlobSquare
+        ref={blob2}
+        className={cn({ hidden: hide === 'big' }, 'opacity-0')}
+      />
+    </span>
   );
 };
