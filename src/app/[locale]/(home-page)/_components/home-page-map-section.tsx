@@ -13,7 +13,7 @@ export const HomePageMapSection = () => {
         kicker={'kicker'}
         className="px-main"
       />
-      <div className="w-wide relative mx-auto aspect-3/4 overflow-hidden rounded-4xl shadow-md md:aspect-4/3 xl:aspect-2/1">
+      <div className="w-wide relative mx-auto aspect-3/4 overflow-hidden rounded-4xl shadow-md md:aspect-4/aspect">
         <iframe
           className=""
           src="https://nextcharge.app/map?nextcharge=only&isHeaderLogo=false&isNEXTCHARGEnetworkWebsite=true"
