@@ -41,8 +41,7 @@ export const Hero = (props: HeroProps) => {
           ease: 'none',
           scrollTrigger: {
             trigger: bgHero.current,
-            scrub: true,
-            markers: false,
+            scrub: true
           },
         }
       );

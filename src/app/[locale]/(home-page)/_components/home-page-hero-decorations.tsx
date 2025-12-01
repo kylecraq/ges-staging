@@ -27,8 +27,7 @@ export const HomePageHeroDecorations = () => {
             ease: 'none',
             scrollTrigger: {
               trigger: container.current,
-              scrub: true,
-              markers: false,
+              scrub: true
             },
           },
         );
@@ -43,8 +42,7 @@ export const HomePageHeroDecorations = () => {
             ease: 'none',
             scrollTrigger: {
               trigger: container.current,
-              scrub: true,
-              markers: false,
+              scrub: true
             },
           },
         );
@@ -61,15 +59,15 @@ export const HomePageHeroDecorations = () => {
               y: 0,
               rotate: 0,
               duration: 1,
-              ease: 'sine.inOut',
+              ease: 'slow',
             },
           );
           tl.to(blob.current, {
             y: '+=15',
-            duration: 2.7,
+            duration: 3,
             repeat: -1,
             yoyo: true,
-            ease: 'sine.inOut',
+            ease: 'slow',
           });
         }
       });

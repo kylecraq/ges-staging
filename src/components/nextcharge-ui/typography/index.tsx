@@ -59,7 +59,7 @@ export function Heading({
     const animation = gsap.from(splitTexts.chars, {
       y: yOffset,
       duration: 0.8,
-      ease: 'power2.out',
+      ease: 'slow',
       stagger: 0.02,
       scrollTrigger: {
         trigger: element,

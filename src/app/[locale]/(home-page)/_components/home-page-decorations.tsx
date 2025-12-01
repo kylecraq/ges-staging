@@ -4,7 +4,7 @@ import {
   CurvedRightLineDsk,
 } from '@/components/nextcharge-ui/decorations/curved-lines-dsk';
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 export const HomePageDecorations = () => {
@@ -30,13 +30,22 @@ const BubblesDecoration = () => {
   const blob1 = useRef<SVGSVGElement>(null);
   const blob2 = useRef<SVGSVGElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const context = gsap.context(() => {
       if (!containerRef.current || !blob1.current || !blob2.current) return;
+      const yEndValue = 15;
+
       const internalBlob1 = blob1.current;
       const internalBlob2 = blob2.current;
 
-      gsap.set([internalBlob1, internalBlob2], { y: -15, opacity: 0 });
+      const yoyoTween = gsap.to([internalBlob1, internalBlob2], {
+        y: -yEndValue,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'slow',
+        paused: true,
+      });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -45,29 +54,34 @@ const BubblesDecoration = () => {
           end: 'bottom center',
           scrub: true,
           markers: false,
+          onLeave: () => yoyoTween.play(),
         },
         ease: 'none',
       });
 
       tl.fromTo(
         internalBlob1,
-        { y: -15, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: 'none' },
+        { autoAlpha: 0, rotate: -yEndValue },
+        { autoAlpha: 1, rotate: 0, duration: 1, ease: 'none' },
         0
       );
       tl.fromTo(
         internalBlob2,
-        { y: -15, opacity: 0 },
-        { y: -7.5, opacity: 0.5, duration: 0 , ease: 'none'},
-        '<0.5',
+        { rotate: -yEndValue },
+        { rotate: 0, duration: 1, ease: 'none' },
+        0
       );
       tl.fromTo(
         internalBlob2,
-        { y: -7.5, opacity: 0.5 },
-        { y: 0, opacity: 1, duration: 0.5 , ease: 'none' },
-        '<',
+        { autoAlpha: 0 },
+        { autoAlpha: 0.4, duration: 0.1, ease: 'slow' },
+        0.3
       );
-
+      tl.to(
+        internalBlob2,
+        { autoAlpha: 1, duration: 0.6, ease: 'none' },
+        '>'
+      );
     }, containerRef);
 
     return () => context.revert();
@@ -78,8 +92,8 @@ const BubblesDecoration = () => {
       ref={containerRef}
       className="absolute top-[34%] right-8 -z-10 flex flex-col justify-center"
     >
-      <BlobSquare ref={blob1} className="-translate-x-1/2 scale-50" />
-      <BlobSquare ref={blob2} />
+      <BlobSquare ref={blob1} className="-translate-x-1/2 scale-50 opacity-0" />
+      <BlobSquare ref={blob2} className="opacity-0" />
     </div>
   );
 };
