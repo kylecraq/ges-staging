@@ -44,7 +44,7 @@ const BubblesDecoration = () => {
           start: 'top center',
           end: 'bottom center',
           scrub: true,
-          markers: true,
+          markers: false,
         },
         ease: 'none',
       });
