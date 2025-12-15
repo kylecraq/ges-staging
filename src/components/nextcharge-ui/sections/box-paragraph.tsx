@@ -17,14 +17,12 @@ export const BoxParagraph = (
 
   const actualClassname = cn(
     className,
-    'flex flex-col items-center justify-center rounded-4xl p-8 px-3 md:p-12 xl:p-24',
+    'flex flex-col items-center justify-center rounded-4xl p-8 px-3 md:p-12 md:py-20 xl:px-24 xl:py-28',
   );
 
   return (
     <div className={actualClassname}>
-      <div className="drop-shadow-xs drop-shadow-neutral-100">
-        <IntroParagraph title={title} kicker={kicker} description={description} />
-      </div>
+      <IntroParagraph title={title} kicker={kicker} description={description} />
       <div className="flex flex-wrap items-center gap-2.5">
         {buttons
           ? buttons.map((buttonProps, index) => {

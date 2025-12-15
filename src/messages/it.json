@@ -12,21 +12,23 @@
       "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici.",
       "Carousel": {
         "slide-1": {
-          "badge": "mappa navigabile",
-          "description": "Punti di ricarica ad alta potenza per ricariche veloci durante i tuoi viaggi."
+          "badge": "Your identity on NextCharge",
+          "title": "NextCharge for CPOs",
+          "description": "Create your profile on NextCharge and manage your network just like your own app."
         },
         "slide-2": {
           "badge": "Nuovo",
+          "title": "",
           "description": "Soluzioni di ricarica ideali per l'uso quotidiano in città e aree urbane."
         },
         "slide-3": {
           "badge": "Nuovo",
-          "title": "Ricarica domestica",
+          "title": "",
           "description": "Stazioni di ricarica per la comodità di ricaricare il tuo veicolo a casa."
         },
         "slide-4": {
           "badge": "Nuovo",
-          "title": "Ricarica sul posto di lavoro",
+          "title": "",
           "description": "Soluzioni di ricarica per dipendenti e flotte aziendali."
         }
       }
@@ -45,13 +47,9 @@
       "caption": "<span class='heading-l'>Let’s charge</span> </br> Bastano pochi passaggi per iniziare la tua prima ricarica."
     },
     "SectionDownload": {
-      "title": "Download now",
-      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet",
-      "buttons": {
-        "app-store": "App Store",
-        "google-play": "Google Play",
-        "open-web-app": "Open Web App"
-      }
+      "kicker": "compatibilità",
+      "title": "Una piattaforma, infinite possibilità di integrazione",
+      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
     },
     "SectionFaq": {
       "kicker": "faq",

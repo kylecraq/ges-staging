@@ -47,13 +47,9 @@
       "caption": "<span class='heading-l'>Let’s charge</span> </br> Bastano pochi passaggi per iniziare la tua prima ricarica."
     },
     "SectionDownload": {
-      "title": "Download now",
-      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet",
-      "buttons": {
-        "app-store": "App Store",
-        "google-play": "Google Play",
-        "open-web-app": "Open Web App"
-      }
+      "kicker": "compatibilità",
+      "title": "Una piattaforma, infinite possibilità di integrazione",
+      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
     },
     "SectionFaq": {
       "kicker": "faq",

@@ -2,7 +2,6 @@ import { use } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { HomePageHero } from '@/app/[locale]/(home-page)/_components/home-page-hero';
 import { HomePageChargeSystemSection } from '@/app/[locale]/(home-page)/_components/home-page-charge-system-section';
-import { HomePageMapSection } from '@/app/[locale]/(home-page)/_components/home-page-map-section';
 import { HomePageDecorations } from './_components/home-page-decorations';
 import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/home-page-download-section';
 import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';
@@ -33,11 +32,10 @@ export default function Home(props: HomeProps) {
   return (
     <main className="relative flex flex-col gap-32 lg:gap-36">
       <HomePageDecorations />
-      <HomePageDownloadSection />
       <HomePageHero />
       <HomePageChargeSystemSection />
+      <HomePageDownloadSection />
       <HomePageOnBoardingSection />
-      <HomePageMapSection />
       <HomePageFeatureSection />
       <HomePageFaqSection />
     </main>
