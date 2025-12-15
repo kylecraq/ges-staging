@@ -31,8 +31,8 @@ export const HomePageFeatureSection = () => {
       <FeatureListWithImage
         chips={chips}
         imgAlt="Iphone"
-        imgMbl="/hero/feature-phone.png"
-        imgDsk="/hero/feature-phone.png"
+        imgMbl="/feature-phone.png"
+        imgDsk="/feature-phone.png"
       />
     </article>
   );

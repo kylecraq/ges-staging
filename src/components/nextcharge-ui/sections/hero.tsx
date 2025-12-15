@@ -77,24 +77,24 @@ const ImgWithBg = ({
 }) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
-  // useGSAP(() => {
-  //   if (imgRef.current) {
-  //     const tl = gsap.fromTo(
-  //       [imgRef.current],
-  //       { y: -yParallaxAmount },
-  //       { y: yParallaxAmount, ease: "none" }
-  //     );
-  //
-  //     ScrollTrigger.create({
-  //       animation: tl,
-  //       trigger: imgRef.current,
-  //       scrub: true
-  //     });
-  //   }
-  // }, []);
+  useGSAP(() => {
+    if (imgRef.current) {
+      const tl = gsap.fromTo(
+        [imgRef.current],
+        { y: -yParallaxAmount },
+        { y: yParallaxAmount, ease: "none" }
+      );
+
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: imgRef.current,
+        scrub: true
+      });
+    }
+  }, []);
 
   return (
-    <div className={cn('relative h-full w-full flex justify-center bg-green-500', className)}>
+    <div className={cn('relative h-full w-full flex justify-center overflow-hidden', className)}>
       <img
         ref={imgRef}
         src={imgSrc}

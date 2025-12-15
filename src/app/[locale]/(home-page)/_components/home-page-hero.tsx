@@ -31,7 +31,7 @@ export const HomePageHero = () => {
       <Hero
         className={cn(
           'col-start-1 row-start-1',
-          'h-[850px] sm:h-[1080px] md:h-[1200px] lg:aspect-4/3 lg:h-auto',
+          'h-[850px] sm:h-[1080px] md:h-[1200px] lg:aspect-4/3 lg:h-auto overflow-hidden',
         )}
         imgSrcDsk="/hero/ges-hero-dsk.png"
         imgSrcMbl={'/hero/ges-hero-mbl.png'}
