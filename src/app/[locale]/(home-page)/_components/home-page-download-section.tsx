@@ -2,12 +2,12 @@
 
 import { useTranslations } from 'next-intl';
 import { BoxParagraph } from '@/components/nextcharge-ui/sections/box-paragraph';
-import { PrimaryButtonWithIconProps } from '@/components/nextcharge-ui/buttons/primary-with-icon';
 import { AppleIcon, ArrowUpRightIcon, BotIcon } from 'lucide-react';
+import { PrimaryButtonProps } from '@/components/nextcharge-ui/buttons/primary-button';
 
 export const HomePageDownloadSection = () => {
   const t = useTranslations('HomePage.SectionDownload');
-  const buttons: PrimaryButtonWithIconProps[] = [
+  const buttons: PrimaryButtonProps[] = [
     {
       icon: <AppleIcon />,
       label: 'Apple store',
@@ -27,7 +27,7 @@ export const HomePageDownloadSection = () => {
         title={t('title')}
         description={t('description')}
         buttons={buttons}
-        className="bg-neutral-100"
+        className="bg-[url(/download-app-bg.png)] bg-cover"
       />
     </section>
   );

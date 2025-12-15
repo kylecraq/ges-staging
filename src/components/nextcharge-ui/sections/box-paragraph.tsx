@@ -1,18 +1,12 @@
 'use client';
 
-import {
-  IntroParagraph,
-  IntroParagraphProps,
-} from '@/components/nextcharge-ui/sections/intro-paragraph';
-import {
-  PrimaryButtonWithIcon,
-  PrimaryButtonWithIconProps,
-} from '@/components/nextcharge-ui/buttons/primary-with-icon';
+import { IntroParagraph, IntroParagraphProps } from '@/components/nextcharge-ui/sections/intro-paragraph';
+import { PrimaryButton, PrimaryButtonProps } from '@/components/nextcharge-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
 
 type BoxParagraphProps = {
   className?: string;
-  buttons?: PrimaryButtonWithIconProps[];
+  buttons?: PrimaryButtonProps[];
 } & IntroParagraphProps;
 
 export const BoxParagraph = (
@@ -28,12 +22,14 @@ export const BoxParagraph = (
 
   return (
     <div className={actualClassname}>
-      <IntroParagraph title={title} kicker={kicker} description={description} />
+      <div className="drop-shadow-xs drop-shadow-neutral-100">
+        <IntroParagraph title={title} kicker={kicker} description={description} />
+      </div>
       <div className="flex flex-wrap items-center gap-2.5">
         {buttons
           ? buttons.map((buttonProps, index) => {
             return (
-              <PrimaryButtonWithIcon
+              <PrimaryButton
                 key={index}
                 icon={buttonProps.icon}
                 label={buttonProps.label}

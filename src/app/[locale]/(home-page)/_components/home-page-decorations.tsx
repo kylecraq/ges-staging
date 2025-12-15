@@ -1,28 +1,61 @@
 'use client';
-import {
-  CurvedLeftLinesDsk,
-  CurvedRightLineDsk,
-} from '@/components/nextcharge-ui/decorations/curved-lines-dsk';
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { cn } from '@/lib/utils';
+import { CurvedLineLeftDsk } from '@/components/nextcharge-ui/decorations/curved-line-left-dsk';
+import { CurvedLineRightDsk } from '@/components/nextcharge-ui/decorations/curved-line-right-dsk';
+import { CurvedLineLeftMbl } from '@/components/nextcharge-ui/decorations/curved-line-left-mbl';
+import { CurvedLineRightMbl } from '@/components/nextcharge-ui/decorations/curved-line-right-mbl';
 
 export const HomePageDecorations = () => {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 h-full">
-      <span className="absolute top-[13%]">
-        <CurvedLeftLinesDsk />
+      {/*---MOBILE---*/}
+      {/*HERO*/}
+      <span className="absolute top-[6%] md:hidden">
+        <CurvedLineLeftMbl />
       </span>
-      <span className="absolute top-[35%]">
-        <CurvedLeftLinesDsk />
+      {/*MAP*/}
+      <span className="absolute top-[54%] md:hidden">
+        <CurvedLineLeftMbl />
       </span>
-      <span className="absolute top-[55%] right-0">
-        <CurvedRightLineDsk />
+
+      {/*FEATURE*/}
+      <span className="absolute top-[68%] md:hidden right-0">
+        <CurvedLineRightMbl />
       </span>
-      <BlobsDecoration className="absolute top-[34%] right-8" />
-      <BlobsDecoration hide="small" className="absolute top-[56%] left-24" />
-      <BlobsDecoration className="absolute top-[81.5%] right-4" />
+
+      {/*---DESKTOP---*/}
+      {/*HERO*/}
+      <span className="absolute top-[8%] hidden md:inline lg:top-[7%] xl:top-[10%]">
+        <CurvedLineLeftDsk />
+      </span>
+      {/*MAP*/}
+      <span className="absolute top-[54%] hidden md:inline">
+        <CurvedLineLeftDsk />
+      </span>
+      {/*FEATURE*/}
+      <span className="absolute md:top-[70%] lg:top-[69%] right-0">
+        <CurvedLineRightDsk className="hidden md:inline" />
+      </span>
+
+      {/*---BLOBS---*/}
+
+      {/*ONBOARDING*/}
+      <BlobsDecoration className="absolute left-2 top-[30%] xxs:top-[31.5%] md:top-[32%] xl:top-[37.5%] 2xl:top-[40%] md:left-24 xl:left-12" inverted />
+
+      {/*MAP*/}
+      <BlobsDecoration className="absolute top-[52.5%] right-[6%] md:top-[53%] md:right-[15%]" />
+
+      {/*FEATURE*/}
+      <BlobsDecoration
+        hide="small"
+        className="absolute left-4 md:left-24 top-[65%] lg:top-[68%] xl:top-[70%] 2xl:top-[71%]"
+      />
+
+      {/*FAQ*/}
+      <BlobsDecoration className="absolute hidden md:inline md:top-[87.5%] md:right-24" />
     </div>
   );
 };
@@ -30,10 +63,11 @@ export const HomePageDecorations = () => {
 type BlobsDecorationProps = {
   className?: string;
   hide?: 'big' | 'small';
+  inverted?: boolean;
 };
 
 const BlobsDecoration = (props: BlobsDecorationProps) => {
-  const { className, hide = '' } = props;
+  const { className, hide = '', inverted } = props;
   const containerRef = useRef<HTMLDivElement>(null);
 
   const blob1 = useRef<SVGSVGElement>(null);
@@ -93,22 +127,24 @@ const BlobsDecoration = (props: BlobsDecorationProps) => {
   }, []);
 
   return (
-    <span
-      ref={containerRef}
-      className={cn(className, 'flex flex-col justify-center')}
-    >
+    <span ref={containerRef} className={cn(className, '')}>
       <BlobSquare
         ref={blob1}
         className={cn(
-          {
-            hidden: hide === 'small',
-          },
-          '-translate-x-1/2 scale-50 opacity-0'
+          'absolute opacity-0 scale-50',
+          hide === 'small' && 'hidden',
+          inverted
+            ? '-bottom-18 left-12'
+            : '-top-8/12 -translate-x-10/12'
         )}
       />
       <BlobSquare
         ref={blob2}
-        className={cn({ hidden: hide === 'big' }, 'opacity-0')}
+        className={cn(
+          'opacity-0',
+          hide === 'big' && 'hidden',
+          inverted ? '-top-12 -left-8' : ''
+        )}
       />
     </span>
   );

@@ -2,28 +2,37 @@
 
 import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
+
+const IframeWrapper = dynamic(
+  () =>
+    import('@/components/nextcharge-ui/sections/iframe-wrapper').then(
+      (mod) => mod.IframeWrapper
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="bg-neutral-80 h-full w-full animate-pulse" />
+    ),
+  }
+);
 
 export const HomePageMapSection = () => {
   const t = useTranslations('HomePage.SectionMap');
 
   return (
-    <section>
+    <section className={"mt-24 md:mt-0"}>
       <IntroParagraph
         title={t('title')}
-        kicker={'kicker'}
-        className="px-main"
+        kicker={t('kicker')}
+        className="px-main xl:px-central pb-16"
       />
       <div className="w-wide relative mx-auto aspect-3/4 overflow-hidden rounded-4xl shadow-md md:aspect-4/2">
-        <iframe
-          className=""
-          src="https://nextcharge.app/map?nextcharge=only&isHeaderLogo=false&isNEXTCHARGEnetworkWebsite=true"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Location Map"
+        <IframeWrapper
+          title={t('title')}
+          src={
+            'https://nextcharge.app/map?nextcharge=only&isHeaderLogo=false&isNEXTCHARGEnetworkWebsite=true'
+          }
         />
       </div>
     </section>

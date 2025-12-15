@@ -1,9 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import 'tw-animate-css';
 
 @theme {
-    --color-primary: #06ef00;
+    --color-primary: #18634a;
+    --color-primary-foreground: #ffffff;
     --color-primary-variant: #18634a;
+    --color-secondary: #ffffff;
+    --color-secondary-foreground: #18634a;
+
+    --color-neutral-90: #212321;
 
     --color-neutral-0: #ffffff;
     --color-neutral-20: #fafafa;
@@ -15,10 +20,15 @@
     --spacing-navbar-3: 3px;
     --ease-sine-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
+    --ease-slow: cubic-bezier(0.25, 0.1, 0.75, 0.9);
+
     --width-wide: 95%;
     --spacing-wide: 2.5%;
     --spacing-main: 10%;
-    --spacing-central: 18%
+    --spacing-central: 18%;
+
+    --breakpoint-xxs: 20.1rem;
+    --breakpoint-xs: 25rem;
 }
 
 
@@ -28,6 +38,8 @@
 
     --font-sans: 'Roboto', 'Roboto Fallback';
     --font-mono: 'Roboto Mono', 'Roboto Mono Fallback';
+
+    --container-7xl: 1920px;
 }
 
 @layer components {
@@ -39,11 +51,11 @@
         line-height: 38px;
         /* Tablet */
         @media (min-width: 768px) {
-            font-size: 50px;
-            line-height: 60px;
+            font-size: 40px;
+            line-height: 50px;
         }
         /* Desktop */
-        @media (min-width: 1024px) {
+        @media (min-width: 1440px) {
             font-size: 60px;
             line-height: 72px;
         }
@@ -123,10 +135,10 @@
        BODY TEXT
        ========================= */
     .body-text {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 24px;
-        /*margin-bottom: 32px;*/
-        @media (min-width: 768px) {
+
+        @media (min-width: 1024px) {
             font-size: 18px;
             line-height: 27px;
         }
@@ -167,7 +179,7 @@
 }
 
 :root {
-    --background: #1c1e1c;
+    --background: #ffffff;
     --foreground: #ededed;
 }
 

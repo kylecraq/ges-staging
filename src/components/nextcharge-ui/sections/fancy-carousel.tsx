@@ -1,153 +1,135 @@
 'use client';
 
-import { MapPin, Battery, Info } from 'lucide-react';
-import { useState } from 'react';
+import { ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
+import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-import Image from 'next/image';
 
-const slides = [
-  {
-    id: 1,
-    badge: 'MAPPA NAVIGABILE',
-    title: 'Stazioni di Ricarica',
-    description:
-      'Scopri tutte le colonnine di ricarica disponibili grazie alla nostra mappa interattiva e sempre aggiornata. Scopri tutte le colonnine di ricarica disponibili grazie alla nostra mappa interattiva e sempre aggiornata.Scopri tutte le colonnine di ricarica disponibili grazie alla nostra mappa interattiva e sempre aggiornata.',
-    backgroundImage: 'modern-electric-charging-port.jpg',
-    foregroundImage: 'professional-woman-electric-car-coffee.jpg',
-    icon: MapPin,
-  },
-  {
-    id: 2,
-    badge: 'RICARICA VELOCE',
-    title: 'Tecnologia Avanzata',
-    description:
-      'Ricarica rapida fino a 350kW per massimizzare il tuo tempo. Le nostre stazioni sono dotate delle più moderne tecnologie per garantire efficienza e velocità.',
-    backgroundImage: 'customer-support-center-blurred.jpg',
-    foregroundImage: 'electric-car-charging-cable.jpg',
-    icon: Battery,
-  },
-  {
-    id: 3,
-    badge: 'SUPPORTO 24/7',
-    title: 'Sempre al Tuo Fianco',
-    description:
-      'Il nostro team è disponibile 24 ore su 24, 7 giorni su 7 per assisterti. Che tu abbia domande tecniche o necessiti di supporto, siamo qui per aiutarti in ogni momento.',
-    backgroundImage: 'customer-support-center-blurred.jpg',
-    foregroundImage: 'customer-service-headset.jpg',
-    icon: Info,
-  },
-];
+import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
+import { BodyText, Heading } from '@/components/nextcharge-ui/typography';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { PaginationOptions } from 'swiper/types';
+import { cn } from '@/lib/utils';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-export function FancyCarousel() {
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
-  const [current, setCurrent] = useState(0);
+type Slide = {
+  id: number;
+  badge: string;
+  title: string;
+  description: string;
+  backgroundImageDsk: string;
+  backgroundImageMbl: string;
+  icon: ReactNode;
+};
+
+export type FancyCarouselProps = {
+  slides: Slide[];
+  className?: string;
+};
+
+export function FancyCarousel(props: FancyCarouselProps) {
+  const { slides, className } = props;
+
+  const pagination: PaginationOptions = {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+    bulletActiveClass: 'text-neutral-100',
+    renderBullet: (index, className) => {
+      const iconHtml = renderToStaticMarkup(slides[index].icon);
+      return `<span class='${className} transition-all duration-500 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full outline-2 outline-offset-3 outline-primary [&_svg]:size-5'>${iconHtml}</span>`;
+    },
+  };
+
+  const isSmallDevice = useMediaQuery('only screen and (min-width : 768px)');
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-neutral-900">
+    <div className={cn('relative overflow-hidden md:aspect-video', className)}>
       <Swiper
-        modules={[Navigation, Pagination, EffectFade, Autoplay]}
-        onSwiper={setSwiperInstance}
-        onSlideChange={(swiper) => setCurrent(swiper.activeIndex)}
-        direction={"vertical"}
-        pagination={{
-          clickable: true,
-        }}
+        className="h-full w-full"
+        modules={[Navigation, Pagination, EffectFade]}
+        scrollbar={{ draggable: true }}
+        direction={isSmallDevice ? 'vertical' : 'horizontal'}
         loop={true}
-        speed={800}
+        speed={300}
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        className="h-full w-full"
+        pagination={pagination}
+        onSwiper={() => null}
+        onSlideChange={() => null}
       >
-        {slides.map((slide) => {
-          const Icon = slide.icon;
-          const ForegroundImage = `/carousel/${slide.foregroundImage}`;
-          const BackgroundImage = `/carousel/${slide.backgroundImage}`;
+        {slides.map((slide, index) => {
+          const BackgroundImageDsk = slide.backgroundImageDsk
+            ? `/carousel/${slide.backgroundImageDsk}`
+            : null;
+          const BackgroundImageMbl = slide.backgroundImageMbl
+            ? `/carousel/${slide.backgroundImageMbl}`
+            : null;
 
           return (
-            <SwiperSlide key={slide.id} className="h-screen">
-              {/* Background Image with Overlay */}
-              <div className="absolute inset-0">
-                <div className="relative h-full w-full">
-                  <Image
-                    src={BackgroundImage || '/placeholder.svg'}
-                    alt="Background"
-                    className="object-cover object-center"
-                    fill={true}
+            <SwiperSlide key={index} className="relative h-full w-full">
+              <div className="bg-neutral-80 h-full w-full overflow-hidden">
+                {BackgroundImageDsk ? (
+                  <img
+                    src={BackgroundImageDsk}
+                    alt={slide.badge}
+                    className="hidden h-full w-full object-cover object-center md:block"
                   />
-                </div>
-                <div className="absolute inset-0 bg-black/50" />
+                ) : null}
+                {BackgroundImageMbl ? (
+                  <img
+                    src={BackgroundImageMbl}
+                    alt={slide.badge}
+                    className="object-cover object-center md:hidden"
+                  />
+                ) : null}
               </div>
-
-              {/* Content Container */}
-              <div className="relative z-10 flex h-full items-center justify-between px-8 md:px-16 lg:px-24">
-                {/* Left Side - Text Content */}
-                <div className="max-w-xl space-y-6">
-                  {/* Badge */}
-                  <div className="inline-flex items-center gap-2 rounded-full bg-lime-400 px-4 py-2 text-sm font-bold tracking-wider text-black uppercase">
-                    <Icon className="h-4 w-4" />
-                    {slide.badge}
-                  </div>
-
-                  {/* Text Box */}
-                  <div className="rounded-3xl bg-white p-8 shadow-2xl">
-                    <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-                      {slide.title}
-                    </h2>
-                    <p className="leading-relaxed text-neutral-700">
-                      {slide.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Center - Circular Image */}
-                <div className="relative hidden lg:block">
-                  <div className="relative h-[600px] w-[450px]">
-                    {/* Animated border */}
-                    <div className="absolute inset-0 rounded-[50%] border-4 border-lime-400 shadow-[0_0_30px_rgba(163,230,53,0.5)]" />
-
-                    {/* Image */}
-                    <div className="absolute inset-2 overflow-hidden rounded-[50%]">
-                      <div className="relative h-full w-full">
-                        <Image
-                          src={ForegroundImage || '/placeholder.svg'}
-                          alt="Featured"
-                          className="object-cover object-center"
-                          fill={true}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Circular Image - Bottom */}
-              <div className="absolute bottom-8 left-1/2 block -translate-x-1/2 lg:hidden">
-                <div className="relative h-64 w-64">
-                  <div className="absolute inset-0 rounded-full border-4 border-lime-400 shadow-[0_0_20px_rgba(163,230,53,0.5)]" />
-                  <div className="absolute inset-2 overflow-hidden rounded-full">
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={ForegroundImage || '/placeholder.svg'}
-                        alt="Featured"
-                        fill={true}
-                        className="object-cover object-center"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <SlideArticle
+                badge={slide.badge}
+                title={slide.title}
+                description={slide.description}
+              />
             </SwiperSlide>
           );
         })}
       </Swiper>
+      <div
+        className={cn(
+          'absolute top-0 right-0 flex h-fit w-full items-center justify-center',
+          'pt-6 pb-12 md:h-full md:w-fit md:pt-0 md:pr-11 md:pb-0 md:pl-22 lg:pb-0',
+          'before:pointer-events-none before:absolute before:right-0 before:z-10 before:h-full before:w-full before:bg-linear-to-b before:from-neutral-100 before:to-transparent before:content-[""] before:md:bg-linear-to-l',
+        )}
+      >
+        <div className={cn('swiper-pagination z-10 flex gap-6 md:flex-col')} />
+      </div>
     </div>
   );
 }
+
+const SlideArticle = ({
+                        title,
+                        description,
+                        badge,
+                      }: {
+  title: string;
+  description: string;
+  badge: string;
+}) => {
+  return (
+    <article
+      className="lg:px-wide absolute bottom-0 left-0 z-10 px-3.5 pb-3.5 md:max-w-sm md:px-7 md:pb-7 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
+      <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
+        <Kicker text={badge} variant="full" />
+        <div className="rounded-3xl bg-white p-5 shadow-2xl lg:p-7">
+          <Heading as="h3" size="xl">
+            {title}
+          </Heading>
+          <BodyText>{description}</BodyText>
+        </div>
+      </div>
+    </article>
+  );
+};

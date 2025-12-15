@@ -8,6 +8,7 @@ import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/
 import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';
 import { HomePageFeatureSection } from '@/app/[locale]/(home-page)/_components/home-page-feature-section';
 import { Metadata } from 'next';
+import { HomePageOnBoardingSection } from '@/app/[locale]/(home-page)/_components/home-page-onboarding-section';
 
 type HomeProps = {
   params: Promise<{ locale: string }>;
@@ -30,10 +31,11 @@ export default function Home(props: HomeProps) {
   setRequestLocale(locale);
 
   return (
-    <main className="relative flex flex-col gap-32">
+    <main className="relative flex flex-col gap-32 lg:gap-36">
       <HomePageDecorations />
       <HomePageHero />
       <HomePageChargeSystemSection />
+      <HomePageOnBoardingSection />
       <HomePageMapSection />
       <HomePageFeatureSection />
       <HomePageFaqSection />

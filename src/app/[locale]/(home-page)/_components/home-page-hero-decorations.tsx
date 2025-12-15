@@ -2,7 +2,7 @@
 import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
 import Image from 'next/image';
 import gsap from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +14,7 @@ export const HomePageHeroDecorations = () => {
   const userStatus = useRef<HTMLImageElement>(null);
   const userReviews = useRef<HTMLImageElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const blobs = [blobSquare1, blobSquare2];
 
     const context = gsap.context(() => {
@@ -27,7 +27,8 @@ export const HomePageHeroDecorations = () => {
             ease: 'none',
             scrollTrigger: {
               trigger: container.current,
-              scrub: true
+              scrub: true,
+              invalidateOnRefresh: true,
             },
           },
         );
@@ -42,7 +43,8 @@ export const HomePageHeroDecorations = () => {
             ease: 'none',
             scrollTrigger: {
               trigger: container.current,
-              scrub: true
+              scrub: true,
+              invalidateOnRefresh: true,
             },
           },
         );
@@ -79,7 +81,7 @@ export const HomePageHeroDecorations = () => {
 
   return (
     <div className="pointer-events-none relative h-full pt-32" ref={container}>
-      <span className="absolute mt-[53px] ml-[87px]" ref={blobSquare1}>
+      <span className="absolute mt-[50px] ml-[87px]" ref={blobSquare1}>
         <BlobSquare />
       </span>
       <span
@@ -102,7 +104,7 @@ export const HomePageHeroDecorations = () => {
         alt={'Decoration user reviews'}
         height={383}
         width={115}
-        className="absolute bottom-0 mb-[153px] ml-[299px] max-h-[115px] w-64 object-cover object-center xl:h-fit xl:w-fit"
+        className="absolute bottom-0 mb-[120px] ml-[299px] max-h-[115px] w-64 object-cover object-center xl:h-fit xl:w-fit"
       />
     </div>
   );

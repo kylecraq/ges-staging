@@ -1,15 +1,15 @@
 import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
 import {
-  LinkPrimaryButtonWithIcon,
-  LinkPrimaryButtonWithIconProps,
-} from '@/components/nextcharge-ui/links/link-with-icon';
+  LinkPrimaryProps,
+  PrimaryLink,
+} from '@/components/nextcharge-ui/links/primary-link';
 
 type FeatureListWithImageProps = {
   chips: Chip[];
   imgDsk?: string;
   imgMbl?: string;
   imgAlt?: string;
-  button?: LinkPrimaryButtonWithIconProps;
+  button?: LinkPrimaryProps;
 };
 
 export type Chip = {
@@ -21,7 +21,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
   const { chips, imgDsk, imgMbl, imgAlt, button } = props;
 
   return (
-    <section className="grid gap-10 md:grid-cols-2">
+    <section className="grid gap-20 md:gap-8 md:grid-cols-2">
       <div className="mx-auto flex flex-col gap-10">
         {chips.map((chip, index) => {
           return (
@@ -34,7 +34,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
           );
         })}
         {button ? (
-          <LinkPrimaryButtonWithIcon
+          <PrimaryLink
             icon={button.icon}
             label={button.label}
             href={button.href}
@@ -55,7 +55,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
           <img
             src={imgMbl}
             alt={imgAlt || 'Image'}
-            className="aspect-4/4 h-full w-full object-contain object-center md:hidden"
+            className="min-h-[344px] aspect-4/4 h-full w-full object-contain object-center md:hidden"
           />
         ) : null}
       </div>

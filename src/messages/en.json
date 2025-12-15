@@ -4,20 +4,56 @@
       "title": "Entra anche tu nella community NextCharge",
       "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito NextCharge. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio."
     },
-    "title": "Entra anche tu nella community <primary>NextCharge</primary>",
-    "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito <primary>NextCharge</primary>. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio",
+    "title": "The future is electric: let's embark on a wonderful journey together.",
+    "description": "Oltre 200.000 punti di ricarica indicizzati. Trova la stazione di ricarica, controlla lo stato, organizza un itinerario, leggi i commenti e guarda le foto.",
     "SectionChargeSystem": {
       "kicker": "Sistemi di ricarica",
       "title": "Un’unica rete, una sola esperienza di ricarica, un’unica <primary>app</primary>.",
-      "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici."
+      "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici.",
+      "Carousel": {
+        "slide-1": {
+          "badge": "mappa navigabile",
+          "title": "",
+          "description": "Scopri tutte le colonnine di ricarica disponibili grazie alla nostra mappa interattiva e sempre aggiornata. Scopri tutte le colonnine di ricarica disponibili grazie alla nostra mappa interattiva e sempre aggiornata.Scopri tutte le colonnine di ricarica disponibili grazie alla nostra mappa interattiva e sempre aggiornata."
+        },
+        "slide-2": {
+          "badge": "Nuovo",
+          "title": "",
+          "description": "Soluzioni di ricarica ideali per l'uso quotidiano in città e aree urbane."
+        },
+        "slide-3": {
+          "badge": "Nuovo",
+          "title": "",
+          "description": "Stazioni di ricarica per la comodità di ricaricare il tuo veicolo a casa."
+        },
+        "slide-4": {
+          "badge": "Nuovo",
+          "title": "",
+          "description": "Soluzioni di ricarica per dipendenti e flotte aziendali."
+        }
+      }
+    },
+    "SectionOnboarding": {
+      "kicker": "onboarding app",
+      "title": "Guida Introduttiva all’App",
+      "description": "We developed the Management System with a very clear goal: make everything that a charging point operator – CPO – needs to control simple.",
+      "caption": "<important>Let’s charge</important> Bastano pochi passaggi per iniziare la tua prima ricarica.",
+      "button": "Download app"
     },
     "SectionMap": {
       "title": "Diversi operatori per un solo sistema di autenticazione",
-      "kicker": "rete di ricarica"
+      "kicker": "rete di ricarica",
+      "description": "We developed the Management System with a very clear goal: make everything that a charging point operator – CPO – needs to control simple.",
+      "caption": "<span class='heading-l'>Let’s charge</span> </br> Bastano pochi passaggi per iniziare la tua prima ricarica."
     },
     "SectionDownload": {
       "title": "Download now",
-      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
+      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet",
+      "buttons": {
+        "app-store": "App Store",
+        "google-play": "Google Play",
+        "open-web-app": "Open Web App"
+      }
     },
     "SectionFaq": {
       "kicker": "faq",
@@ -28,11 +64,11 @@
       "question-4": "4. Se non fosse possibile terminare la ricarica da App, ad esempio perche il tuo telefonino e' scarico, \u2028puoi usare la card NextCharge",
       "question-5": "5. Posso ricaricare sia con carta Rfid che con App?"
     },
-    "SectionFeature" : {
+    "SectionFeature": {
       "title": "Borsellino elettronico ricaricabile per monitorare la tua spesa",
       "kicker": "nextcharge wallet",
       "chips": {
-        "badge-1":"Smartphone",
+        "badge-1": "Smartphone",
         "description-1": "Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.",
         "badge-2": "Smartcard Rfid",
         "description-2": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.",
@@ -41,22 +77,24 @@
       }
     },
     "Buttons": {
-      "download": "download app"
+      "cpm-backend": "CPM Backend",
+      "fleet-management": "Fleet management",
+      "nextcharge": "nextcharge APP"
     }
   },
-  "Header" : {
+  "Header": {
     "LanguageLabels": {
       "en": "English (EN)",
       "it": "Italiano (IT)"
     },
     "Buttons": {
-      "download" : "scarica app"
+      "download": "scarica app"
     }
   },
   "Footer": {
     "terms": "Terms & Conditions",
     "b2b": "Sito B2B",
-    "credits": "Credits",
+    "status": "Status servizio",
     "copyright": "© Copyright {year}. Go Electric Stations SRLS - All Rights Reserved",
     "craq-tag-crafted": "Crafted with love by <strong>CRAQ DESIGN STUDIO</strong>"
   }

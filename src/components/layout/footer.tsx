@@ -3,12 +3,13 @@ import { Logo } from '@/components/nextcharge-ui/logo';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { BodyText } from '@/components/nextcharge-ui/typography';
+import { Suspense, useMemo } from 'react';
 
 export const Footer = () => {
   const t = useTranslations('Footer');
   return (
     <footer
-      className="mt-80 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base"
+      className="mt-40 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base"
       itemScope
       itemType="https://schema.org/Organization"
     >
@@ -34,12 +35,12 @@ export const Footer = () => {
             <Copyright />
           </div>
           <hr />
-          <div className="mt-2 flex flex-col md:flex-row text-center gap-4 items-center justify-between">
+          <div className="mt-2 flex flex-col items-center justify-between gap-4 text-center md:flex-row">
             <Link
               href="/credits"
               className="hover:decoration-primary shrink-0 underline underline-offset-4 transition-all duration-500"
             >
-              {t('credits')}
+              {t('status')}
             </Link>
             <cite className="text-xs md:text-sm">
               {t.rich('craq-tag-crafted', {
@@ -62,7 +63,7 @@ export const Footer = () => {
 };
 
 const Copyright = () => {
-  const currentYear = new Date().getFullYear();
+  const year = useMemo(() => new Date().getFullYear(), []);
   const t = useTranslations('Footer');
-  return <BodyText>{t('copyright', { year: currentYear })}</BodyText>;
+  return <BodyText>{t('copyright', { year: year })}</BodyText>;
 };

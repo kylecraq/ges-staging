@@ -1,8 +1,9 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
-import { ComponentProps, useEffect, useRef } from 'react';
+import { ComponentProps, useRef } from 'react';
 import { SplitText } from 'gsap/SplitText';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export type HeadingSizes = 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs' | 'xxs';
 export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -26,40 +27,42 @@ const headingVariants = cva('font-mono', {
 });
 
 interface HeadingProps
-  extends ComponentProps<HeadingTags>,
-    VariantProps<typeof headingVariants> {
+  extends ComponentProps<HeadingTags>, VariantProps<typeof headingVariants> {
   as?: HeadingTags;
   effect?: HeadingEffects;
 }
 
 export function Heading({
-  size,
-  as: Tag = 'h2',
-  effect,
-  className,
-  children,
-  ...props
-}: HeadingProps) {
+                          size,
+                          as: Tag = 'h2',
+                          effect,
+                          className,
+                          children,
+                          ...props
+                        }: HeadingProps) {
   const ref = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!ref.current || effect !== 'text-wave-reveal') return;
     const element = ref.current;
 
     const splitTexts = new SplitText(element, {
-      type: 'words, chars',
+      type: 'lines,words,chars',
+      linesClass: 'line-wrapper',
       wordsClass: 'word',
-      charsClass: 'char',
+      charsClass: 'char'
     });
+
     gsap.set(splitTexts.words, {
-      overflow: 'clip',
+      overflow: 'clip'
     });
+
     const fontSize = parseFloat(getComputedStyle(element).fontSize);
     const yOffset = fontSize * 1.2;
-    const animation = gsap.from(splitTexts.chars, {
+    gsap.from(splitTexts.chars, {
       y: yOffset,
       duration: 0.8,
-      ease: 'slow',
+      ease: 'power2.out',
       stagger: 0.02,
       scrollTrigger: {
         trigger: element,
@@ -68,10 +71,6 @@ export function Heading({
         onLeaveBack: () => splitTexts.revert()
       }
     });
-    return () => {
-      animation.kill();
-      splitTexts.revert();
-    };
   }, []);
 
   return (
@@ -101,15 +100,15 @@ const bodyTextVariants = cva('', {
 });
 
 interface BodyTextProps
-  extends ComponentProps<'p'>,
-    VariantProps<typeof bodyTextVariants> {}
+  extends ComponentProps<'p'>, VariantProps<typeof bodyTextVariants> {
+}
 
 export function BodyText({
-  variant,
-  className,
-  children,
-  ...props
-}: BodyTextProps) {
+                           variant,
+                           className,
+                           children,
+                           ...props
+                         }: BodyTextProps) {
   return (
     <p className={cn(bodyTextVariants({ variant }), className)} {...props}>
       {children}
@@ -131,15 +130,15 @@ const menuLabelVariants = cva('', {
 });
 
 interface MenuLabelProps
-  extends ComponentProps<'span'>,
-    VariantProps<typeof menuLabelVariants> {}
+  extends ComponentProps<'span'>, VariantProps<typeof menuLabelVariants> {
+}
 
 export function MenuLabel({
-  variant,
-  className,
-  children,
-  ...props
-}: MenuLabelProps) {
+                            variant,
+                            className,
+                            children,
+                            ...props
+                          }: MenuLabelProps) {
   return (
     <span className={cn(menuLabelVariants({ variant }), className)} {...props}>
       {children}

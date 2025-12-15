@@ -1,6 +1,6 @@
 "use client";
 import { Heading, BodyText, MenuLabel } from '@/components/nextcharge-ui/typography';
-import { PrimaryButtonWithIcon } from '@/components/nextcharge-ui/buttons/primary-with-icon';
+import { PrimaryButton } from '@/components/nextcharge-ui/buttons/primary-button';
 import { DownloadIcon } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -259,7 +259,7 @@ export default function Page() {
             </BodyText>
 
             <div className="flex flex-wrap gap-4">
-              <PrimaryButtonWithIcon icon={<DownloadIcon />} label={"Call to action"} />
+              <PrimaryButton icon={<DownloadIcon />} label={"Call to action"} />
             </div>
           </div>
         </section>

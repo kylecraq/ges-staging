@@ -1,21 +1,22 @@
 'use client';
-import { ContentLeftBlock } from '@/components/nextcharge-ui/content/content-left-block';
+import { BlockContent } from '@/components/nextcharge-ui/content/block-content';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import { ReactNode, useEffect, useRef } from 'react';
-import { PrimaryButtonWithIconProps } from '@/components/nextcharge-ui/buttons/primary-with-icon';
+import { ReactNode, useRef } from 'react';
+import { PrimaryButtonProps } from '@/components/nextcharge-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
 import { HeadingEffects } from '@/components/nextcharge-ui/typography';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 type HeroProps = {
-  imgSrcDsk?: string;
-  imgSrcMbl?: string;
+  imgSrcDsk: string;
+  imgSrcMbl: string;
   title: ReactNode;
   titleEffect?: HeadingEffects;
   description?: ReactNode;
-  buttons?: PrimaryButtonWithIconProps[];
+  buttons?: PrimaryButtonProps[];
   className?: string;
 };
 
@@ -29,61 +30,79 @@ export const Hero = (props: HeroProps) => {
     buttons,
     className,
   } = props;
-  const bgHero = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (bgHero.current) {
-      gsap.fromTo(
-        bgHero.current,
-        { y: -30 },
-        {
-          y: 30,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: bgHero.current,
-            scrub: true
-          },
-        }
-      );
-    }
-  }, []);
 
   return (
-    <div
-      className={cn(className, 'grid grid-cols-1 grid-rows-1 xl:min-h-screen')}
-    >
-      <div className="col-start-1 row-start-1 overflow-hidden pt-80 pb-2 md:pt-40 md:pb-0 xl:pt-32">
-        <img
-          ref={bgHero}
-          src={imgSrcDsk}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          alt="Next charge hero"
-          loading="eager"
-          decoding="async"
-          className="hidden aspect-4/3 h-full w-full object-contain object-top md:block xl:aspect-[460/327] xl:object-cover xl:object-center"
+    <div className={cn(className, 'grid grid-cols-1 grid-rows-1')}>
+      <div className="relative col-start-1 row-start-1">
+        <ImgWithBg
+          yParallaxAmount={30}
+          imgSrc={imgSrcDsk}
+          alt={'Hero image desktop'}
+          className="hidden w-full lg:block"
         />
-        <img
-          ref={bgHero}
-          src={imgSrcMbl}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          alt="Next charge hero"
-          loading="eager"
-          decoding="async"
-          className="h-full w-full object-contain object-bottom md:hidden"
+        <ImgWithBg
+          yParallaxAmount={30}
+          imgSrc={imgSrcMbl}
+          alt={'Hero image mobile'}
+          className="lg:hidden"
         />
       </div>
-      <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1 pt-28 md:pt-32">
-        <div className="z-10 col-start-1 row-start-1 md:w-7/12 md:pr-0 md:pl-12 lg:mt-16 lg:w-6/12 lg:pl-16 xl:mt-40 xl:w-[50.5%] xl:pl-36">
-          <ContentLeftBlock
+      <div className="col-start-1 row-start-1 grid h-full w-full grid-cols-1 grid-rows-1 pt-28 xl:pt-32">
+        <div className="z-10 col-start-1 row-start-1 md:pr-0 md:pb-8 lg:mt-20 lg:w-7/12 lg:pl-20 xl:mt-10 xl:pl-36">
+          <BlockContent
             title={title}
             titleTag="h1"
             titleSize="xxl"
             titleEffect={titleEffect}
             description={description}
             buttons={buttons}
+            className="px-wide xs:max-w-10/12 pb-12 sm:max-w-8/12 sm:px-0 md:max-w-11/12 xl:max-w-10/12"
           />
         </div>
       </div>
+    </div>
+  );
+};
+
+const ImgWithBg = ({
+  imgSrc,
+  alt,
+  className,
+  yParallaxAmount,
+}: {
+  imgSrc: string;
+  alt: string;
+  className: string;
+  yParallaxAmount: number;
+}) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // useGSAP(() => {
+  //   if (imgRef.current) {
+  //     const tl = gsap.fromTo(
+  //       [imgRef.current],
+  //       { y: -yParallaxAmount },
+  //       { y: yParallaxAmount, ease: "none" }
+  //     );
+  //
+  //     ScrollTrigger.create({
+  //       animation: tl,
+  //       trigger: imgRef.current,
+  //       scrub: true
+  //     });
+  //   }
+  // }, []);
+
+  return (
+    <div className={cn('relative h-full w-full flex justify-center bg-green-500', className)}>
+      <img
+        ref={imgRef}
+        src={imgSrc}
+        alt={alt}
+        loading="eager"
+        decoding="async"
+        className="w-full h-full object-cover object-center"
+      />
     </div>
   );
 };
