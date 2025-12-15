@@ -20,8 +20,8 @@ export const HomePageFaqSection = () => {
         collapsible
         className="w-full mx-auto"
       >
-        <AccordionItem value="item-1" className="bg-neutral-100">
-          <AccordionTrigger>{t('question-1')}</AccordionTrigger>
+        <AccordionItem value="item-1" className="bg-neutral-20 border border-neutral-40">
+          <AccordionTrigger className="font-normal">{t('question-1')}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-6 text-balance">
             <strong>
               Guida Introduttiva all’App
@@ -33,8 +33,8 @@ export const HomePageFaqSection = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-2" className="bg-neutral-100">
-          <AccordionTrigger>{t('question-2')}</AccordionTrigger>
+        <AccordionItem value="item-2" className="bg-neutral-20 border border-neutral-40">
+          <AccordionTrigger className="font-normal">{t('question-2')}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               We offer worldwide shipping through trusted courier partners.
@@ -47,8 +47,8 @@ export const HomePageFaqSection = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3" className="bg-neutral-100">
-          <AccordionTrigger>{t('question-3')}</AccordionTrigger>
+        <AccordionItem value="item-3" className="bg-neutral-20 border border-neutral-40">
+          <AccordionTrigger className="font-normal">{t('question-3')}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               We stand behind our products with a comprehensive 30-day return

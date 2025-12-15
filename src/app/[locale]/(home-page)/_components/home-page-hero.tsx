@@ -12,27 +12,24 @@ export const HomePageHero = () => {
     {
       icon: <ArrowRightIcon />,
       label: t('Buttons.cpm-backend'),
-      variant: "secondary"
+      variant: 'secondary',
     },
     {
       icon: <ArrowRightIcon />,
       label: t('Buttons.fleet-management'),
-      variant: "secondary"
+      variant: 'secondary',
     },
     {
       icon: <ArrowRightIcon />,
       label: t('Buttons.nextcharge'),
-      variant: "secondary"
+      variant: 'secondary',
     },
   ];
 
   return (
-    <section className="grid grid-cols-1 grid-rows-1">
+    <section className={"text-neutral-0"}>
       <Hero
-        className={cn(
-          'col-start-1 row-start-1',
-          'h-[850px] sm:h-[1080px] md:h-[1200px] lg:aspect-4/3 lg:h-auto overflow-hidden',
-        )}
+        className="aspect-[375/874] lg:aspect-[1440/995]"
         imgSrcDsk="/hero/ges-hero-dsk.png"
         imgSrcMbl={'/hero/ges-hero-mbl.png'}
         title={t.rich('title', {

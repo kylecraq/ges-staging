@@ -9,12 +9,12 @@ export const Footer = () => {
   const t = useTranslations('Footer');
   return (
     <footer
-      className="mt-40 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base"
+      className="mt-40 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base text-neutral-0"
       itemScope
       itemType="https://schema.org/Organization"
     >
       <div className="flex h-full flex-col justify-between rounded-t-4xl bg-neutral-100 px-5 pt-20 pb-5 md:px-24 xl:px-28">
-        <Logo variant="primary" />
+        <Logo />
 
         <div className="flex flex-col">
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">

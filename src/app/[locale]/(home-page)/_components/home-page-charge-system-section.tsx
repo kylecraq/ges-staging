@@ -12,8 +12,8 @@ export const HomePageChargeSystemSection = () => {
       badge: t('Carousel.slide-1.badge'),
       title: t('Carousel.slide-1.title'),
       description: t('Carousel.slide-1.description'),
-      backgroundImageDsk: 'maps.png',
-      backgroundImageMbl: 'maps-mbl.jpg',
+      backgroundImageDsk: 'identity.png',
+      backgroundImageMbl: 'identity.png',
       icon: <CrosshairIcon />,
     },
     {
@@ -22,7 +22,7 @@ export const HomePageChargeSystemSection = () => {
       title: t('Carousel.slide-2.title'),
       description: t('Carousel.slide-1.description'),
       backgroundImageDsk: 'payment-methods.png',
-      backgroundImageMbl: 'payment-methods-mbl.jpg',
+      backgroundImageMbl: 'payment-methods-mbl.png',
       icon: <CreditCardIcon />,
     },
     {
@@ -30,8 +30,8 @@ export const HomePageChargeSystemSection = () => {
       badge: t('Carousel.slide-3.badge'),
       title: t('Carousel.slide-3.title'),
       description: t('Carousel.slide-1.description'),
-      backgroundImageDsk: 'community.png',
-      backgroundImageMbl: 'community-mbl.jpg',
+      backgroundImageDsk: 'analyzer.png',
+      backgroundImageMbl: 'analyzer-mbl.png',
       icon: <Users />,
     },
     {
@@ -40,7 +40,7 @@ export const HomePageChargeSystemSection = () => {
       title: t('Carousel.slide-4.title'),
       description: t('Carousel.slide-1.description'),
       backgroundImageDsk: 'authorization-methods.png',
-      backgroundImageMbl: 'authorization-methods-mbl.jpg',
+      backgroundImageMbl: 'authorization-methods-mbl.png',
       icon: <FingerprintIcon />,
     },
   ];

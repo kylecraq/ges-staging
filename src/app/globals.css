@@ -11,8 +11,8 @@
     --color-neutral-90: #212321;
 
     --color-neutral-0: #ffffff;
-    --color-neutral-20: #fafafa;
-    --color-neutral-40: #fff4eb;
+    --color-neutral-20: #F6F6F6;
+    --color-neutral-40: #D2D2D2;
     --color-neutral-60: #616d6d;
     --color-neutral-80: #2e2d2c;
     --color-neutral-100: #000000;
@@ -180,7 +180,7 @@
 
 :root {
     --background: #ffffff;
-    --foreground: #ededed;
+    --foreground: #000000;
 }
 
 body {

@@ -37,10 +37,11 @@ export function FancyCarousel(props: FancyCarouselProps) {
     el: '.swiper-pagination',
     type: 'bullets',
     clickable: true,
-    bulletActiveClass: 'text-neutral-100',
+    bulletActiveClass:
+      'text-neutral-100 outline-2 outline-offset-3 outline-primary',
     renderBullet: (index, className) => {
       const iconHtml = renderToStaticMarkup(slides[index].icon);
-      return `<span class='${className} transition-all duration-500 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full outline-2 outline-offset-3 outline-primary [&_svg]:size-5'>${iconHtml}</span>`;
+      return `<span class='${className} transition-all duration-500 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>${iconHtml}</span>`;
     },
   };
 
@@ -100,7 +101,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
         className={cn(
           'absolute top-0 right-0 flex h-fit w-full items-center justify-center',
           'pt-6 pb-12 md:h-full md:w-fit md:pt-0 md:pr-11 md:pb-0 md:pl-22 lg:pb-0',
-          'before:pointer-events-none before:absolute before:right-0 before:z-10 before:h-full before:w-full before:bg-linear-to-b before:from-neutral-100 before:to-transparent before:content-[""] before:md:bg-linear-to-l',
+          'before:pointer-events-none before:absolute before:right-0 before:z-10 before:h-full before:w-full before:bg-linear-to-b before:from-neutral-40 before:to-transparent before:content-[""] before:md:bg-linear-to-l'
         )}
       >
         <div className={cn('swiper-pagination z-10 flex gap-6 md:flex-col')} />
@@ -110,20 +111,19 @@ export function FancyCarousel(props: FancyCarouselProps) {
 }
 
 const SlideArticle = ({
-                        title,
-                        description,
-                        badge,
-                      }: {
+  title,
+  description,
+  badge,
+}: {
   title: string;
   description: string;
   badge: string;
 }) => {
   return (
-    <article
-      className="lg:px-wide absolute bottom-0 left-0 z-10 px-3.5 pb-3.5 md:max-w-sm md:px-7 md:pb-7 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
+    <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-3.5 pb-3.5 md:max-w-sm md:px-7 md:pb-7 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
       <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
         <Kicker text={badge} variant="full" />
-        <div className="rounded-3xl bg-white p-5 shadow-2xl lg:p-7">
+        <div className="bg-transparent p-5 lg:p-7">
           <Heading as="h3" size="xl">
             {title}
           </Heading>

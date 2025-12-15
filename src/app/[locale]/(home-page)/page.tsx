@@ -33,13 +33,13 @@ export default function Home(props: HomeProps) {
   return (
     <main className="relative flex flex-col gap-32 lg:gap-36">
       <HomePageDecorations />
+      <HomePageDownloadSection />
       <HomePageHero />
       <HomePageChargeSystemSection />
       <HomePageOnBoardingSection />
       <HomePageMapSection />
       <HomePageFeatureSection />
       <HomePageFaqSection />
-      <HomePageDownloadSection />
     </main>
   );
 }

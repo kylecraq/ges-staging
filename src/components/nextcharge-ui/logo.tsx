@@ -1,4 +1,4 @@
-import { NextChargeCompleteLogo } from '@/components/nextcharge-ui/icons/icon-logo';
+import { GesCompleteLogo } from '@/components/nextcharge-ui/icons/icon-logo';
 import { Link } from '@/i18n/navigation';
 import { cva, VariantProps } from 'class-variance-authority';
 
@@ -20,7 +20,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <Link href={'/'} className={logoVariants({ variant })}>
       <div aria-hidden="true">
-        <NextChargeCompleteLogo className="w-28 md:w-32 drop-shadow-sm drop-shadow-neutral-100" />
+        <GesCompleteLogo className="w-28 md:w-32 max-h-[56px] drop-shadow-sm drop-shadow-neutral-100" />
       </div>
     </Link>
   );
