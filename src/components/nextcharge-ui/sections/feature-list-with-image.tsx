@@ -22,12 +22,12 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
 
   return (
     <section className="grid gap-20 md:gap-8 md:grid-cols-2">
-      <div className="mx-auto flex flex-col gap-10">
+      <div className="mx-auto flex flex-col items-start gap-10">
         {chips.map((chip, index) => {
           return (
             <div key={index} className="flex flex-col items-start gap-4">
               <Kicker text={chip.badge} variant="full" />
-              <p className="rounded-4xl bg-neutral-100 px-8 py-6 xl:p-8">
+              <p className="rounded-4xl border border-neutral-40 px-8 py-6 xl:p-8">
                 {chip.description}
               </p>
             </div>

@@ -6,6 +6,7 @@ import {
   FeatureListWithImage,
 } from '@/components/nextcharge-ui/sections/feature-list-with-image';
 import { useTranslations } from 'next-intl';
+import { ArrowRightIcon } from 'lucide-react';
 
 export const HomePageFeatureSection = () => {
   const t = useTranslations('HomePage.SectionFeature');
@@ -30,9 +31,14 @@ export const HomePageFeatureSection = () => {
       <IntroParagraph title={t('title')} kicker={t('kicker')} className="pb-12"/>
       <FeatureListWithImage
         chips={chips}
-        imgAlt="Iphone"
-        imgMbl="/feature-phone.png"
-        imgDsk="/feature-phone.png"
+        imgAlt="Management"
+        imgMbl="/fleet-management.png"
+        imgDsk="/fleet-management.png"
+        button={{
+          label: t("button"),
+          href:"#",
+          icon: <ArrowRightIcon />
+        }}
       />
     </article>
   );
