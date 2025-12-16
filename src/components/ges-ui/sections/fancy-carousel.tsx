@@ -48,7 +48,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
   const isSmallDevice = useMediaQuery('only screen and (min-width : 768px)');
 
   return (
-    <div className={cn('relative overflow-hidden md:aspect-video', className)}>
+    <div className={cn('relative overflow-hidwden md:aspect-video', className)}>
       <Swiper
         className="h-full w-full"
         modules={[Navigation, Pagination, EffectFade]}

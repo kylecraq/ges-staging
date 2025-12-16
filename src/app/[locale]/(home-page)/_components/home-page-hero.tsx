@@ -1,10 +1,8 @@
 'use client';
 import { Hero } from '@/components/ges-ui/sections/hero';
 import { useTranslations } from 'next-intl';
-import { HomePageHeroDecorations } from '@/app/[locale]/(home-page)/_components/home-page-hero-decorations';
 import { ArrowRightIcon } from 'lucide-react';
 import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
-import { cn } from '@/lib/utils';
 
 export const HomePageHero = () => {
   const t = useTranslations('HomePage');
