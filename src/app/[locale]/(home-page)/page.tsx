@@ -8,6 +8,7 @@ import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-
 import { HomePageFeatureSection } from '@/app/[locale]/(home-page)/_components/home-page-feature-section';
 import { Metadata } from 'next';
 import { HomePageOnBoardingSection } from '@/app/[locale]/(home-page)/_components/home-page-onboarding-section';
+import { HomePageCardsSection } from '@/app/[locale]/(home-page)/_components/home-page-cards-section';
 
 type HomeProps = {
   params: Promise<{ locale: string }>;
@@ -34,9 +35,10 @@ export default function Home(props: HomeProps) {
       <HomePageDecorations />
       <HomePageHero />
       <HomePageChargeSystemSection />
+      <HomePageCardsSection />
       <HomePageDownloadSection />
-      <HomePageOnBoardingSection />
       <HomePageFeatureSection />
+      <HomePageOnBoardingSection />
       <HomePageFaqSection />
     </main>
   );
