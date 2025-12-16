@@ -43,7 +43,7 @@ export const CurvedLineRightDsk = (props: ComponentProps<'svg'>) => {
       xmlns="http://www.w3.org/2000/svg"
       ref={svgRef}
       width="582"
-      height="641"
+      height="767.5"
       viewBox="0 0 582 641"
       fill="none"
       {...props}
