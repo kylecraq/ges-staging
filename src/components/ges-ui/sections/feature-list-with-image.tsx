@@ -27,7 +27,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
           return (
             <div key={index} className="flex flex-col items-start gap-4">
               <Kicker text={chip.badge} variant="full" />
-              <p className="rounded-4xl border border-neutral-40 px-8 py-6 xl:p-8">
+              <p className="rounded-4xl border bg-neutral-0 border-neutral-40 px-8 py-6 xl:p-8">
                 {chip.description}
               </p>
             </div>
