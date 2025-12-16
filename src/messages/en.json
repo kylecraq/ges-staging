@@ -33,7 +33,7 @@
         }
       }
     },
-    "SectionOnboarding": {
+    "SectionNextChargeApp": {
       "kicker": "onboarding app",
       "title": "Guida Introduttiva all’App",
       "description": "We developed the Management System with a very clear goal: make everything that a charging point operator – CPO – needs to control simple.",

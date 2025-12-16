@@ -8,18 +8,12 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { ArrowRightIcon, MapIcon } from 'lucide-react';
-import { ReactNode, useMemo } from 'react';
-import { Button } from '@/components/ui/button';
+import { useMemo } from 'react';
 import { PrimaryLink } from '@/components/ges-ui/links/primary-link';
-
-type Card = {
-  icon: ReactNode;
-  title: string;
-  description: string;
-};
+import { CardType } from '@/types/Card';
 
 export const HomePageCardsSection = () => {
-  const cards: Card[] = useMemo(() => {
+  const cards: CardType[] = useMemo(() => {
     return [
       {
         icon: <MapIcon className="size-10" />,
@@ -61,8 +55,8 @@ export const HomePageCardsSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col justify-center items-center gap-14">
-      <article className="px-wide md:px-main grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7 lg:grid-cols-3">
+    <section className="flex flex-col items-center justify-center gap-14">
+      <article className="px-main grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7 lg:grid-cols-3">
         {cards.map((data, index) => {
           return (
             <Card key={index} className="border border-neutral-400">
@@ -81,6 +75,5 @@ export const HomePageCardsSection = () => {
       </article>
       <PrimaryLink icon={<ArrowRightIcon />} label={'Contact us'} href={'#'} />
     </section>
-
   );
 };

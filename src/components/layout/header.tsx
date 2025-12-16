@@ -23,7 +23,7 @@ export function Header() {
   );
 
   const navbarClassname = cn(
-    'bg-neutral-0 py-navbar-3 md:pr-navbar-3 flex h-full items-center justify-end gap-6 rounded-l-full pr-3 pl-6 font-medium text-neutral-100 uppercase transition duration-700 md:rounded-full md:px-wide'
+    'bg-neutral-0 py-navbar-3 md:pr-navbar-3 flex h-full items-center justify-end gap-6 rounded-l-full pr-3 pl-6 font-medium text-neutral-100 uppercase transition duration-700 md:rounded-full md:px-wide shadow-xs shadow-neutral-400'
   );
 
   return (
