@@ -13,7 +13,7 @@ export const HomePageChargeSystemSection = () => {
       title: t('Carousel.slide-1.title'),
       description: t('Carousel.slide-1.description'),
       backgroundImageDsk: 'identity.png',
-      backgroundImageMbl: 'identity.png',
+      backgroundImageMbl: 'identity-mbl.png',
       icon: <CrosshairIcon />,
     },
     {

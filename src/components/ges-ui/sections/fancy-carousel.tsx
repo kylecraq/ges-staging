@@ -84,7 +84,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
                   <img
                     src={BackgroundImageMbl}
                     alt={slide.badge}
-                    className="object-cover object-center md:hidden"
+                    className="min-h-[800px] h-full w-full object-cover object-center md:hidden"
                   />
                 ) : null}
               </div>
