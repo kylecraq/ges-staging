@@ -21,7 +21,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
   const { chips, imgDsk, imgMbl, imgAlt, button } = props;
 
   return (
-    <section className="grid gap-20 md:gap-8 md:grid-cols-2">
+    <section className="grid gap-20 md:gap-8 md:grid-cols-[auto_65%] pl-wide lg:pl-main xl:pl-main xl:pr-wide">
       <div className="mx-auto flex flex-col items-start gap-10">
         {chips.map((chip, index) => {
           return (

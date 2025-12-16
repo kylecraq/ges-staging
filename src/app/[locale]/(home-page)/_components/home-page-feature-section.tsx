@@ -27,8 +27,8 @@ export const HomePageFeatureSection = () => {
   ];
 
   return (
-    <article className="mt-20 md:mt-0 px-wide lg:px-main xl:pl-central xl:pr-main flex flex-col">
-      <IntroParagraph title={t('title')} kicker={t('kicker')} className="pb-12"/>
+    <article className="mt-20 md:mt-0 flex flex-col">
+      <IntroParagraph title={t('title')} kicker={t('kicker')} className="pb-12 px-wide lg:px-main xl:pl-central xl:pr-main"/>
       <FeatureListWithImage
         chips={chips}
         imgAlt="Management"

@@ -7,19 +7,20 @@ import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/
 import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';
 import { HomePageFeatureSection } from '@/app/[locale]/(home-page)/_components/home-page-feature-section';
 import { Metadata } from 'next';
-import { HomePageOnBoardingSection } from '@/app/[locale]/(home-page)/_components/home-page-onboarding-section';
 import { HomePageCardsSection } from '@/app/[locale]/(home-page)/_components/home-page-cards-section';
 
 type HomeProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({params}:HomeProps): Promise<Metadata> {
-  const {locale} = await params;
-  const t = await getTranslations({locale, namespace: 'HomePage.Seo'});
+export async function generateMetadata({
+  params,
+}: HomeProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HomePage.Seo' });
 
   return {
-    title: t('title')
+    title: t('title'),
   };
 }
 
@@ -38,7 +39,6 @@ export default function Home(props: HomeProps) {
       <HomePageCardsSection />
       <HomePageDownloadSection />
       <HomePageFeatureSection />
-      <HomePageOnBoardingSection />
       <HomePageFaqSection />
     </main>
   );
