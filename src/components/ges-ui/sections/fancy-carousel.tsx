@@ -72,7 +72,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
 
           return (
             <SwiperSlide key={index} className="relative h-full w-full">
-              <div className="bg-neutral-80 h-full w-full overflow-hidden">
+              <div className="bg-neutral-80 h-full w-full">
                 {BackgroundImageDsk ? (
                   <img
                     src={BackgroundImageDsk}

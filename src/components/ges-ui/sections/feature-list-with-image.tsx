@@ -21,8 +21,8 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
   const { chips, imgDsk, imgMbl, imgAlt, button } = props;
 
   return (
-    <section className="grid gap-20 md:gap-8 md:grid-cols-[auto_65%] pl-wide lg:pl-main xl:pl-main xl:pr-wide">
-      <div className="mx-auto flex flex-col items-start gap-10">
+    <section className="grid grid-cols-1 md:gap-0 lg:gap-8 lg:grid-cols-[auto_65%] px-wide md:px-main xl:pl-main xl:pr-wide">
+      <div className="mx-auto flex flex-col items-center lg:items-start gap-10">
         {chips.map((chip, index) => {
           return (
             <div key={index} className="flex flex-col items-start gap-4">
@@ -42,7 +42,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
           />
         ) : null}
       </div>
-      <div className="order-first grid place-items-center md:order-last md:place-items-end">
+      <div className="order-first grid place-items-center lg:order-last md:place-items-end">
         {imgDsk ? (
           <img
             src={imgDsk}

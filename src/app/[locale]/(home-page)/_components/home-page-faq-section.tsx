@@ -13,7 +13,7 @@ export const HomePageFaqSection = () => {
   const t = useTranslations('HomePage.SectionFaq');
 
   return (
-    <article id="faq" className="px-wide md:px-central flex flex-col">
+    <article id="faq" className="px-wide md:px-main lg:px-central flex flex-col">
       <IntroParagraph kicker={t('kicker')} title={t('title')} className="pb-16"/>
       <Accordion
         type="single"

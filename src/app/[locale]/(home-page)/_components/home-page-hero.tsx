@@ -25,9 +25,9 @@ export const HomePageHero = () => {
   ];
 
   return (
-    <section className={"text-neutral-0"}>
+    <section className="text-neutral-0">
       <Hero
-        className="aspect-[375/874] lg:aspect-[1440/995]"
+        className="aspect-[374/920] lg:aspect-[1440/995]"
         imgSrcDsk="/hero/ges-hero-dsk.png"
         imgSrcMbl={'/hero/ges-hero-mbl.png'}
         title={t.rich('title', {

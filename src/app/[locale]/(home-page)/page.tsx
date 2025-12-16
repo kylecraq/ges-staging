@@ -34,7 +34,7 @@ export default function Home(props: HomeProps) {
 
   return (
     <main className="relative flex flex-col gap-32 lg:gap-36">
-      <HomePageDecorations />
+      {/*<HomePageDecorations />*/}
       <HomePageHero />
       <HomePageChargeSystemSection />
       <HomePageCardsSection />

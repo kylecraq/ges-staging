@@ -50,15 +50,15 @@ export const HomePageNextChargeAppSection = () => {
       <IntroParagraph
         title={t('title')}
         kicker={t('kicker')}
-        className="px-wide lg:px-main xl:pl-central xl:pr-main pb-12"
+        className="px-wide lg:px-main xl:pl-central xl:pr-main lg:pb-12"
       />
-      <div className="px-wide md:px-main grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="px-wide md:px-main grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
         <img
           src="/ges-app-section.png"
           alt="Nextcharge app mobile"
           className="aspect-[491/736] object-contain object-center"
         />
-        <div className="flex flex-col items-start justify-center gap-6">
+        <div className="flex flex-col items-center lg:items-start justify-center gap-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7">
             {cards.map((data, index) => {
               return (

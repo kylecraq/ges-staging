@@ -38,7 +38,7 @@ export const BlockContent = (props: HeroContentProps) => {
   return (
     <article
       className={cn(
-        'mx-auto flex h-full w-full flex-col items-start gap-6 text-center md:text-left xl:gap-8',
+        'mx-auto flex h-full w-full flex-col items-start gap-6 text-center md:text-left xl:gap-8 pb-6',
         className
       )}
     >
@@ -49,7 +49,7 @@ export const BlockContent = (props: HeroContentProps) => {
       {description ? (
         <BodyText className="lg:w-11/12 xl:w-8/12">{description}</BodyText>
       ) : null}
-      <div className="mx-auto mt-auto flex items-center gap-2.5 md:mx-0 md:mt-0">
+      <div className="mx-auto mt-auto flex justify-center md:items-center flex-wrap gap-2.5 md:mx-0 md:mt-0">
         {buttons
           ? buttons.map((buttonProps, index) => {
               return (
