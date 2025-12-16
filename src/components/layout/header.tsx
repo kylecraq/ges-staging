@@ -1,13 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { LanguageSelector } from '@/components/nextcharge-ui/language-selector';
+import { LanguageSelector } from '@/components/ges-ui/language-selector';
 
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { cn } from '@/lib/utils';
 import { Link } from '@/i18n/navigation';
-import { Logo } from '@/components/nextcharge-ui/logo';
-import { PrimaryLink } from '@/components/nextcharge-ui/links/primary-link';
+import { Logo } from '@/components/ges-ui/logo';
+import { PrimaryLink } from '@/components/ges-ui/links/primary-link';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from 'lucide-react';
 

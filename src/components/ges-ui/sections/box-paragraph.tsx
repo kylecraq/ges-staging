@@ -1,7 +1,7 @@
 'use client';
 
-import { IntroParagraph, IntroParagraphProps } from '@/components/nextcharge-ui/sections/intro-paragraph';
-import { PrimaryButton, PrimaryButtonProps } from '@/components/nextcharge-ui/buttons/primary-button';
+import { IntroParagraph, IntroParagraphProps } from '@/components/ges-ui/sections/intro-paragraph';
+import { PrimaryButton, PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
 
 type BoxParagraphProps = {

@@ -1,7 +1,7 @@
 'use client';
-import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
+import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
-import { FancyCarousel } from '@/components/nextcharge-ui/sections/fancy-carousel';
+import { FancyCarousel } from '@/components/ges-ui/sections/fancy-carousel';
 import { CreditCardIcon, CrosshairIcon, FingerprintIcon, Users } from 'lucide-react';
 
 export const HomePageChargeSystemSection = () => {

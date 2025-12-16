@@ -1,6 +1,6 @@
 "use client";
-import { Heading, BodyText, MenuLabel } from '@/components/nextcharge-ui/typography';
-import { PrimaryButton } from '@/components/nextcharge-ui/buttons/primary-button';
+import { Heading, BodyText, MenuLabel } from '@/components/ges-ui/typography';
+import { PrimaryButton } from '@/components/ges-ui/buttons/primary-button';
 import { DownloadIcon } from 'lucide-react';
 import { notFound } from 'next/navigation';
 

@@ -1,8 +1,8 @@
 'use client';
 
-import { BodyText, Heading } from '@/components/nextcharge-ui/typography';
+import { BodyText, Heading } from '@/components/ges-ui/typography';
 import { ReactNode } from 'react';
-import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
+import { Kicker } from '@/components/ges-ui/badge/kicker';
 import { cn } from '@/lib/utils';
 
 export type IntroParagraphProps = {

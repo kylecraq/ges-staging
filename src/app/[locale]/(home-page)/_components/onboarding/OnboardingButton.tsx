@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { TouchIcon } from '@/components/nextcharge-ui/icons/touch-icon';
+import { TouchIcon } from '@/components/ges-ui/icons/touch-icon';
 
 export type OnBoardingButtonProps = {
   label: string;

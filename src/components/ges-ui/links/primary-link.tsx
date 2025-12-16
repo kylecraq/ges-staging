@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import { Link } from '@/i18n/navigation';
-import { ButtonVariantProps } from '@/components/nextcharge-ui/buttons/primary-button';
+import { ButtonVariantProps } from '@/components/ges-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
 
 export type LinkPrimaryProps = {

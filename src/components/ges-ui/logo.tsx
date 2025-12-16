@@ -1,4 +1,4 @@
-import { GesCompleteLogo } from '@/components/nextcharge-ui/icons/icon-logo';
+import { GesCompleteLogo } from '@/components/ges-ui/icons/icon-logo';
 import { Link } from '@/i18n/navigation';
 import { cva, VariantProps } from 'class-variance-authority';
 

@@ -1,5 +1,5 @@
 'use client';
-import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
+import { BlobSquare } from '@/components/ges-ui/decorations/blob-square';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';

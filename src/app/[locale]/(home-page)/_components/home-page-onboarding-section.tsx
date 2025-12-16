@@ -1,14 +1,14 @@
 'use client';
 
 import { useMemo } from 'react';
-import { BlockContent } from '@/components/nextcharge-ui/content/block-content';
+import { BlockContent } from '@/components/ges-ui/content/block-content';
 import { useTranslations } from 'next-intl';
 import { DownloadIcon } from 'lucide-react';
 import {
   BlobBlackSquare,
   BlobBlackSquareVertical,
-} from '@/components/nextcharge-ui/decorations/blob-black-square';
-import { PrimaryButtonProps } from '@/components/nextcharge-ui/buttons/primary-button';
+} from '@/components/ges-ui/decorations/blob-black-square';
+import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 import { OnboardingImageAndButton } from '@/app/[locale]/(home-page)/_components/onboarding/OnboardingImageAndButton';
 
 export const HomePageOnBoardingSection = () => {

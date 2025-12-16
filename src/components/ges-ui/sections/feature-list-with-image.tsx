@@ -1,8 +1,8 @@
-import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
+import { Kicker } from '@/components/ges-ui/badge/kicker';
 import {
   LinkPrimaryProps,
   PrimaryLink,
-} from '@/components/nextcharge-ui/links/primary-link';
+} from '@/components/ges-ui/links/primary-link';
 
 type FeatureListWithImageProps = {
   chips: Chip[];

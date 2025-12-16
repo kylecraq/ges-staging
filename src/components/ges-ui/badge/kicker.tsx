@@ -1,4 +1,4 @@
-import { BodyText } from '@/components/nextcharge-ui/typography';
+import { BodyText } from '@/components/ges-ui/typography';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 

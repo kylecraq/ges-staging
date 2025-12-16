@@ -8,8 +8,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
-import { BodyText, Heading } from '@/components/nextcharge-ui/typography';
+import { Kicker } from '@/components/ges-ui/badge/kicker';
+import { BodyText, Heading } from '@/components/ges-ui/typography';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { PaginationOptions } from 'swiper/types';
 import { cn } from '@/lib/utils';

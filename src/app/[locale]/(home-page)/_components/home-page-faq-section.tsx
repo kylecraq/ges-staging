@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { useTranslations } from 'next-intl';
-import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
+import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 
 export const HomePageFaqSection = () => {
   const t = useTranslations('HomePage.SectionFaq');

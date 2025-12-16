@@ -5,14 +5,14 @@ import {
   HeadingEffects,
   HeadingSizes,
   HeadingTags,
-} from '@/components/nextcharge-ui/typography';
+} from '@/components/ges-ui/typography';
 import {
   PrimaryButton,
   PrimaryButtonProps,
-} from '@/components/nextcharge-ui/buttons/primary-button';
+} from '@/components/ges-ui/buttons/primary-button';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
-import { Kicker } from '@/components/nextcharge-ui/badge/kicker';
+import { Kicker } from '@/components/ges-ui/badge/kicker';
 
 type HeroContentProps = {
   kicker?: string;

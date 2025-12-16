@@ -1,8 +1,8 @@
 'use client';
-import { Logo } from '@/components/nextcharge-ui/logo';
+import { Logo } from '@/components/ges-ui/logo';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { BodyText } from '@/components/nextcharge-ui/typography';
+import { BodyText } from '@/components/ges-ui/typography';
 import { Suspense, useMemo } from 'react';
 
 export const Footer = () => {

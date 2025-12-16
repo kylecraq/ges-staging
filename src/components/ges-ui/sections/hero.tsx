@@ -1,11 +1,11 @@
 'use client';
-import { BlockContent } from '@/components/nextcharge-ui/content/block-content';
+import { BlockContent } from '@/components/ges-ui/content/block-content';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { ReactNode, useRef } from 'react';
-import { PrimaryButtonProps } from '@/components/nextcharge-ui/buttons/primary-button';
+import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
-import { HeadingEffects } from '@/components/nextcharge-ui/typography';
+import { HeadingEffects } from '@/components/ges-ui/typography';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);

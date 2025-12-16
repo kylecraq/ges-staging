@@ -1,10 +1,10 @@
 'use client';
 
-import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
+import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 import {
   Chip,
   FeatureListWithImage,
-} from '@/components/nextcharge-ui/sections/feature-list-with-image';
+} from '@/components/ges-ui/sections/feature-list-with-image';
 import { useTranslations } from 'next-intl';
 import { ArrowRightIcon } from 'lucide-react';
 

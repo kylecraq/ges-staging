@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { BoxParagraph } from '@/components/nextcharge-ui/sections/box-paragraph';
+import { BoxParagraph } from '@/components/ges-ui/sections/box-paragraph';
 
 export const HomePageDownloadSection = () => {
   const t = useTranslations('HomePage.SectionDownload');

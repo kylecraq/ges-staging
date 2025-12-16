@@ -1,12 +1,12 @@
 'use client';
-import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
+import { BlobSquare } from '@/components/ges-ui/decorations/blob-square';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { cn } from '@/lib/utils';
-import { CurvedLineLeftDsk } from '@/components/nextcharge-ui/decorations/curved-line-left-dsk';
-import { CurvedLineRightDsk } from '@/components/nextcharge-ui/decorations/curved-line-right-dsk';
-import { CurvedLineLeftMbl } from '@/components/nextcharge-ui/decorations/curved-line-left-mbl';
-import { CurvedLineRightMbl } from '@/components/nextcharge-ui/decorations/curved-line-right-mbl';
+import { CurvedLineLeftDsk } from '@/components/ges-ui/decorations/curved-line-left-dsk';
+import { CurvedLineRightDsk } from '@/components/ges-ui/decorations/curved-line-right-dsk';
+import { CurvedLineLeftMbl } from '@/components/ges-ui/decorations/curved-line-left-mbl';
+import { CurvedLineRightMbl } from '@/components/ges-ui/decorations/curved-line-right-mbl';
 
 export const HomePageDecorations = () => {
   return (
