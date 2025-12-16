@@ -72,7 +72,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
 
           return (
             <SwiperSlide key={index} className="relative h-full w-full">
-              <div className="bg-neutral-80 h-full w-full">
+              <div className="bg-neutral-0 h-full w-full">
                 {BackgroundImageDsk ? (
                   <img
                     src={BackgroundImageDsk}
@@ -120,11 +120,11 @@ const SlideArticle = ({
   badge: string;
 }) => {
   return (
-    <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-3.5 pb-3.5 md:max-w-sm md:px-7 md:pb-7 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
+    <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-3.5 pb-3.5 md:max-w-sm md:px-7 md:pb-9 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
       <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
         <Kicker text={badge} variant="full" />
-        <div className="bg-transparent p-5 lg:p-7">
-          <Heading as="h3" size="xl">
+        <div className="bg-transparent pr-20">
+          <Heading as="h3" size="l" className="pb-6">
             {title}
           </Heading>
           <BodyText>{description}</BodyText>

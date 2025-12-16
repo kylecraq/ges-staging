@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const kickerVariants = cva(
-  'text-primary border-primary rounded-full border px-5 py-2.5 uppercase font-mono',
+  'text-primary border-primary rounded-full border px-5 py-1 uppercase font-mono',
   {
     variants: {
       variant: {

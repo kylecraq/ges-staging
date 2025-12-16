@@ -27,9 +27,10 @@ export const HomePageHero = () => {
   return (
     <section className="text-neutral-0">
       <Hero
-        className="aspect-[374/920] lg:aspect-[1440/995]"
+        className="aspect-[374/900] xs:aspect-[414/928] md:aspect-[800/1150] lg:aspect-[1440/995]"
         imgSrcDsk="/hero/ges-hero-dsk.png"
         imgSrcMbl={'/hero/ges-hero-mbl.png'}
+        imgSrcTbl={'/hero/ges-hero-tbl.png'}
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}

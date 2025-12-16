@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 type HeroProps = {
   imgSrcDsk: string;
   imgSrcMbl: string;
+  imgSrcTbl: string;
   title: ReactNode;
   titleEffect?: HeadingEffects;
   description?: ReactNode;
@@ -24,6 +25,7 @@ export const Hero = (props: HeroProps) => {
   const {
     imgSrcDsk,
     imgSrcMbl,
+    imgSrcTbl,
     title,
     titleEffect,
     description,
@@ -42,14 +44,21 @@ export const Hero = (props: HeroProps) => {
           className="w-full h-full object-cover object-center hidden lg:block"
         />
         <img
+          src={imgSrcTbl}
+          alt={"Hero image mobile"}
+          loading="eager"
+          decoding="async"
+          className="w-full h-full object-cover object-center hidden md:block lg:hidden"
+        />
+        <img
           src={imgSrcMbl}
           alt={"Hero image mobile"}
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover object-center lg:hidden"
+          className="w-full h-full object-cover object-center md:hidden"
         />
       </div>
-      <div className="z-10 col-start-1 row-start-1 pt-24 xs:pt-32 xl:pt-[15%] xl:pl-main">
+      <div className="z-10 col-start-1 row-start-1 pt-28 xs:pt-32 xl:pt-[15%] xl:pl-main">
         <BlockContent
           title={title}
           titleTag="h1"
@@ -57,7 +66,7 @@ export const Hero = (props: HeroProps) => {
           titleEffect={titleEffect}
           description={description}
           buttons={buttons}
-          className="px-wide md:px-main xl:px-wide mx-0 xl:w-[60%] md:w-11/12"
+          className="px-wide md:px-main xl:px-wide mx-0 xl:w-[60%] lg:w-11/12"
         />
       </div>
     </div>
