@@ -31,7 +31,9 @@ export const LanguageSelector = () => {
 
   useEffect(() => {
     if (scrollDirection === 'down') {
-      setOpen(false);
+      window.requestAnimationFrame(() => {
+        setOpen(false);
+      });
     }
   }, [scrollDirection]);
 
