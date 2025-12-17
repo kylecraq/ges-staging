@@ -1,11 +1,12 @@
 'use client';
 
-import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
+import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 import {
   Chip,
   FeatureListWithImage,
-} from '@/components/nextcharge-ui/sections/feature-list-with-image';
+} from '@/components/ges-ui/sections/feature-list-with-image';
 import { useTranslations } from 'next-intl';
+import { ArrowRightIcon } from 'lucide-react';
 
 export const HomePageFeatureSection = () => {
   const t = useTranslations('HomePage.SectionFeature');
@@ -26,13 +27,18 @@ export const HomePageFeatureSection = () => {
   ];
 
   return (
-    <article className="px-wide md:px-main xl:px-central flex flex-col">
-      <IntroParagraph title={t('title')} kicker={t('kicker')} />
+    <article className="mt-20 md:mt-0 flex flex-col">
+      <IntroParagraph title={t('title')} kicker={t('kicker')} className="lg:pb-12 px-wide lg:px-main xl:pl-central xl:pr-main"/>
       <FeatureListWithImage
         chips={chips}
-        imgAlt="Iphone"
-        imgMbl="/hero/feature-phone.png"
-        imgDsk="/hero/feature-phone.png"
+        imgAlt="Management"
+        imgMbl="/fleet-management.png"
+        imgDsk="/fleet-management.png"
+        button={{
+          label: t("button"),
+          href:"#",
+          icon: <ArrowRightIcon />
+        }}
       />
     </article>
   );

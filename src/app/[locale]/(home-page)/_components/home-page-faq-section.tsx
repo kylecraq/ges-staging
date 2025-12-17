@@ -7,21 +7,21 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { useTranslations } from 'next-intl';
-import { IntroParagraph } from '@/components/nextcharge-ui/sections/intro-paragraph';
+import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 
 export const HomePageFaqSection = () => {
   const t = useTranslations('HomePage.SectionFaq');
 
   return (
-    <article className="px-wide md:px-main flex flex-col">
-      <IntroParagraph kicker={t('kicker')} title={t('title')}/>
+    <article id="faq" className="px-wide md:px-main lg:px-central flex flex-col">
+      <IntroParagraph kicker={t('kicker')} title={t('title')} className="pb-16"/>
       <Accordion
         type="single"
         collapsible
         className="w-full mx-auto"
       >
-        <AccordionItem value="item-1" className="bg-neutral-100">
-          <AccordionTrigger>{t('question-1')}</AccordionTrigger>
+        <AccordionItem value="item-1" className="bg-neutral-20 border border-neutral-40">
+          <AccordionTrigger className="font-normal">{t('question-1')}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-6 text-balance">
             <strong>
               Guida Introduttiva all’App
@@ -33,8 +33,8 @@ export const HomePageFaqSection = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-2" className="bg-neutral-100">
-          <AccordionTrigger>{t('question-2')}</AccordionTrigger>
+        <AccordionItem value="item-2" className="bg-neutral-20 border border-neutral-40">
+          <AccordionTrigger className="font-normal">{t('question-2')}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               We offer worldwide shipping through trusted courier partners.
@@ -47,8 +47,8 @@ export const HomePageFaqSection = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3" className="bg-neutral-100">
-          <AccordionTrigger>{t('question-3')}</AccordionTrigger>
+        <AccordionItem value="item-3" className="bg-neutral-20 border border-neutral-40">
+          <AccordionTrigger className="font-normal">{t('question-3')}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               We stand behind our products with a comprehensive 30-day return

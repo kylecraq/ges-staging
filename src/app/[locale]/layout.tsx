@@ -8,15 +8,16 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { cn } from '@/lib/utils';
 
 const robotoSans = Roboto({
   subsets: ['latin'],
-  variable: '--font-sans'
+  variable: '--font-sans',
 });
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
-  variable: '--font-mono'
+  variable: '--font-mono',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +33,11 @@ export const metadata: Metadata = {
       alt: 'Nextcharge Logo',
     },
   },
-}
+  robots: {
+    index: false,
+    follow: false
+  }
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -53,10 +58,15 @@ export default async function RootLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${robotoSans.variable} ${robotoMono.variable}`}>
-      <body
-        className="antialiased"
-      >
+    <html
+      lang={locale}
+      className={cn(
+        robotoSans.variable,
+        robotoMono.variable,
+        'scroll-pt-6 scroll-smooth'
+      )}
+    >
+      <body className="antialiased w-full max-w-7xl mx-auto">
         <NextIntlClientProvider>
           <Header />
           {children}

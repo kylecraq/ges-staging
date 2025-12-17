@@ -1,115 +1,39 @@
 'use client';
-import {
-  CurvedLeftLinesDsk,
-  CurvedRightLineDsk,
-} from '@/components/nextcharge-ui/decorations/curved-lines-dsk';
-import { BlobSquare } from '@/components/nextcharge-ui/decorations/blob-square';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { cn } from '@/lib/utils';
+import { CurvedLineLeftLightDsk } from '@/components/ges-ui/decorations/curved-line-left-light-dsk';
+import { CurvedLineRightDarkDsk } from '@/components/ges-ui/decorations/curved-line-right-dark-dsk';
+import { CurvedLineRightLightDsk } from '@/components/ges-ui/decorations/curved-line-right-light-dsk';
+import { CurvedLineLeftLightMbl } from '@/components/ges-ui/decorations/curved-line-left-light-mbl';
 
 export const HomePageDecorations = () => {
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 h-full">
-      <span className="absolute top-[13%]">
-        <CurvedLeftLinesDsk />
+    <div className="pointer-events-none absolute inset-0 -z-10 h-full overflow-x-clip">
+      {/*---MOBILE---*/}
+      {/*FEATURES*/}
+      <span className="absolute top-[56%] md:hidden">
+        <CurvedLineLeftLightMbl />
       </span>
-      <span className="absolute top-[35%]">
-        <CurvedLeftLinesDsk />
+      {/*FAQ*/}
+      <span className="absolute top-[92%] scale-125 md:hidden">
+        <CurvedLineLeftLightMbl />
       </span>
-      <span className="absolute top-[55%] right-0">
-        <CurvedRightLineDsk />
+      {/*FAQ*/}
+      <span className="absolute -right-20 top-[96%] md:hidden scale-75">
+        <CurvedLineRightDarkDsk />
       </span>
-      <BlobsDecoration className="absolute top-[34%] right-8" />
-      <BlobsDecoration hide="small" className="absolute top-[56%] left-24" />
-      <BlobsDecoration className="absolute top-[81.5%] right-4" />
+
+      {/*---TABLET/DESKTOP---*/}
+      {/*FEATURES*/}
+      <span className="absolute right-14 hidden scale-125 md:inline top-[51.5%] lg:top-[61%] xl:top-[64%]">
+        <CurvedLineRightLightDsk />
+      </span>
+      {/*FAQ*/}
+      <span className="absolute -left-20 top-[92%] lg:left-0 lg:top-[91%] hidden md:inline">
+        <CurvedLineLeftLightDsk />
+      </span>
+      {/*FAQ*/}
+      <span className="absolute -right-10 lg:right-0 hidden md:top-[95%] md:inline lg:top-[94%]">
+        <CurvedLineRightDarkDsk />
+      </span>
     </div>
-  );
-};
-
-type BlobsDecorationProps = {
-  className?: string;
-  hide?: 'big' | 'small';
-};
-
-const BlobsDecoration = (props: BlobsDecorationProps) => {
-  const { className, hide = '' } = props;
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const blob1 = useRef<SVGSVGElement>(null);
-  const blob2 = useRef<SVGSVGElement>(null);
-
-  useEffect(() => {
-    const context = gsap.context(() => {
-      if (!containerRef.current || !blob1.current || !blob2.current) return;
-      const yEndValue = 15;
-
-      const internalBlob1 = blob1.current;
-      const internalBlob2 = blob2.current;
-
-      const yoyoTween = gsap.to([internalBlob1, internalBlob2], {
-        y: -yEndValue,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: 'slow',
-        paused: true,
-      });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true,
-          markers: false,
-          onLeave: () => yoyoTween.play(),
-        },
-        ease: 'none',
-      });
-
-      tl.fromTo(
-        internalBlob1,
-        { autoAlpha: 0, rotate: -yEndValue },
-        { autoAlpha: 1, rotate: 0, duration: 1, ease: 'none' },
-        0
-      );
-      tl.fromTo(
-        internalBlob2,
-        { rotate: -yEndValue },
-        { rotate: 0, duration: 1, ease: 'none' },
-        0
-      );
-      tl.fromTo(
-        internalBlob2,
-        { autoAlpha: 0 },
-        { autoAlpha: 0.4, duration: 0.1, ease: 'slow' },
-        0.3
-      );
-      tl.to(internalBlob2, { autoAlpha: 1, duration: 0.6, ease: 'none' }, '>');
-    }, containerRef);
-
-    return () => context.revert();
-  }, []);
-
-  return (
-    <span
-      ref={containerRef}
-      className={cn(className, 'flex flex-col justify-center')}
-    >
-      <BlobSquare
-        ref={blob1}
-        className={cn(
-          {
-            hidden: hide === 'small',
-          },
-          '-translate-x-1/2 scale-50 opacity-0'
-        )}
-      />
-      <BlobSquare
-        ref={blob2}
-        className={cn({ hidden: hide === 'big' }, 'opacity-0')}
-      />
-    </span>
   );
 };

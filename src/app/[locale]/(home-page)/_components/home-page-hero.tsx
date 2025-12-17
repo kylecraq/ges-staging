@@ -1,25 +1,36 @@
 'use client';
-import { Hero } from '@/components/nextcharge-ui/sections/hero';
+import { Hero } from '@/components/ges-ui/sections/hero';
 import { useTranslations } from 'next-intl';
-import { HomePageHeroDecorations } from '@/app/[locale]/(home-page)/_components/home-page-hero-decorations';
-import { PrimaryButtonWithIconProps } from '@/components/nextcharge-ui/buttons/primary-with-icon';
-import { DownloadIcon } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
+import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 
 export const HomePageHero = () => {
   const t = useTranslations('HomePage');
-  const buttons: PrimaryButtonWithIconProps[] = [
+  const buttons: PrimaryButtonProps[] = [
     {
-      icon: <DownloadIcon />,
-      label: t("Buttons.download")
-    }
-  ]
+      icon: <ArrowRightIcon />,
+      label: t('Buttons.cpm-backend'),
+      variant: 'secondary',
+    },
+    {
+      icon: <ArrowRightIcon />,
+      label: t('Buttons.fleet-management'),
+      variant: 'secondary',
+    },
+    {
+      icon: <ArrowRightIcon />,
+      label: t('Buttons.nextcharge'),
+      variant: 'secondary',
+    },
+  ];
 
   return (
-    <section className="grid grid-cols-1 grid-rows-1 px-wide">
+    <section className="text-neutral-0">
       <Hero
-        className="col-start-1 row-start-1"
-        imgSrcDsk="/hero/next-charge-hero-dsk.png"
-        imgSrcMbl={"/hero/next-charge-hero-mbl.png"}
+        className="aspect-[374/900] xs:aspect-[414/928] md:aspect-[800/1150] lg:aspect-[1440/995]"
+        imgSrcDsk="/hero/ges-hero-dsk.png"
+        imgSrcMbl={'/hero/ges-hero-mbl.png'}
+        imgSrcTbl={'/hero/ges-hero-tbl.png'}
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}
@@ -29,9 +40,6 @@ export const HomePageHero = () => {
         })}
         buttons={buttons}
       />
-      <div className="col-start-1 row-start-1 px-3 md:px-9 hidden xl:block">
-        <HomePageHeroDecorations />
-      </div>
     </section>
   );
 };

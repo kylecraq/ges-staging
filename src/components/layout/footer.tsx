@@ -1,19 +1,20 @@
 'use client';
-import { Logo } from '@/components/nextcharge-ui/logo';
+import { Logo } from '@/components/ges-ui/logo';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { BodyText } from '@/components/nextcharge-ui/typography';
+import { BodyText } from '@/components/ges-ui/typography';
+import {  useMemo } from 'react';
 
 export const Footer = () => {
   const t = useTranslations('Footer');
   return (
     <footer
-      className="mt-80 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base"
+      className="mt-32 md:mt-36 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base text-neutral-0"
       itemScope
       itemType="https://schema.org/Organization"
     >
       <div className="flex h-full flex-col justify-between rounded-t-4xl bg-neutral-100 px-5 pt-20 pb-5 md:px-24 xl:px-28">
-        <Logo variant="primary" />
+        <Logo />
 
         <div className="flex flex-col">
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">
@@ -34,12 +35,12 @@ export const Footer = () => {
             <Copyright />
           </div>
           <hr />
-          <div className="mt-2 flex flex-col md:flex-row text-center gap-4 items-center justify-between">
+          <div className="mt-2 flex flex-col items-center justify-between gap-4 text-center md:flex-row">
             <Link
               href="/credits"
               className="hover:decoration-primary shrink-0 underline underline-offset-4 transition-all duration-500"
             >
-              {t('credits')}
+              {t('status')}
             </Link>
             <cite className="text-xs md:text-sm">
               {t.rich('craq-tag-crafted', {
@@ -62,7 +63,7 @@ export const Footer = () => {
 };
 
 const Copyright = () => {
-  const currentYear = new Date().getFullYear();
+  const year = useMemo(() => new Date().getFullYear(), []);
   const t = useTranslations('Footer');
-  return <BodyText>{t('copyright', { year: currentYear })}</BodyText>;
+  return <BodyText>{t('copyright', { year: year })}</BodyText>;
 };
