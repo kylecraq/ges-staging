@@ -20,7 +20,8 @@ export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
 
       const path = pathRef.current;
       const frictionSlower = 2000;
-      const length = path.getTotalLength();
+      const radius = path.r.baseVal.value
+      const length = 2 * Math.PI * radius;
 
       gsap.set(path, {
         strokeDasharray: length,

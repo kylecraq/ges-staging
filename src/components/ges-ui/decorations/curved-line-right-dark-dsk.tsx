@@ -19,7 +19,8 @@ export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
       });
 
       const path = pathRef.current;
-      const length = path.getTotalLength();
+      const radius = path.r.baseVal.value
+      const length = 2 * Math.PI * radius;
 
       const frictionSlower = 2400;
 
