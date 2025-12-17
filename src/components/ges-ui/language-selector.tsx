@@ -9,6 +9,8 @@ import { useLocale } from 'use-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
+import { ChevronDownIcon } from 'lucide-react';
+import * as React from 'react';
 
 export const LanguageSelector = () => {
   const locale = useLocale();
@@ -35,31 +37,24 @@ export const LanguageSelector = () => {
 
   return (
     <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
-      <DropdownMenuTrigger
-        className="font-semibold uppercase flex cursor-pointer items-center gap-1 text-sm transition-colors outline-none focus-visible:underline underline-offset-4">
+      <DropdownMenuTrigger className="flex cursor-pointer items-center gap-1 text-sm font-semibold uppercase underline-offset-4 transition-colors outline-none focus-visible:underline data-[state=open]:[&_svg]:rotate-180">
         {locale}
-        <svg
-          className="h-4 w-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        <ChevronDownIcon className="text-muted-foreground ease-sine-in-out pointer-events-none size-5 shrink-0 transition-transform duration-200" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
         className={'bg-neutral-0 text-neutral-100'}
       >
-        <DropdownMenuItem className="cursor-pointer focus-visible:bg-neutral-20 hover:bg-neutral-20" onClick={() => handleChange('en')}>
+        <DropdownMenuItem
+          className="focus-visible:bg-neutral-20 hover:bg-neutral-20 cursor-pointer"
+          onClick={() => handleChange('en')}
+        >
           {t('en')}
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer focus-visible:bg-neutral-20 hover:bg-neutral-20" onClick={() => handleChange('it')}>
+        <DropdownMenuItem
+          className="focus-visible:bg-neutral-20 hover:bg-neutral-20 cursor-pointer"
+          onClick={() => handleChange('it')}
+        >
           {t('it')}
         </DropdownMenuItem>
       </DropdownMenuContent>
