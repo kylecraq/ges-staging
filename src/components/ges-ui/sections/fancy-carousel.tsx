@@ -48,7 +48,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
   const isSmallDevice = useMediaQuery('only screen and (min-width : 768px)');
 
   return (
-    <div className={cn('relative overflow-hidden md:aspect-video', className)}>
+    <div className={cn('relative overflow-hidden md:h-[685px]', className)}>
       <Swiper
         className="h-full w-full"
         modules={[Navigation, Pagination, EffectFade]}
@@ -120,7 +120,7 @@ const SlideArticle = ({
   badge: string;
 }) => {
   return (
-    <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-3.5 pb-3.5 md:max-w-sm md:px-7 md:pb-9 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
+    <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-5 pb-6.5 md:max-w-sm md:px-7 md:pb-9 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
       <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
         <Kicker text={badge} variant="full" />
         <div className="bg-transparent pr-20">
