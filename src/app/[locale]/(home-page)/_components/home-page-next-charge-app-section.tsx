@@ -62,7 +62,7 @@ export const HomePageNextChargeAppSection = () => {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7">
             {cards.map((data, index) => {
               return (
-                <Card key={index} className="border border-neutral-400">
+                <Card key={index} className="border border-neutral-400 bg-neutral-0">
                   <CardHeader>{data.icon}</CardHeader>
                   <CardFooter className="flex flex-col items-start gap-5 text-start">
                     <CardTitle className="heading-xs font-mono font-normal">

@@ -2,9 +2,8 @@
 import { ComponentProps, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import * as React from 'react';
 
-export const CurvedLineLeftDsk = (props: ComponentProps<'svg'>) => {
+export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGCircleElement>(null);
 
@@ -20,20 +19,21 @@ export const CurvedLineLeftDsk = (props: ComponentProps<'svg'>) => {
       });
 
       const path = pathRef.current;
+      const frictionSlower = 2000;
       const length = path.getTotalLength();
 
       gsap.set(path, {
         strokeDasharray: length,
-        strokeDashoffset: length,
+        strokeDashoffset: length + frictionSlower / 2,
       });
 
       gsap.to(path, {
-        strokeDashoffset: 124,
+        strokeDashoffset: length * 2 - frictionSlower,
         ease: 'none',
         scrollTrigger: {
-          trigger: path,
-          start: 'top bottom',
-          end: 'top top',
+          trigger: svg,
+          start: 'top 90%',
+          end: 'top -20%',
           scrub: true,
         },
       });
@@ -42,23 +42,24 @@ export const CurvedLineLeftDsk = (props: ComponentProps<'svg'>) => {
 
   return (
     <svg
-      ref={svgRef}
-      width={446}
-      height={582.5}
+      width="446"
+      height="528"
+      viewBox="0 0 446 528"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      ref={svgRef}
       className="opacity-0"
       {...props}
     >
       <circle
         strokeLinecap="round"
         strokeLinejoin="round"
-        ref={pathRef}
-        cx="-226.5"
-        cy="645.5"
+        cx="672.5"
+        cy="623.5"
         r="582.5"
         stroke="#D9EFD8"
-        strokeWidth={116}
+        strokeWidth="116"
+        ref={pathRef}
       />
     </svg>
   );

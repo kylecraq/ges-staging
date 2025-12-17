@@ -3,7 +3,7 @@ import { ComponentProps, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const CurvedLineRightDsk = (props: ComponentProps<'svg'>) => {
+export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGCircleElement>(null);
 
@@ -21,18 +21,21 @@ export const CurvedLineRightDsk = (props: ComponentProps<'svg'>) => {
       const path = pathRef.current;
       const length = path.getTotalLength();
 
+      const frictionSlower = 2400;
+
       gsap.set(path, {
         strokeDasharray: length,
-        strokeDashoffset: length,
+        strokeDashoffset: length + frictionSlower / 2,
       });
 
       gsap.to(path, {
-        strokeDashoffset: length * 2,
+        strokeDashoffset: length * 2 - frictionSlower,
         ease: 'none',
         scrollTrigger: {
           trigger: svg,
-          start: 'top bottom',
-          scrub: true
+          start: 'top 90%',
+          end: 'top -10%',
+          scrub: true,
         },
       });
     }
@@ -46,6 +49,7 @@ export const CurvedLineRightDsk = (props: ComponentProps<'svg'>) => {
       height="767.5"
       viewBox="0 0 582 641"
       fill="none"
+      className="opacity-0"
       {...props}
     >
       <circle

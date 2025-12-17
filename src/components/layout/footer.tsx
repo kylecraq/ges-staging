@@ -3,13 +3,13 @@ import { Logo } from '@/components/ges-ui/logo';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { BodyText } from '@/components/ges-ui/typography';
-import { Suspense, useMemo } from 'react';
+import {  useMemo } from 'react';
 
 export const Footer = () => {
   const t = useTranslations('Footer');
   return (
     <footer
-      className="mt-40 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base text-neutral-0"
+      className="mt-32 md:mt-36 h-[353px] px-3 md:px-9 lg:text-sm xl:text-base text-neutral-0"
       itemScope
       itemType="https://schema.org/Organization"
     >

@@ -1,43 +1,38 @@
 'use client';
-import { BlobSquare } from '@/components/ges-ui/decorations/blob-square';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { cn } from '@/lib/utils';
-import { CurvedLineLeftDsk } from '@/components/ges-ui/decorations/curved-line-left-dsk';
-import { CurvedLineRightDsk } from '@/components/ges-ui/decorations/curved-line-right-dsk';
-import { CurvedLineLeftMbl } from '@/components/ges-ui/decorations/curved-line-left-mbl';
-import { CurvedLineRightMbl } from '@/components/ges-ui/decorations/curved-line-right-mbl';
+import { CurvedLineLeftLightDsk } from '@/components/ges-ui/decorations/curved-line-left-light-dsk';
+import { CurvedLineRightDarkDsk } from '@/components/ges-ui/decorations/curved-line-right-dark-dsk';
+import { CurvedLineRightLightDsk } from '@/components/ges-ui/decorations/curved-line-right-light-dsk';
+import { CurvedLineLeftLightMbl } from '@/components/ges-ui/decorations/curved-line-left-light-mbl';
 
 export const HomePageDecorations = () => {
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 h-full">
+    <div className="pointer-events-none absolute inset-0 -z-10 h-full overflow-x-clip">
       {/*---MOBILE---*/}
-      {/*HERO*/}
-      <span className="absolute top-[6%] md:hidden">
-        <CurvedLineLeftMbl />
+      {/*FEATURES*/}
+      <span className="absolute top-[56%] md:hidden">
+        <CurvedLineLeftLightMbl />
       </span>
-      {/*MAP*/}
-      <span className="absolute top-[54%] md:hidden">
-        <CurvedLineLeftMbl />
+      {/*FAQ*/}
+      <span className="absolute top-[92%] scale-125 md:hidden">
+        <CurvedLineLeftLightMbl />
+      </span>
+      {/*FAQ*/}
+      <span className="absolute -right-20 top-[96%] md:hidden scale-75">
+        <CurvedLineRightDarkDsk />
       </span>
 
-      {/*FEATURE*/}
-      <span className="absolute top-[68%] md:hidden right-0">
-        <CurvedLineRightMbl />
+      {/*---TABLET/DESKTOP---*/}
+      {/*FEATURES*/}
+      <span className="absolute right-14 hidden scale-125 md:inline top-[51.5%] lg:top-[61%] xl:top-[64%]">
+        <CurvedLineRightLightDsk />
       </span>
-
-      {/*---DESKTOP---*/}
-      {/*HERO*/}
-      <span className="absolute hidden md:inline lg:top-[64%]">
-        <CurvedLineLeftDsk />
+      {/*FAQ*/}
+      <span className="absolute -left-20 top-[92%] lg:left-0 lg:top-[91%] hidden md:inline">
+        <CurvedLineLeftLightDsk />
       </span>
-      {/*MAP*/}
-      <span className="absolute top-[90%] hidden md:inline">
-        <CurvedLineLeftDsk />
-      </span>
-      {/*FEATURE*/}
-      <span className="absolute md:top-[70%] lg:top-[92%] right-0">
-        <CurvedLineRightDsk className="hidden md:inline" />
+      {/*FAQ*/}
+      <span className="absolute -right-10 lg:right-0 hidden md:top-[95%] md:inline lg:top-[94%]">
+        <CurvedLineRightDarkDsk />
       </span>
     </div>
   );
