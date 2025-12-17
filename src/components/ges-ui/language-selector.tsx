@@ -37,9 +37,9 @@ export const LanguageSelector = () => {
 
   return (
     <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
-      <DropdownMenuTrigger className="flex cursor-pointer items-center gap-1 text-sm font-semibold uppercase underline-offset-4 transition-colors outline-none focus-visible:underline data-[state=open]:[&_svg]:rotate-180">
+      <DropdownMenuTrigger className="flex cursor-pointer items-center gap-px text-sm font-semibold uppercase underline-offset-4 transition-colors outline-none focus-visible:underline data-[state=open]:[&_svg]:rotate-180">
         {locale}
-        <ChevronDownIcon className="text-muted-foreground ease-sine-in-out pointer-events-none size-5 shrink-0 transition-transform duration-200" />
+        <ChevronDownIcon className="text-muted-foreground ease-sine-in-out pointer-events-none size-5 shrink-0 translate-y-px transition-transform duration-200" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
