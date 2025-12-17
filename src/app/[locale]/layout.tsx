@@ -20,17 +20,21 @@ const robotoMono = Roboto_Mono({
   variable: '--font-mono',
 });
 
+const VERCEL_HOST = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
+const BASE_URL = VERCEL_HOST ? `https://${VERCEL_HOST}` : 'https://goelectricstations.it';
+const ogImage = `${BASE_URL}/hero/ges-hero-dsk.png`;
+
 export const metadata: Metadata = {
   title: {
-    template: 'Nextcharge - %s',
-    default: 'Nextcharge - Charging solutions for a sustainable future',
+    template: 'Go Electric Stations - %s',
+    default: 'Go Electric Stations - Charging stations for electric vehicles',
   },
   openGraph: {
-    title: 'Nextcharge',
-    description: 'Nextcharge - Charging solutions for a sustainable future',
+    title: 'Go Electric Stations',
+    description: 'Go Electric Stations - Charging stations for electric vehicles',
     images: {
-      url: 'https://nextcharge.app/og.png',
-      alt: 'Nextcharge Logo',
+      url: ogImage,
+      alt: 'Go Electric Stations',
     },
   },
   robots: {
