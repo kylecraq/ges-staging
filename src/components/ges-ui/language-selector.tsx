@@ -24,6 +24,7 @@ export const LanguageSelector = () => {
   const pathname = usePathname();
 
   const handleChange = (newLocale: string) => {
+    if (locale === newLocale) return;
     startTransition(() => {
       router.push(pathname, { locale: newLocale });
     });
