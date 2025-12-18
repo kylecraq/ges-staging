@@ -8,58 +8,54 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { ArrowRightIcon, MapIcon } from 'lucide-react';
-import { useMemo } from 'react';
 import { PrimaryLink } from '@/components/ges-ui/links/primary-link';
 import { CardType } from '@/types/Card';
+import { useTranslations } from 'next-intl';
 
 export const HomePageCardsSection = () => {
-  const cards: CardType[] = useMemo(() => {
-    return [
-      {
-        icon: <MapIcon className="size-10" />,
-        title: 'Maps',
-        description:
-          'An overview of your stations, highlighting their real time status.',
-      },
-      {
-        icon: <MapIcon className="size-10" />,
-        title: 'Maps',
-        description:
-          'An overview of your stations, highlighting their real time status.',
-      },
-      {
-        icon: <MapIcon className="size-10" />,
-        title: 'Maps',
-        description:
-          'An overview of your stations, highlighting their real time status.',
-      },
-      {
-        icon: <MapIcon className="size-10" />,
-        title: 'Maps',
-        description:
-          'An overview of your stations, highlighting their real time status.',
-      },
-      {
-        icon: <MapIcon className="size-10" />,
-        title: 'Maps',
-        description:
-          'An overview of your stations, highlighting their real time status.',
-      },
-      {
-        icon: <MapIcon className="size-10" />,
-        title: 'Maps',
-        description:
-          'An overview of your stations, highlighting their real time status.',
-      },
-    ];
-  }, []);
+  const t = useTranslations('HomePage.SectionCards');
+  const cards: CardType[] = [
+    {
+      icon: <MapIcon className="size-10" />,
+      title: t('Cards1.title'),
+      description: t('Cards1.description'),
+    },
+    {
+      icon: <MapIcon className="size-10" />,
+      title: t('Cards1.title'),
+      description: t('Cards1.description'),
+    },
+    {
+      icon: <MapIcon className="size-10" />,
+      title: t('Cards1.title'),
+      description: t('Cards1.description'),
+    },
+    {
+      icon: <MapIcon className="size-10" />,
+      title: t('Cards1.title'),
+      description: t('Cards1.description'),
+    },
+    {
+      icon: <MapIcon className="size-10" />,
+      title: t('Cards1.title'),
+      description: t('Cards1.description'),
+    },
+    {
+      icon: <MapIcon className="size-10" />,
+      title: t('Cards1-title'),
+      description: t('Cards1.description'),
+    },
+  ];
 
   return (
     <section className="flex flex-col items-center justify-center gap-14">
       <article className="px-main grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7 lg:grid-cols-3">
         {cards.map((data, index) => {
           return (
-            <Card key={index} className="border border-neutral-400 bg-neutral-0">
+            <Card
+              key={index}
+              className="bg-neutral-0 border border-neutral-400"
+            >
               <CardHeader>{data.icon}</CardHeader>
               <CardFooter className="flex flex-col items-start gap-5 text-start">
                 <CardTitle className="heading-xs font-mono font-normal">

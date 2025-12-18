@@ -2,6 +2,6 @@ import { ReactNode } from 'react';
 
 export type CardType = {
   icon: ReactNode;
-  title: string;
+  title: ReactNode;
   description: string;
 };
