@@ -37,7 +37,7 @@ export function Header() {
         <div className="hidden md:block border-neutral-0">
           <PrimaryLink
             icon={<ArrowRightIcon />}
-            label={t('download')}
+            label={t('contact-us')}
             href={'https://apps.apple.com/it/app/nextcharge/id614946715'}
             target={"_blank"}
           />
