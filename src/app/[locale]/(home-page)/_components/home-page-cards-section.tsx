@@ -22,28 +22,28 @@ export const HomePageCardsSection = () => {
     },
     {
       icon: <MapIcon className="size-10" />,
-      title: t('Cards1.title'),
-      description: t('Cards1.description'),
+      title: t('Cards2.title'),
+      description: t('Cards2.description'),
     },
     {
       icon: <MapIcon className="size-10" />,
-      title: t('Cards1.title'),
-      description: t('Cards1.description'),
+      title: t('Cards3.title'),
+      description: t('Cards3.description'),
     },
     {
       icon: <MapIcon className="size-10" />,
-      title: t('Cards1.title'),
-      description: t('Cards1.description'),
+      title: t('Cards4.title'),
+      description: t('Cards4.description'),
     },
     {
       icon: <MapIcon className="size-10" />,
-      title: t('Cards1.title'),
-      description: t('Cards1.description'),
+      title: t('Cards5.title'),
+      description: t('Cards5.description'),
     },
     {
       icon: <MapIcon className="size-10" />,
-      title: t('Cards1-title'),
-      description: t('Cards1.description'),
+      title: t('Cards6.title'),
+      description: t('Cards6.description'),
     },
   ];
 
