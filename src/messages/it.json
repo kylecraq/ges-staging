@@ -7,6 +7,7 @@
     "title": "The future is electric: let's embark on a wonderful journey together.",
     "description": "Oltre 200.000 punti di ricarica indicizzati. Trova la stazione di ricarica, controlla lo stato, organizza un itinerario, leggi i commenti e guarda le foto.",
     "SectionCards": {
+      "button": "contattaci",
       "Cards1" : {
         "title": "Maps",
         "description": "An overview of your stations, highlighting their real time status."
@@ -64,7 +65,25 @@
       "title": "NextCharge mobile application",
       "description": "We developed the Management System with a very clear goal: make everything that a charging point operator – CPO – needs to control simple.",
       "caption": "<important>Let’s charge</important> Bastano pochi passaggi per iniziare la tua prima ricarica.",
-      "button": "Download app"
+      "button": "Vai al sito di nextcharge",
+      "Cards": {
+        "Card1": {
+          "title": "Maps",
+          "description": "An overview of your stations, highlighting their real time status."
+        },
+        "Card2": {
+          "title": "Maps",
+          "description": "An overview of your stations, highlighting their real time status."
+        },
+        "Card3": {
+          "title": "Maps",
+          "description": "An overview of your stations, highlighting their real time status."
+        },
+        "Card4": {
+          "title": "Maps",
+          "description": "An overview of your stations, highlighting their real time status."
+        }
+      }
     },
     "SectionMap": {
       "title": "Diversi operatori per un solo sistema di autenticazione",

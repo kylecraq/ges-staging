@@ -69,7 +69,7 @@ export const HomePageCardsSection = () => {
           );
         })}
       </article>
-      <PrimaryLink icon={<ArrowRightIcon />} label={'Contact us'} href={'#'} />
+      <PrimaryLink icon={<ArrowRightIcon />} label={t("button")} href={'#'} />
     </section>
   );
 };
