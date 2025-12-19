@@ -17,21 +17,21 @@ export const HomePageDecorations = () => {
         <CurvedLineLeftLightMbl />
       </span>
       {/*FAQ*/}
-      <span className="absolute -right-20 top-[96%] md:hidden scale-75">
+      <span className="absolute top-[96%] -right-20 scale-75 md:hidden">
         <CurvedLineRightDarkDsk />
       </span>
 
       {/*---TABLET/DESKTOP---*/}
       {/*FEATURES*/}
-      <span className="absolute right-14 hidden scale-125 md:inline top-[51.5%] lg:top-[61%] xl:top-[64%]">
+      <span className="absolute top-[51.5%] right-14 hidden scale-125 md:inline lg:top-[61%] xl:top-[64%]">
         <CurvedLineRightLightDsk />
       </span>
       {/*FAQ*/}
-      <span className="absolute -left-20 top-[92%] lg:left-0 lg:top-[91%] hidden md:inline">
+      <span className="absolute top-[92%] -left-20 hidden md:inline lg:top-[91%] lg:left-0">
         <CurvedLineLeftLightDsk />
       </span>
       {/*FAQ*/}
-      <span className="absolute -right-10 lg:right-0 hidden md:top-[95%] md:inline lg:top-[94%]">
+      <span className="absolute -right-10 hidden md:top-[95%] md:inline lg:top-[94%] lg:right-0">
         <CurvedLineRightDarkDsk />
       </span>
     </div>

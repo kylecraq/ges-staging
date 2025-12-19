@@ -20,9 +20,9 @@ export const CurvedLineLeftLightMbl = (props: ComponentProps<'svg'>) => {
         },
       });
 
-      const path = pathRef.current
+      const path = pathRef.current;
       const frictionSlower = 124;
-      const radius = path.r.baseVal.value
+      const radius = path.r.baseVal.value;
       const length = 2 * Math.PI * radius;
 
       gsap.set(path, {
@@ -36,7 +36,7 @@ export const CurvedLineLeftLightMbl = (props: ComponentProps<'svg'>) => {
           trigger: svgRef.current,
           start: 'top bottom',
           end: 'top 60',
-          scrub: true
+          scrub: true,
         },
       });
     }

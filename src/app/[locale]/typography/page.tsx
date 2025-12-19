@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { Heading, BodyText, MenuLabel } from '@/components/ges-ui/typography';
 import { PrimaryButton } from '@/components/ges-ui/buttons/primary-button';
 import { DownloadIcon } from 'lucide-react';
@@ -259,7 +259,7 @@ export default function Page() {
             </BodyText>
 
             <div className="flex flex-wrap gap-4">
-              <PrimaryButton icon={<DownloadIcon />} label={"Call to action"} />
+              <PrimaryButton icon={<DownloadIcon />} label={'Call to action'} />
             </div>
           </div>
         </section>

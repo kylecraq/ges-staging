@@ -27,17 +27,21 @@ export const HomePageFeatureSection = () => {
   ];
 
   return (
-    <article className="mt-20 md:mt-0 flex flex-col">
-      <IntroParagraph title={t('title')} kicker={t('kicker')} className="lg:pb-12 px-wide lg:px-main xl:pl-central xl:pr-main"/>
+    <article className="mt-20 flex flex-col md:mt-0">
+      <IntroParagraph
+        title={t('title')}
+        kicker={t('kicker')}
+        className="px-wide lg:px-main xl:pl-central xl:pr-main lg:pb-12"
+      />
       <FeatureListWithImage
         chips={chips}
         imgAlt="Management"
         imgMbl="/fleet-management.png"
         imgDsk="/fleet-management.png"
         button={{
-          label: t("button"),
-          href:"#",
-          icon: <ArrowRightIcon />
+          label: t('button'),
+          href: '#',
+          icon: <ArrowRightIcon />,
         }}
       />
     </article>

@@ -38,27 +38,27 @@ export const Hero = (props: HeroProps) => {
       <div className="col-start-1 row-start-1">
         <img
           src={imgSrcDsk}
-          alt={"Hero image desktop"}
+          alt={'Hero image desktop'}
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover object-center hidden lg:block"
+          className="hidden h-full w-full object-cover object-center lg:block"
         />
         <img
           src={imgSrcTbl}
-          alt={"Hero image mobile"}
+          alt={'Hero image mobile'}
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover object-center hidden md:block lg:hidden"
+          className="hidden h-full w-full object-cover object-center md:block lg:hidden"
         />
         <img
           src={imgSrcMbl}
-          alt={"Hero image mobile"}
+          alt={'Hero image mobile'}
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover object-center md:hidden"
+          className="h-full w-full object-cover object-center md:hidden"
         />
       </div>
-      <div className="z-10 col-start-1 row-start-1 pt-28 xs:pt-32 xl:pt-[15%] xl:pl-main">
+      <div className="xs:pt-32 xl:pl-main z-10 col-start-1 row-start-1 pt-28 xl:pt-[15%]">
         <BlockContent
           title={title}
           titleTag="h1"
@@ -66,9 +66,9 @@ export const Hero = (props: HeroProps) => {
           titleEffect={titleEffect}
           description={description}
           buttons={buttons}
-          className="px-wide md:px-main xl:px-wide mx-0 xl:w-[60%] lg:w-11/12"
+          className="px-wide md:px-main xl:px-wide mx-0 lg:w-11/12 xl:w-[60%]"
         />
       </div>
     </div>
   );
-}
+};

@@ -1,10 +1,7 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 
-export const STATIC_PATHS = [
-  '/',
-  '/privacy'
-];
+export const STATIC_PATHS = ['/', '/privacy'];
 
 const VERCEL_HOST = process.env.NEXT_PUBLIC_VERCEL_URL;
 const BASE_URL = VERCEL_HOST ? `https://${VERCEL_HOST}` : 'https://ges.app';

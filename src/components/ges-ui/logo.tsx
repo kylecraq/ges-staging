@@ -20,7 +20,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <Link href={'/'} className={logoVariants({ variant })}>
       <div aria-hidden="true">
-        <GesCompleteLogo className="w-28 md:w-32 max-h-[56px] drop-shadow-sm drop-shadow-neutral-100" />
+        <GesCompleteLogo className="max-h-[56px] w-28 drop-shadow-sm drop-shadow-neutral-100 md:w-32" />
       </div>
     </Link>
   );

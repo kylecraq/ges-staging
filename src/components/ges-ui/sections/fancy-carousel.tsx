@@ -84,7 +84,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
                   <img
                     src={BackgroundImageMbl}
                     alt={slide.badge}
-                    className="min-h-[800px] h-full w-full object-cover object-center md:hidden"
+                    className="h-full min-h-[800px] w-full object-cover object-center md:hidden"
                   />
                 ) : null}
               </div>
@@ -101,7 +101,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
         className={cn(
           'absolute top-0 right-0 flex h-fit w-full items-center justify-center',
           'pt-6 pb-12 md:h-full md:w-fit md:pt-0 md:pr-11 md:pb-0 md:pl-22 lg:pb-0',
-          'before:pointer-events-none before:absolute before:right-0 before:z-10 before:h-full before:w-full before:bg-linear-to-b before:from-neutral-40 before:to-transparent before:content-[""] before:md:bg-linear-to-l'
+          'before:from-neutral-40 before:pointer-events-none before:absolute before:right-0 before:z-10 before:h-full before:w-full before:bg-linear-to-b before:to-transparent before:content-[""] before:md:bg-linear-to-l'
         )}
       >
         <div className={cn('swiper-pagination z-10 flex gap-6 md:flex-col')} />

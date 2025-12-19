@@ -21,7 +21,9 @@ const robotoMono = Roboto_Mono({
 });
 
 const VERCEL_HOST = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
-const BASE_URL = VERCEL_HOST ? `https://${VERCEL_HOST}` : 'https://goelectricstations.it';
+const BASE_URL = VERCEL_HOST
+  ? `https://${VERCEL_HOST}`
+  : 'https://goelectricstations.it';
 const ogImage = `${BASE_URL}/hero/ges-hero-dsk.png`;
 
 export const metadata: Metadata = {
@@ -31,7 +33,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Go Electric Stations',
-    description: 'Go Electric Stations - Charging stations for electric vehicles',
+    description:
+      'Go Electric Stations - Charging stations for electric vehicles',
     images: {
       url: ogImage,
       alt: 'Go Electric Stations',
@@ -39,8 +42,8 @@ export const metadata: Metadata = {
   },
   robots: {
     index: false,
-    follow: false
-  }
+    follow: false,
+  },
 };
 
 export function generateStaticParams() {
@@ -70,7 +73,7 @@ export default async function RootLayout({ children, params }: Props) {
         'scroll-pt-6 scroll-smooth'
       )}
     >
-      <body className="antialiased w-full max-w-7xl mx-auto">
+      <body className="mx-auto w-full max-w-7xl antialiased">
         <NextIntlClientProvider>
           <Header />
           {children}

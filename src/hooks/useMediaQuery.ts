@@ -13,9 +13,7 @@ export function useMediaQuery(query: string) {
   );
 
   const getSnapshot = () =>
-    typeof window !== 'undefined'
-      ? window.matchMedia(query).matches
-      : false;
+    typeof window !== 'undefined' ? window.matchMedia(query).matches : false;
 
   // Essenziale: NON fare throw qui
   const getServerSnapshot = () => false;

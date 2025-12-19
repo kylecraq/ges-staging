@@ -33,13 +33,13 @@ interface HeadingProps
 }
 
 export function Heading({
-                          size,
-                          as: Tag = 'h2',
-                          effect,
-                          className,
-                          children,
-                          ...props
-                        }: HeadingProps) {
+  size,
+  as: Tag = 'h2',
+  effect,
+  className,
+  children,
+  ...props
+}: HeadingProps) {
   const ref = useRef<HTMLHeadingElement>(null);
 
   useGSAP(() => {
@@ -50,11 +50,11 @@ export function Heading({
       type: 'lines,words,chars',
       linesClass: 'line-wrapper',
       wordsClass: 'word',
-      charsClass: 'char'
+      charsClass: 'char',
     });
 
     gsap.set(splitTexts.words, {
-      overflow: 'clip'
+      overflow: 'clip',
     });
 
     const fontSize = parseFloat(getComputedStyle(element).fontSize);
@@ -68,8 +68,8 @@ export function Heading({
         trigger: element,
         start: 'top 85%',
         onLeave: () => splitTexts.revert(),
-        onLeaveBack: () => splitTexts.revert()
-      }
+        onLeaveBack: () => splitTexts.revert(),
+      },
     });
   }, []);
 
@@ -100,15 +100,14 @@ const bodyTextVariants = cva('', {
 });
 
 interface BodyTextProps
-  extends ComponentProps<'p'>, VariantProps<typeof bodyTextVariants> {
-}
+  extends ComponentProps<'p'>, VariantProps<typeof bodyTextVariants> {}
 
 export function BodyText({
-                           variant,
-                           className,
-                           children,
-                           ...props
-                         }: BodyTextProps) {
+  variant,
+  className,
+  children,
+  ...props
+}: BodyTextProps) {
   return (
     <p className={cn(bodyTextVariants({ variant }), className)} {...props}>
       {children}
@@ -130,15 +129,14 @@ const menuLabelVariants = cva('', {
 });
 
 interface MenuLabelProps
-  extends ComponentProps<'span'>, VariantProps<typeof menuLabelVariants> {
-}
+  extends ComponentProps<'span'>, VariantProps<typeof menuLabelVariants> {}
 
 export function MenuLabel({
-                            variant,
-                            className,
-                            children,
-                            ...props
-                          }: MenuLabelProps) {
+  variant,
+  className,
+  children,
+  ...props
+}: MenuLabelProps) {
   return (
     <span className={cn(menuLabelVariants({ variant }), className)} {...props}>
       {children}

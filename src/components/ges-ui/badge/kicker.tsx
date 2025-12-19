@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const kickerVariants = cva(
-  'text-primary border-primary rounded-full border px-5 py-1 uppercase font-mono',
+  'text-primary border-primary rounded-full border px-5 py-1 font-mono uppercase',
   {
     variants: {
       variant: {
@@ -26,7 +26,7 @@ export const Kicker = (props: KickerProps) => {
 
   return (
     <div className={cn(kickerVariants({ variant }))}>
-      <BodyText variant={"button"}>{text}</BodyText>
+      <BodyText variant={'button'}>{text}</BodyText>
     </div>
   );
 };

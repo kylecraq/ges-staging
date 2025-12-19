@@ -16,13 +16,13 @@ export const CurvedLineLeftLightDsk = (props: ComponentProps<'svg'>) => {
         scrollTrigger: {
           trigger: svg,
           start: 'top bottom',
-          end: 'top center'
+          end: 'top center',
         },
       });
 
-      const path = pathRef.current
+      const path = pathRef.current;
       const frictionSlower = 124;
-      const radius = path.r.baseVal.value
+      const radius = path.r.baseVal.value;
       const length = 2 * Math.PI * radius;
 
       gsap.set(path, {
@@ -37,7 +37,7 @@ export const CurvedLineLeftLightDsk = (props: ComponentProps<'svg'>) => {
           trigger: path,
           start: 'top bottom',
           end: 'top 20%',
-          scrub: true
+          scrub: true,
         },
       });
     }

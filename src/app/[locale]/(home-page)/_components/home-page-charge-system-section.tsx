@@ -2,7 +2,12 @@
 import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
 import { FancyCarousel } from '@/components/ges-ui/sections/fancy-carousel';
-import { CreditCardIcon, CrosshairIcon, FingerprintIcon, Users } from 'lucide-react';
+import {
+  CreditCardIcon,
+  CrosshairIcon,
+  FingerprintIcon,
+  Users,
+} from 'lucide-react';
 
 export const HomePageChargeSystemSection = () => {
   const t = useTranslations('HomePage.SectionChargeSystem');
@@ -55,7 +60,7 @@ export const HomePageChargeSystemSection = () => {
           description={t('description')}
         />
       </div>
-      <FancyCarousel slides={slides} className="rounded-4xl"/>
+      <FancyCarousel slides={slides} className="rounded-4xl" />
     </section>
   );
 };

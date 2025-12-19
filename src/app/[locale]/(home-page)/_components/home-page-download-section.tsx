@@ -8,7 +8,7 @@ export const HomePageDownloadSection = () => {
   return (
     <section className="px-wide">
       <BoxParagraph
-        kicker={t("kicker")}
+        kicker={t('kicker')}
         title={t('title')}
         description={t('description')}
         className="bg-[url(/integration.png)] bg-cover"

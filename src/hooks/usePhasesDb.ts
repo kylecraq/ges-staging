@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 export type Phase = {
   id: number;
   imageInfo: {
-    url: string,
-    alt: string
-  }
+    url: string;
+    alt: string;
+  };
   buttonInfo: {
     text?: string;
     position: string;
@@ -18,7 +18,7 @@ export const usePhasesDb = () => {
         id: 1,
         imageInfo: {
           url: '/onboarding/app-onboarding-01.png',
-          alt: 'First'
+          alt: 'First',
         },
         buttonInfo: {
           text: 'Start',
@@ -29,7 +29,7 @@ export const usePhasesDb = () => {
         id: 2,
         imageInfo: {
           url: '/onboarding/app-onboarding-02.png',
-          alt: 'Second'
+          alt: 'Second',
         },
         buttonInfo: {
           position: 'bottom-[22%] left-1/2 -translate-x-1/2',
@@ -39,7 +39,7 @@ export const usePhasesDb = () => {
         id: 3,
         imageInfo: {
           url: '/onboarding/app-onboarding-03.png',
-          alt: 'Third'
+          alt: 'Third',
         },
         buttonInfo: {
           position: 'bottom-[22%] right-[26%] md:right-[28%]',
@@ -49,7 +49,7 @@ export const usePhasesDb = () => {
         id: 4,
         imageInfo: {
           url: '/onboarding/app-onboarding-04.png',
-          alt: 'Fourth'
+          alt: 'Fourth',
         },
         buttonInfo: {
           position: 'bottom-[12%] right-[20%]',
@@ -59,7 +59,7 @@ export const usePhasesDb = () => {
         id: 5,
         imageInfo: {
           url: '/onboarding/app-onboarding-05.png',
-          alt: 'Fifth'
+          alt: 'Fifth',
         },
         buttonInfo: {
           position: 'bottom-[14%] md:bottom-[16%] right-[16%]',
@@ -69,7 +69,7 @@ export const usePhasesDb = () => {
         id: 6,
         imageInfo: {
           url: '/onboarding/app-onboarding-06.png',
-          alt: 'Last'
+          alt: 'Last',
         },
         buttonInfo: {
           text: 'Restart',
