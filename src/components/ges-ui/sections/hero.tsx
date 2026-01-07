@@ -7,6 +7,7 @@ import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
 import { HeadingEffects } from '@/components/ges-ui/typography';
 import { useGSAP } from '@gsap/react';
+import { LinkPrimaryProps } from '@/components/ges-ui/links/primary-link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,7 @@ type HeroProps = {
   title: ReactNode;
   titleEffect?: HeadingEffects;
   description?: ReactNode;
-  buttons?: PrimaryButtonProps[];
+  buttons?: LinkPrimaryProps[];
   className?: string;
 };
 
