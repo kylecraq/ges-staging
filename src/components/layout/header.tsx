@@ -22,7 +22,7 @@ export function Header() {
   );
 
   const navbarClassname = cn(
-    'bg-neutral-0 py-navbar-3 md:pr-navbar-3 md:px-wide flex h-full items-center justify-end gap-6 rounded-l-full pr-3 pl-6 font-medium text-neutral-100 uppercase shadow-xs shadow-neutral-400 transition duration-700 md:rounded-full'
+    'border border-neutral-40 bg-neutral-0 py-navbar-3 md:pr-navbar-3 md:px-wide flex h-full items-center justify-end gap-6 rounded-l-full pr-3 pl-6 font-medium text-neutral-100 uppercase transition duration-700 md:rounded-full'
   );
 
   return (
@@ -30,6 +30,16 @@ export function Header() {
       <Logo />
       <nav className={navbarClassname}>
         <Button
+          onClick={(e)=>{
+            e.preventDefault()
+            const element = document.getElementById("faq");
+            if (element) {
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
           asChild
           variant={'link'}
           className="text-sm text-neutral-100 transition-colors focus-visible:underline focus-visible:ring-0"

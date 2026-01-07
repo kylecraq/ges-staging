@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { HomePageHero } from '@/app/[locale]/(home-page)/_components/home-page-hero';
 import { HomePageChargeSystemSection } from '@/app/[locale]/(home-page)/_components/home-page-charge-system-section';
 import { HomePageDecorations } from './_components/home-page-decorations';
-import { HomePageDownloadSection } from '@/app/[locale]/(home-page)/_components/home-page-download-section';
+import { HomePageCompatibilitySection } from '@/app/[locale]/(home-page)/_components/home-page-compatibility-section';
 import { HomePageFaqSection } from '@/app/[locale]/(home-page)/_components/home-page-faq-section';
 import { HomePageFeatureSection } from '@/app/[locale]/(home-page)/_components/home-page-feature-section';
 import { Metadata } from 'next';
@@ -38,7 +38,7 @@ export default function Home(props: HomeProps) {
       <HomePageHero />
       <HomePageChargeSystemSection />
       <HomePageCardsSection />
-      <HomePageDownloadSection />
+      <HomePageCompatibilitySection />
       <HomePageFeatureSection />
       <HomePageNextChargeAppSection />
       <HomePageFaqSection />

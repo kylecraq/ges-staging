@@ -27,7 +27,7 @@ export const HomePageFeatureSection = () => {
   ];
 
   return (
-    <article className="mt-20 flex flex-col md:mt-0">
+    <article id="fleet-management" className="mt-20 flex flex-col md:mt-0">
       <IntroParagraph
         title={t('title')}
         kicker={t('kicker')}

@@ -39,7 +39,7 @@ export const HomePageNextChargeAppSection = () => {
   ];
 
   return (
-    <section>
+    <section id="nextcharge-app">
       <IntroParagraph
         title={t('title')}
         kicker={t('kicker')}
@@ -57,7 +57,7 @@ export const HomePageNextChargeAppSection = () => {
               return (
                 <Card
                   key={index}
-                  className="bg-neutral-0 border border-neutral-400"
+                  className="bg-neutral-0 border border-neutral-40 shadow-none"
                 >
                   <CardHeader>{data.icon}</CardHeader>
                   <CardFooter className="flex flex-col items-start gap-5 text-start">

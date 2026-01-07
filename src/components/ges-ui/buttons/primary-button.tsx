@@ -1,5 +1,5 @@
 import { Button, buttonVariants } from '@/components/ui/button';
-import { ReactNode } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
@@ -8,7 +8,7 @@ export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
 export type PrimaryButtonProps = {
   icon: ReactNode;
   label: string;
-} & ButtonVariantProps;
+} & ButtonVariantProps & ComponentProps<'button'>;
 
 export const PrimaryButton = (props: PrimaryButtonProps) => {
   const { icon, label, variant } = props;

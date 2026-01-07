@@ -41,7 +41,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
       'text-neutral-900 outline-2 outline-offset-3 outline-primary-variant',
     renderBullet: (index, className) => {
       const iconHtml = renderToStaticMarkup(slides[index].icon);
-      return `<span class='${className} text-neutral-400 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>${iconHtml}</span>`;
+      return `<span class='${className} text-neutral-40 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>${iconHtml}</span>`;
     },
   };
 

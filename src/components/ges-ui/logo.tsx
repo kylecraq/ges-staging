@@ -5,7 +5,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 const logoVariants = cva('flex items-center text-sm font-medium', {
   variants: {
     variant: {
-      default: 'text-neutral-0',
+      default: 'text-neutral-100',
       primary: 'text-primary',
     },
   },
@@ -20,7 +20,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <Link href={'/'} className={logoVariants({ variant })}>
       <div aria-hidden="true">
-        <GesCompleteLogo className="max-h-[56px] w-28 drop-shadow-sm drop-shadow-neutral-100 md:w-32" />
+        <GesCompleteLogo className="max-h-[56px] w-28 md:w-32" />
       </div>
     </Link>
   );

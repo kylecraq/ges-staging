@@ -6,13 +6,10 @@ import {
   HeadingSizes,
   HeadingTags,
 } from '@/components/ges-ui/typography';
-import {
-  PrimaryButton,
-  PrimaryButtonProps,
-} from '@/components/ges-ui/buttons/primary-button';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 import { Kicker } from '@/components/ges-ui/badge/kicker';
+import { LinkPrimaryProps, PrimaryLink } from '../links/primary-link';
 
 type HeroContentProps = {
   kicker?: string;
@@ -21,7 +18,7 @@ type HeroContentProps = {
   titleSize: HeadingSizes;
   titleEffect?: HeadingEffects;
   description?: ReactNode;
-  buttons?: PrimaryButtonProps[];
+  buttons?: LinkPrimaryProps[];
   className?: string;
 };
 export const BlockContent = (props: HeroContentProps) => {
@@ -53,11 +50,13 @@ export const BlockContent = (props: HeroContentProps) => {
         {buttons
           ? buttons.map((buttonProps, index) => {
               return (
-                <PrimaryButton
+                <PrimaryLink
+                  onClick={buttonProps.onClick}
                   key={index}
                   icon={buttonProps.icon}
                   label={buttonProps.label}
                   variant={buttonProps.variant}
+                  href={buttonProps.href}
                 />
               );
             })

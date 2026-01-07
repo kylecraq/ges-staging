@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
+import { ComponentProps, HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import { Link } from '@/i18n/navigation';
 import { ButtonVariantProps } from '@/components/ges-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
@@ -9,12 +9,13 @@ export type LinkPrimaryProps = {
   label: string;
   href: string;
   target?: HTMLAttributeAnchorTarget;
-} & ButtonVariantProps;
+} & ButtonVariantProps & ComponentProps<'button'>;
 
 export const PrimaryLink = (props: LinkPrimaryProps) => {
-  const { icon, label, href, target = '_self', variant } = props;
+  const { icon, label, href, target = '_self', variant , onClick} = props;
   return (
     <Button
+      onClick={onClick}
       variant={variant}
       asChild
       className={cn(

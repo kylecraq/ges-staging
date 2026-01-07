@@ -2,12 +2,10 @@
 import { IntroParagraph } from '@/components/ges-ui/sections/intro-paragraph';
 import { useTranslations } from 'next-intl';
 import { FancyCarousel } from '@/components/ges-ui/sections/fancy-carousel';
-import {
-  CreditCardIcon,
-  CrosshairIcon,
-  FingerprintIcon,
-  Users,
-} from 'lucide-react';
+import { GesSystemIcon } from '@/components/ges-ui/icons/ges-system-icon';
+import { CrosshairIcon } from '@/components/ges-ui/icons/crosshair-icon';
+import { CreditCardIcon } from '@/components/ges-ui/icons/credit-card-icon';
+import { FingerprintIcon } from '@/components/ges-ui/icons/fingerprint-icon';
 
 export const HomePageChargeSystemSection = () => {
   const t = useTranslations('HomePage.SectionChargeSystem');
@@ -32,15 +30,6 @@ export const HomePageChargeSystemSection = () => {
     },
     {
       id: 3,
-      badge: t('Carousel.slide-3.badge'),
-      title: t('Carousel.slide-3.title'),
-      description: t('Carousel.slide-1.description'),
-      backgroundImageDsk: 'analyzer.png',
-      backgroundImageMbl: 'analyzer-mbl.png',
-      icon: <Users />,
-    },
-    {
-      id: 3,
       badge: t('Carousel.slide-4.badge'),
       title: t('Carousel.slide-4.title'),
       description: t('Carousel.slide-1.description'),
@@ -48,9 +37,18 @@ export const HomePageChargeSystemSection = () => {
       backgroundImageMbl: 'authorization-methods-mbl.png',
       icon: <FingerprintIcon />,
     },
+    {
+      id: 4,
+      badge: t('Carousel.slide-3.badge'),
+      title: t('Carousel.slide-3.title'),
+      description: t('Carousel.slide-1.description'),
+      backgroundImageDsk: 'analyzer.png',
+      backgroundImageMbl: 'analyzer-mbl.png',
+      icon: <GesSystemIcon />,
+    },
   ];
   return (
-    <section className="px-wide">
+    <section id="charge-system" className="px-wide">
       <div className="px-main pb-16">
         <IntroParagraph
           title={t.rich('title', {
@@ -60,7 +58,7 @@ export const HomePageChargeSystemSection = () => {
           description={t('description')}
         />
       </div>
-      <FancyCarousel slides={slides} className="rounded-4xl" />
+      <FancyCarousel slides={slides} className="rounded-4xl border border-neutral-40" />
     </section>
   );
 };

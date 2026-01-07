@@ -19,36 +19,20 @@ export const Footer = () => {
         <div className="flex flex-col">
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">
             <div className="flex gap-4">
-              <Link
-                href="/privacy"
-                className="hover:decoration-primary shrink-0 underline underline-offset-4 transition-all duration-500"
-              >
-                {t('terms')}
-              </Link>
-              <Link
-                href="/b2b"
-                className="hover:decoration-primary shrink-0 underline underline-offset-4 transition-all duration-500"
-              >
-                {t('b2b')}
-              </Link>
-            </div>
+              <FooterGesLink href="/privacy" label={t('terms')} />
+              <FooterGesLink href="/b2b" label={t('b2b')} /></div>
             <Copyright />
           </div>
           <hr />
           <div className="mt-2 flex flex-col items-center justify-between gap-4 text-center md:flex-row">
-            <Link
-              href="/credits"
-              className="hover:decoration-primary shrink-0 underline underline-offset-4 transition-all duration-500"
-            >
-              {t('status')}
-            </Link>
+            <FooterGesLink href={"/status"} label={t('status')} />
             <cite className="text-xs md:text-sm">
               {t.rich('craq-tag-crafted', {
                 strong: (chunks) => (
                   <Link
                     href="https://craqdesignstudio.it/"
                     target="_blank"
-                    className="hover:decoration-primary underline decoration-transparent underline-offset-4 transition duration-200"
+                    className="hover:decoration-primary-variant underline decoration-transparent underline-offset-4 transition duration-200"
                   >
                     <strong>{chunks}</strong>
                   </Link>
@@ -59,6 +43,17 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
+  );
+};
+
+const FooterGesLink = ({ href, label }: { href: string; label: string }) => {
+  return (
+    <Link
+      href={href}
+      className="hover:decoration-primary-variant shrink-0 underline underline-offset-4 transition-all duration-500"
+    >
+      {label}
+    </Link>
   );
 };
 
