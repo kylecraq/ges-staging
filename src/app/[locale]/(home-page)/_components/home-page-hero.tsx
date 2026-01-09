@@ -2,7 +2,6 @@
 import { Hero } from '@/components/ges-ui/sections/hero';
 import { useTranslations } from 'next-intl';
 import { ArrowRightIcon } from 'lucide-react';
-import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 import { LinkPrimaryProps } from '@/components/ges-ui/links/primary-link';
 
 export const HomePageHero = () => {
@@ -61,7 +60,6 @@ export const HomePageHero = () => {
   return (
     <section className="text-neutral-0">
       <Hero
-        className="xs:aspect-[414/928] aspect-[374/900] md:aspect-[800/1150] lg:aspect-[1440/995]"
         imgSrcDsk="/hero/ges-hero-dsk.png"
         imgSrcMbl={'/hero/ges-hero-mbl.png'}
         imgSrcTbl={'/hero/ges-hero-tbl.png'}
