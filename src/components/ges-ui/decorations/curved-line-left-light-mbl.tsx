@@ -3,6 +3,7 @@ import { ComponentProps, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import * as React from 'react';
+import { getTotalCirclePath } from '@/lib/utils';
 
 export const CurvedLineLeftLightMbl = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -22,8 +23,7 @@ export const CurvedLineLeftLightMbl = (props: ComponentProps<'svg'>) => {
 
       const path = pathRef.current;
       const frictionSlower = 124;
-      const radius = path.r.baseVal.value;
-      const length = 2 * Math.PI * radius;
+      const length = getTotalCirclePath(path)
 
       gsap.set(path, {
         strokeDasharray: length,
@@ -34,8 +34,8 @@ export const CurvedLineLeftLightMbl = (props: ComponentProps<'svg'>) => {
         strokeDashoffset: frictionSlower,
         scrollTrigger: {
           trigger: svgRef.current,
-          start: 'top bottom',
-          end: 'top 60',
+          start: 'top 80%',
+          end: 'top 20%',
           scrub: true,
         },
       });

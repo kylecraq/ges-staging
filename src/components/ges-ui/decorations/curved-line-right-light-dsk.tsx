@@ -2,6 +2,7 @@
 import { ComponentProps, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { getTotalCirclePath } from '@/lib/utils';
 
 export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -20,12 +21,11 @@ export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
 
       const path = pathRef.current;
       const frictionSlower = 2000;
-      const radius = path.r.baseVal.value;
-      const length = 2 * Math.PI * radius;
+      const length = getTotalCirclePath(path)
 
       gsap.set(path, {
         strokeDasharray: length,
-        strokeDashoffset: length + frictionSlower / 2,
+        strokeDashoffset: length / 2 + frictionSlower,
       });
 
       gsap.to(path, {
@@ -33,8 +33,8 @@ export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
         ease: 'none',
         scrollTrigger: {
           trigger: svg,
-          start: 'top 90%',
-          end: 'top -20%',
+          start: 'top 140%',
+          end: 'top top',
           scrub: true,
         },
       });
