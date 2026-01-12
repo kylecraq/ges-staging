@@ -2,7 +2,6 @@
 import {
   BodyText,
   Heading,
-  HeadingEffects,
   HeadingSizes,
   HeadingTags,
 } from '@/components/ges-ui/typography';
@@ -16,7 +15,6 @@ type HeroContentProps = {
   title: ReactNode;
   titleTag: HeadingTags;
   titleSize: HeadingSizes;
-  titleEffect?: HeadingEffects;
   description?: ReactNode;
   buttons?: LinkPrimaryProps[];
   className?: string;
@@ -27,7 +25,6 @@ export const BlockContent = (props: HeroContentProps) => {
     title,
     titleTag,
     titleSize,
-    titleEffect,
     description,
     buttons,
     className,
@@ -39,14 +36,14 @@ export const BlockContent = (props: HeroContentProps) => {
         className
       )}
     >
-      {kicker ? <Kicker text={kicker} /> : null}
-      <Heading as={titleTag} size={titleSize} effect={titleEffect}>
+      {kicker ? <Kicker text={kicker} className="kicker" /> : null}
+      <Heading as={titleTag} size={titleSize} className="heading">
         {title}
       </Heading>
       {description ? (
-        <BodyText className="lg:w-11/12 xl:w-8/12">{description}</BodyText>
+        <BodyText className="description lg:w-11/12 xl:w-8/12">{description}</BodyText>
       ) : null}
-      <div className="mx-auto mt-auto flex flex-wrap justify-center gap-2.5 md:mx-0 md:mt-4 md:justify-start">
+      <div className="buttons mx-auto mt-auto flex flex-wrap justify-center gap-2.5 md:mx-0 md:mt-4 md:justify-start">
         {buttons
           ? buttons.map((buttonProps, index) => {
               return (

@@ -3,11 +3,9 @@ import { BlockContent } from '@/components/ges-ui/content/block-content';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { ReactNode, useRef } from 'react';
-import { PrimaryButtonProps } from '@/components/ges-ui/buttons/primary-button';
 import { cn } from '@/lib/utils';
-import { HeadingEffects } from '@/components/ges-ui/typography';
-import { useGSAP } from '@gsap/react';
 import { LinkPrimaryProps } from '@/components/ges-ui/links/primary-link';
+import { useBlockContentAnimations } from '@/hooks/useBlockContentAnimations';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +14,6 @@ type HeroProps = {
   imgSrcMbl: string;
   imgSrcTbl: string;
   title: ReactNode;
-  titleEffect?: HeadingEffects;
   description?: ReactNode;
   buttons?: LinkPrimaryProps[];
   className?: string;
@@ -28,14 +25,18 @@ export const Hero = (props: HeroProps) => {
     imgSrcMbl,
     imgSrcTbl,
     title,
-    titleEffect,
     description,
     buttons,
     className,
   } = props;
 
+
+  const container = useRef<HTMLDivElement>(null);
+  useBlockContentAnimations(container, false);
+
   return (
     <div
+      ref={container}
       className={cn(
         className,
         'grid aspect-[374/900] grid-cols-1 grid-rows-1',
@@ -72,7 +73,6 @@ export const Hero = (props: HeroProps) => {
           title={title}
           titleTag="h1"
           titleSize="xl"
-          titleEffect={titleEffect}
           description={description}
           buttons={buttons}
           className="px-wide md:px-main xl:px-wide mx-0 lg:w-11/12 xl:w-[60%]"

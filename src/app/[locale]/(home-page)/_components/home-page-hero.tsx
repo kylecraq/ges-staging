@@ -66,7 +66,6 @@ export const HomePageHero = () => {
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}
-        titleEffect="text-wave-reveal"
         description={t.rich('description', {
           primary: (chunks) => <span className="font-semibold">{chunks}</span>,
         })}

@@ -1,30 +1,57 @@
 'use client';
 
-import { BodyText, Heading } from '@/components/ges-ui/typography';
-import { ReactNode } from 'react';
-import { Kicker } from '@/components/ges-ui/badge/kicker';
+import { ReactNode, useRef } from 'react';
 import { cn } from '@/lib/utils';
+import { useBlockContentAnimations } from '@/hooks/useBlockContentAnimations';
+import { LinkPrimaryProps, PrimaryLink } from '@/components/ges-ui/links/primary-link';
+import { Kicker } from '@/components/ges-ui/badge/kicker';
+import { BodyText, Heading } from '@/components/ges-ui/typography';
+
 
 export type IntroParagraphProps = {
-  kicker?: string;
+  kicker?: ReactNode;
   title: ReactNode;
   description?: string;
+  buttons?: LinkPrimaryProps[];
   className?: string;
+  enableAnimations?: boolean;
 };
 
 export const IntroParagraph = (props: IntroParagraphProps) => {
-  const { title, kicker, description, className } = props;
+  const { title, kicker, description, className, enableAnimations = true, buttons } =
+    props;
+
+  const container = useRef<HTMLElement>(null);
+  if (enableAnimations) useBlockContentAnimations(container);
 
   return (
     <article
       className={cn(className, 'flex flex-col items-center gap-6 text-center')}
+      ref={container}
     >
-      {kicker ? <Kicker text={kicker} /> : null}
-      <Heading as="h2" size="xl" effect={'text-wave-reveal'}>
-        {title}
-      </Heading>
+      {kicker ? <Kicker text={kicker} className="kicker" /> : null}
+      {title ? (
+        <Heading as="h2" size="xl" className="heading">
+          {title}
+        </Heading>
+      ) : null}
       {description ? (
-        <BodyText className="md:max-w-7/12">{description}</BodyText>
+        <BodyText className="description md:max-w-7/12">{description}</BodyText>
+      ) : null}
+      {buttons ? (
+        <div className="flex flex-wrap items-center justify-center gap-2.5 md:justify-start">
+          {buttons.map((buttonProps, index) => {
+            return (
+              <PrimaryLink
+                key={index}
+                icon={buttonProps.icon}
+                label={buttonProps.label}
+                href={buttonProps.href}
+                target={buttonProps.target}
+              />
+            );
+          })}
+        </div>
       ) : null}
     </article>
   );
