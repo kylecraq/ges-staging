@@ -59,19 +59,21 @@ export const HomePageCardsSection = () => {
       if (!cards) return;
 
       cards.forEach((card) => {
-        gsap.fromTo(
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom',
+            once: true,
+          },
+        })
+        tl.fromTo(
           card,
           { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            scrollTrigger: {
-              trigger: card,
-              start: 'top bottom',
-              toggleActions: 'play none none none',
-              once: true,
-            },
+
           }
         );
       });
