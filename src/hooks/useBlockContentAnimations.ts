@@ -3,24 +3,28 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 
-export const useBlockContentAnimations = (
-  container: RefObject<HTMLElement | null>,
-  hasTrigger: boolean = true
-) => {
+type HookArgs = {
+  container: RefObject<HTMLElement | null>;
+  hasTrigger?: boolean;
+  disabled?: boolean;
+};
+
+export const useBlockContentAnimations = (args: HookArgs) => {
+  const { container, disabled = false, hasTrigger = true } = args;
   useGSAP(
     () => {
-      if (!container.current) return;
+      if (disabled || !container.current) return;
       const tl = gsap.timeline({
         scrollTrigger: hasTrigger
           ? {
-            trigger: container.current,
-            start: 'top 85%',
-            end: 'bottom center',
-            scrub: 1,
-            invalidateOnRefresh: true,
-            once: true,
-            markers: false,
-          }
+              trigger: container.current,
+              start: 'top 85%',
+              end: 'bottom center',
+              scrub: 1,
+              invalidateOnRefresh: true,
+              once: true,
+              markers: false,
+            }
           : null,
       });
       tl.addLabel('start');
@@ -51,7 +55,7 @@ export const useBlockContentAnimations = (
         gsap.set(headingSplit.words, {
           display: 'inline-block',
           verticalAlign: 'top',
-          lineHeight: 1
+          lineHeight: 1,
         });
         tl.to(
           headingSplit.chars,
@@ -74,13 +78,14 @@ export const useBlockContentAnimations = (
           linesClass: 'overflow-hidden',
         });
         gsap.set(descriptionSplit.lines, {
+          opacity: 0,
+          y: 20,
           textAlign: 'inherit',
           display: 'block',
           width: '100%',
         });
-        tl.fromTo(
+        tl.to(
           descriptionSplit.lines,
-          { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,

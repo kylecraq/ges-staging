@@ -12,6 +12,9 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { PrimaryLink } from '@/components/ges-ui/links/primary-link';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export const HomePageNextChargeAppSection = () => {
   const t = useTranslations('HomePage.SectionNextChargeApp');
@@ -38,8 +41,37 @@ export const HomePageNextChargeAppSection = () => {
     },
   ];
 
+  const container = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      if (!container.current) return;
+      const cards = container.current?.querySelectorAll('.item');
+      if (!cards) return;
+
+      cards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top bottom',
+              toggleActions: 'play none none none',
+              once: true,
+            },
+          }
+        );
+      });
+    },
+    { scope: container }
+  );
+
   return (
-    <section id="nextcharge-app">
+    <section ref={container} id="nextcharge-app">
       <IntroParagraph
         title={t('title')}
         kicker={t('kicker')}
@@ -57,7 +89,7 @@ export const HomePageNextChargeAppSection = () => {
               return (
                 <Card
                   key={index}
-                  className="bg-neutral-0 border border-neutral-40 shadow-none"
+                  className="item bg-neutral-0 border-neutral-40 border shadow-none"
                 >
                   <CardHeader>{data.icon}</CardHeader>
                   <CardFooter className="flex flex-col items-start gap-5 text-start">
@@ -72,12 +104,14 @@ export const HomePageNextChargeAppSection = () => {
               );
             })}
           </div>
-          <PrimaryLink
-            target="_blank"
-            icon={<ArrowRightIcon />}
-            label={t('button')}
-            href="https://nextcharge-staging.vercel.app/en"
-          />
+          <div className="item">
+            <PrimaryLink
+              target="_blank"
+              icon={<ArrowRightIcon />}
+              label={t('button')}
+              href="https://nextcharge-staging.vercel.app/en"
+            />
+          </div>
         </div>
       </div>
     </section>

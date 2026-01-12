@@ -32,7 +32,7 @@ export const Hero = (props: HeroProps) => {
 
 
   const container = useRef<HTMLDivElement>(null);
-  useBlockContentAnimations(container, false);
+  useBlockContentAnimations({ container, hasTrigger: false });
 
   return (
     <div

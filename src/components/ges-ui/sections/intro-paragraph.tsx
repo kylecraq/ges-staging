@@ -14,15 +14,14 @@ export type IntroParagraphProps = {
   description?: string;
   buttons?: LinkPrimaryProps[];
   className?: string;
-  enableAnimations?: boolean;
 };
 
 export const IntroParagraph = (props: IntroParagraphProps) => {
-  const { title, kicker, description, className, enableAnimations = true, buttons } =
+  const { title, kicker, description, className = true, buttons } =
     props;
 
   const container = useRef<HTMLElement>(null);
-  if (enableAnimations) useBlockContentAnimations(container);
+  useBlockContentAnimations({ container });
 
   return (
     <article
