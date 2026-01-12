@@ -71,7 +71,7 @@ export const Hero = (props: HeroProps) => {
           titleSize="xl"
           description={description}
           buttons={buttons}
-          className="px-wide md:px-main xl:px-wide mx-0 lg:w-11/12 xl:w-[60%]"
+          className="px-wide md:px-main xl:px-wide mx-0 lg:w-11/12 xl:w-[60%] drop-shadow-xs drop-shadow-neutral-800"
         />
       </div>
     </div>
