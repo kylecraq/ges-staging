@@ -1,13 +1,9 @@
 'use client';
 import { BlockContent } from '@/components/ges-ui/content/block-content';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
 import { ReactNode, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { LinkPrimaryProps } from '@/components/ges-ui/links/primary-link';
 import { useBlockContentAnimations } from '@/hooks/useBlockContentAnimations';
-
-gsap.registerPlugin(ScrollTrigger);
 
 type HeroProps = {
   imgSrcDsk: string;
