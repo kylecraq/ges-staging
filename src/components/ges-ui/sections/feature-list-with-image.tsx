@@ -29,7 +29,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
     if (!container.current) return;
     const element = container.current;
     const tl = gsap.timeline();
-    const targets = container.current.querySelectorAll('.item');
+    const targets = element.querySelectorAll('.item');
     tl.from(targets, {
       opacity: 0,
       xPercent: 2,
