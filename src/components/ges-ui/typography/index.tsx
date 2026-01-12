@@ -28,12 +28,12 @@ interface HeadingProps
 }
 
 export function Heading({
-                          size,
-                          as: Tag = 'h2',
-                          className,
-                          children,
-                          ...props
-                        }: HeadingProps) {
+  size,
+  as: Tag = 'h2',
+  className,
+  children,
+  ...props
+}: HeadingProps) {
   const ref = useRef<HTMLHeadingElement | null>(null);
 
   return (
@@ -66,11 +66,11 @@ interface BodyTextProps
   extends ComponentProps<'p'>, VariantProps<typeof bodyTextVariants> {}
 
 export function BodyText({
-                           variant,
-                           className,
-                           children,
-                           ...props
-                         }: BodyTextProps) {
+  variant,
+  className,
+  children,
+  ...props
+}: BodyTextProps) {
   return (
     <p className={cn(bodyTextVariants({ variant }), className)} {...props}>
       {children}
@@ -95,11 +95,11 @@ interface MenuLabelProps
   extends ComponentProps<'span'>, VariantProps<typeof menuLabelVariants> {}
 
 export function MenuLabel({
-                            variant,
-                            className,
-                            children,
-                            ...props
-                          }: MenuLabelProps) {
+  variant,
+  className,
+  children,
+  ...props
+}: MenuLabelProps) {
   return (
     <span className={cn(menuLabelVariants({ variant }), className)} {...props}>
       {children}

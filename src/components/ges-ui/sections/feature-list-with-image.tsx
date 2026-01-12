@@ -28,17 +28,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
   useGSAP(() => {
     if (!container.current) return;
     const element = container.current;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: element,
-        start: 'top 85%',
-        end: 'bottom center',
-        scrub: 1,
-        invalidateOnRefresh: false,
-        once: true,
-        markers: false,
-      },
-    });
+    const tl = gsap.timeline();
     const targets = container.current.querySelectorAll('.item');
     tl.from(targets, {
       opacity: 0,
@@ -49,7 +39,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
       scrollTrigger: {
         trigger: element,
         start: 'top bottom',
-        end: 'top 20%',
+        end: 'bottom center',
         scrub: 1,
         invalidateOnRefresh: false,
         once: true,
