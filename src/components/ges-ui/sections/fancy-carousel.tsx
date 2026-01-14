@@ -47,7 +47,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
       'text-neutral-900 focus:outline-offset-0 outline-2 outline-offset-3 outline-primary-variant',
     renderBullet: (index, className) => {
       const iconHtml = renderToStaticMarkup(slides[index].icon);
-      return `<button type="button" aria-label="Go to slide ${index + 1}" class='${className} focus:outline-offset-0 focus:outline-2 focus:outline-primary-variant  text-neutral-40 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>
+      return `<button type="button" aria-label="Go to slide ${index + 1}" class='${className} focus:outline-offset-0 focus:outline-2 focus:outline-primary-variant text-neutral-40 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>
         ${iconHtml}
       </button>`;
     },
