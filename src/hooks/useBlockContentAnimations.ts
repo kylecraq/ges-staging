@@ -1,132 +1,122 @@
 import { RefObject } from 'react';
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+import { gsap } from '../lib/gsap';
 
 type HookArgs = {
   container: RefObject<HTMLElement | null>;
-  hasTrigger?: boolean;
+  removeScrollTrigger?: boolean;
 };
 
 export const useBlockContentAnimations = (args: HookArgs) => {
-  const { container, hasTrigger = true } = args;
+  const { container, removeScrollTrigger } = args;
 
   useGSAP(
     () => {
-      gsap.registerPlugin(ScrollTrigger);
-
       if (!container.current) return;
 
       const duration = 0.8;
       const ease = 'power2.out';
 
-      let hSplit: SplitText | undefined;
-      let dSplit: SplitText | undefined;
+      let headingSplit: SplitText | undefined;
+      let descriptionSplit: SplitText | undefined;
 
-      const tl = gsap.timeline();
-
-      if (hasTrigger) {
-        ScrollTrigger.create({
-          trigger: container.current,
-          start: 'top bottom',
-          end: 'bottom center',
-          scrub: 1,
-          once: true,
-          animation: tl,
-        });
-      }
+      const tl = gsap.timeline({
+        onComplete: () => {
+          headingSplit?.revert();
+          descriptionSplit?.revert();
+        },
+        scrollTrigger: removeScrollTrigger
+          ? null
+          : {
+              trigger: container.current,
+              start: 'top 80%',
+              end: 'bottom 80%',
+              scrub: 1,
+              once: true,
+              markers: false,
+            },
+      });
 
       tl.addLabel('start');
 
+      // Kicker
       const kicker = container.current.querySelector('.kicker');
       if (kicker) {
         tl.fromTo(
           kicker,
           { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: duration,
-            ease: ease,
-          },
-          `start`
+          { opacity: 1, y: 0, duration: duration, ease: ease },
+          'start'
         );
       }
 
-
+      // Heading
       const heading = container.current.querySelector('.heading');
       if (heading) {
-        hSplit = new SplitText(heading, {
+        headingSplit = new SplitText(heading, {
           type: 'words, chars',
-          wordsClass: 'overflow-hidden',
+          mask: 'words',
+          aria: 'auto',
         });
-        gsap.set(hSplit.chars, { lineHeight: 1.2, yPercent: 110 });
-        gsap.set(hSplit.words, {
-          display: 'inline-block',
-          verticalAlign: 'top',
-          lineHeight: 1,
-        });
+
+        gsap.set(headingSplit.chars, { yPercent: 110 });
+
         tl.to(
-          hSplit.chars,
+          headingSplit.chars,
           {
             yPercent: 0,
             duration: duration,
             ease: ease,
             stagger: 0.02,
           },
-          'start+=0.1'
+          `>-${duration * 0.3}`
         );
       }
 
+      // Description
       const description = container.current.querySelector('.description');
       if (description) {
-        dSplit = new SplitText(description, {
+        descriptionSplit = new SplitText(description, {
           type: 'lines',
-          linesClass: 'overflow-hidden',
+          aria: 'auto',
         });
-        gsap.set(dSplit.lines, {
+
+        gsap.set(descriptionSplit.lines, {
           opacity: 0,
           y: 20,
-          textAlign: 'inherit',
           display: 'block',
           width: '100%',
+          textAlign: 'inherit',
         });
+
         tl.to(
-          dSplit.lines,
+          descriptionSplit.lines,
           {
             opacity: 1,
             y: 0,
-            stagger: 0.06,
             duration: duration,
             ease: ease,
+            stagger: 0.06,
           },
-          '>-=0.4'
+          `>-${duration * 0.3}`
         );
       }
 
+      // Buttons
       const buttons = container.current.querySelector('.buttons');
       if (buttons) {
         tl.fromTo(
-          [buttons, '.kicker'],
+          buttons,
           { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: duration,
-            ease: ease,
-          },
-          `>-=0.6`
+          { opacity: 1, y: 0, duration: duration, ease: ease },
+          `>-${duration * 0.3}`
         );
       }
 
       return () => {
-        ScrollTrigger.getAll().forEach((st) => {
-          if (st.trigger === container.current) st.kill();
-        });
-
-        hSplit?.revert();
-        dSplit?.revert();
+        headingSplit?.revert();
+        descriptionSplit?.revert();
       };
     },
     { scope: container }

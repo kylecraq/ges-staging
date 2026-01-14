@@ -41,7 +41,9 @@ export const BlockContent = (props: HeroContentProps) => {
         {title}
       </Heading>
       {description ? (
-        <BodyText className="description lg:w-11/12 xl:w-8/12">{description}</BodyText>
+        <BodyText className="description lg:w-11/12 xl:w-8/12">
+          {description}
+        </BodyText>
       ) : null}
       <div className="buttons mx-auto mt-auto flex flex-wrap justify-center gap-2.5 md:mx-0 md:mt-4 md:justify-start">
         {buttons

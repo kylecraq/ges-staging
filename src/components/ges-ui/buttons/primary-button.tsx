@@ -8,7 +8,8 @@ export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
 export type PrimaryButtonProps = {
   icon: ReactNode;
   label: string;
-} & ButtonVariantProps & ComponentProps<'button'>;
+} & ButtonVariantProps &
+  ComponentProps<'button'>;
 
 export const PrimaryButton = (props: PrimaryButtonProps) => {
   const { icon, label, variant } = props;

@@ -9,10 +9,11 @@ export type LinkPrimaryProps = {
   label: string;
   href: string;
   target?: HTMLAttributeAnchorTarget;
-} & ButtonVariantProps & ComponentProps<'button'>;
+} & ButtonVariantProps &
+  ComponentProps<'button'>;
 
 export const PrimaryLink = (props: LinkPrimaryProps) => {
-  const { icon, label, href, target = '_self', variant , onClick} = props;
+  const { icon, label, href, target = '_self', variant, onClick } = props;
   return (
     <Button
       onClick={onClick}

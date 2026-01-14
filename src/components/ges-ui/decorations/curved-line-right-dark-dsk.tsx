@@ -1,6 +1,6 @@
 'use client';
 import { ComponentProps, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from '@/lib/gsap';
 import { useGSAP } from '@gsap/react';
 import { getTotalCirclePath } from '@/lib/utils';
 
@@ -20,7 +20,7 @@ export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
       });
 
       const path = pathRef.current;
-      const length = getTotalCirclePath(path)
+      const length = getTotalCirclePath(path);
 
       const frictionSlower = 2400;
 

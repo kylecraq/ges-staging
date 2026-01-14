@@ -14,7 +14,7 @@ import {
 import { PrimaryLink } from '@/components/ges-ui/links/primary-link';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import { gsap } from '@/lib/gsap';
 
 export const HomePageNextChargeAppSection = () => {
   const t = useTranslations('HomePage.SectionNextChargeApp');
@@ -56,7 +56,7 @@ export const HomePageNextChargeAppSection = () => {
             toggleActions: 'play none none none',
             once: true,
           },
-        })
+        });
         tl.fromTo(
           card,
           { opacity: 0, y: 20 },

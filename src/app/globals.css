@@ -180,6 +180,8 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
 }
 
 body {

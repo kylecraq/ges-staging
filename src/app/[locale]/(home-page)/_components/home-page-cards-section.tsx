@@ -13,7 +13,7 @@ import { CardType } from '@/types/Card';
 import { useTranslations } from 'next-intl';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from '@/lib/gsap';
 
 export const HomePageCardsSection = () => {
   const t = useTranslations('HomePage.SectionCards');
@@ -65,7 +65,7 @@ export const HomePageCardsSection = () => {
             start: 'top bottom',
             once: true,
           },
-        })
+        });
         tl.fromTo(
           card,
           { opacity: 0, y: 20 },
@@ -73,7 +73,6 @@ export const HomePageCardsSection = () => {
             opacity: 1,
             y: 0,
             duration: 0.8,
-
           }
         );
       });

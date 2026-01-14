@@ -26,9 +26,8 @@ export const Hero = (props: HeroProps) => {
     className,
   } = props;
 
-
   const container = useRef<HTMLDivElement>(null);
-  useBlockContentAnimations({ container, hasTrigger: false });
+  useBlockContentAnimations({ container, removeScrollTrigger: true });
 
   return (
     <div
@@ -71,7 +70,7 @@ export const Hero = (props: HeroProps) => {
           titleSize="xl"
           description={description}
           buttons={buttons}
-          className="px-wide md:px-main xl:px-wide mx-0 lg:w-11/12 xl:w-[60%] drop-shadow-xs drop-shadow-neutral-800"
+          className="px-wide md:px-main xl:px-wide mx-0 drop-shadow-xs drop-shadow-neutral-800 lg:w-11/12 xl:w-[60%]"
         />
       </div>
     </div>

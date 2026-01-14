@@ -56,10 +56,12 @@ export const HomePageChargeSystemSection = () => {
           })}
           kicker={t('kicker')}
           description={t('description')}
-          enableAnimations
         />
       </div>
-      <FancyCarousel slides={slides} className="rounded-4xl border border-neutral-40" />
+      <FancyCarousel
+        slides={slides}
+        className="border-neutral-40 rounded-4xl border"
+      />
     </section>
   );
 };

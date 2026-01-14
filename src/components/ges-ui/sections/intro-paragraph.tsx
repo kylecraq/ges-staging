@@ -3,10 +3,12 @@
 import { ReactNode, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useBlockContentAnimations } from '@/hooks/useBlockContentAnimations';
-import { LinkPrimaryProps, PrimaryLink } from '@/components/ges-ui/links/primary-link';
+import {
+  LinkPrimaryProps,
+  PrimaryLink,
+} from '@/components/ges-ui/links/primary-link';
 import { Kicker } from '@/components/ges-ui/badge/kicker';
 import { BodyText, Heading } from '@/components/ges-ui/typography';
-
 
 export type IntroParagraphProps = {
   kicker?: ReactNode;
@@ -17,8 +19,7 @@ export type IntroParagraphProps = {
 };
 
 export const IntroParagraph = (props: IntroParagraphProps) => {
-  const { title, kicker, description, className = true, buttons } =
-    props;
+  const { title, kicker, description, className = true, buttons } = props;
 
   const container = useRef<HTMLElement>(null);
   useBlockContentAnimations({ container });

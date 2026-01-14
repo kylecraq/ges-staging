@@ -11,7 +11,7 @@ export const HomePageCompatibilitySection = () => {
         kicker={t('kicker')}
         title={t('title')}
         description={t('description')}
-        className="bg-[url(/integration.png)] bg-cover border border-neutral-40"
+        className="border-neutral-40 border bg-[url(/integration.png)] bg-cover"
       />
     </section>
   );

@@ -1,8 +1,8 @@
 'use client';
 import { ComponentProps, useRef } from 'react';
-import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { getTotalCirclePath } from '@/lib/utils';
+import { gsap } from '@/lib/gsap';
 
 export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -21,7 +21,7 @@ export const CurvedLineRightLightDsk = (props: ComponentProps<'svg'>) => {
 
       const path = pathRef.current;
       const frictionSlower = 2000;
-      const length = getTotalCirclePath(path)
+      const length = getTotalCirclePath(path);
 
       gsap.set(path, {
         strokeDasharray: length,

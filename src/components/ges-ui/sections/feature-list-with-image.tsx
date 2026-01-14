@@ -3,7 +3,7 @@ import {
   LinkPrimaryProps,
   PrimaryLink,
 } from '@/components/ges-ui/links/primary-link';
-import gsap from 'gsap';
+import { gsap } from '@/lib/gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 
@@ -90,10 +90,7 @@ const Chip = ({ badge, description }: Chip) => {
   );
 
   return (
-    <div
-      ref={container}
-      className="flex flex-col items-start gap-4"
-    >
+    <div ref={container} className="flex flex-col items-start gap-4">
       <Kicker text={badge} variant="full" className="item" />
       <p className="item bg-neutral-0 border-neutral-40 rounded-4xl border px-8 py-6 xl:p-8">
         {description}

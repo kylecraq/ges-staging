@@ -11,49 +11,49 @@ export const HomePageHero = () => {
       icon: <ArrowRightIcon />,
       label: t('Buttons.cpm-backend'),
       variant: 'secondary',
-      href: "#charge-system",
+      href: '#charge-system',
       onClick: (e) => {
-        e.preventDefault()
-        const element = document.getElementById("charge-system");
+        e.preventDefault();
+        const element = document.getElementById('charge-system');
         if (element) {
           element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
-      }
+      },
     },
     {
       icon: <ArrowRightIcon />,
       label: t('Buttons.fleet-management'),
       variant: 'secondary',
-      href: "#fleet-management",
+      href: '#fleet-management',
       onClick: (e) => {
-        e.preventDefault()
-        const element = document.getElementById("fleet-management");
+        e.preventDefault();
+        const element = document.getElementById('fleet-management');
         if (element) {
           element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
-      }
+      },
     },
     {
       icon: <ArrowRightIcon />,
       label: t('Buttons.nextcharge'),
       variant: 'secondary',
-      href: "#nextcharge-app",
+      href: '#nextcharge-app',
       onClick: (e) => {
-        e.preventDefault()
-        const element = document.getElementById("nextcharge-app");
+        e.preventDefault();
+        const element = document.getElementById('nextcharge-app');
         if (element) {
           element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
-      }
+      },
     },
   ];
 
