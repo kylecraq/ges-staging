@@ -2,7 +2,13 @@
 
 import { ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import {
+  EffectFade,
+  Navigation,
+  Pagination,
+  Keyboard,
+  A11y,
+} from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -30,73 +36,73 @@ export type FancyCarouselProps = {
   className?: string;
 };
 
-export function FancyCarousel(props: FancyCarouselProps) {
-  const { slides, className } = props;
+export function FancyCarousel({ slides, className }: FancyCarouselProps) {
+  const isSmallDevice = useMediaQuery('only screen and (min-width : 768px)');
 
   const pagination: PaginationOptions = {
     el: '.swiper-pagination',
     type: 'bullets',
     clickable: true,
     bulletActiveClass:
-      'text-neutral-900 outline-2 outline-offset-3 outline-primary-variant',
+      'text-neutral-900 focus:outline-offset-0 outline-2 outline-offset-3 outline-primary-variant',
     renderBullet: (index, className) => {
       const iconHtml = renderToStaticMarkup(slides[index].icon);
-      return `<span class='${className} text-neutral-40 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>${iconHtml}</span>`;
+      return `<button type="button" aria-label="Go to slide ${index + 1}" class='${className} focus:outline-offset-0 focus:outline-2 outline-offset-3 focus:outline-primary-variant text-neutral-40 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>
+        ${iconHtml}
+      </button>`;
     },
   };
 
-  const isSmallDevice = useMediaQuery('only screen and (min-width : 768px)');
-
   return (
-    <div className={cn('relative overflow-hidden md:h-[685px]', className)}>
+    <section
+      aria-label="Carousel of slides"
+      className={cn('relative overflow-hidden md:h-[685px]', className)}
+    >
       <Swiper
         className="h-full w-full"
-        modules={[Navigation, Pagination, EffectFade]}
-        scrollbar={{ draggable: true }}
+        modules={[Navigation, Pagination, EffectFade, Keyboard, A11y]}
+        keyboard={{ enabled: true, onlyInViewport: true }}
         direction={isSmallDevice ? 'vertical' : 'horizontal'}
         loop={true}
         speed={300}
         effect="fade"
         fadeEffect={{ crossFade: true }}
         pagination={pagination}
-        onSwiper={() => null}
-        onSlideChange={() => null}
+        a11y={{
+          enabled: true,
+          prevSlideMessage: 'Previous slide',
+          nextSlideMessage: 'Next slide',
+        }}
       >
-        {slides.map((slide, index) => {
-          const BackgroundImageDsk = slide.backgroundImageDsk
-            ? `/carousel/${slide.backgroundImageDsk}`
-            : null;
-          const BackgroundImageMbl = slide.backgroundImageMbl
-            ? `/carousel/${slide.backgroundImageMbl}`
-            : null;
-
-          return (
-            <SwiperSlide key={index} className="relative h-full w-full">
-              <div className="bg-neutral-0 h-full w-full">
-                {BackgroundImageDsk ? (
-                  <img
-                    src={BackgroundImageDsk}
-                    alt={slide.badge}
-                    className="hidden h-full w-full object-cover object-center md:block"
-                  />
-                ) : null}
-                {BackgroundImageMbl ? (
-                  <img
-                    src={BackgroundImageMbl}
-                    alt={slide.badge}
-                    className="h-full min-h-[800px] w-full object-cover object-center md:hidden"
-                  />
-                ) : null}
-              </div>
-              <SlideArticle
-                badge={slide.badge}
-                title={slide.title}
-                description={slide.description}
-              />
-            </SwiperSlide>
-          );
-        })}
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id} className="relative h-full w-full">
+            <div className="bg-neutral-0 h-full w-full">
+              {slide.backgroundImageDsk && (
+                <img
+                  src={`/carousel/${slide.backgroundImageDsk}`}
+                  alt=""
+                  aria-hidden="true"
+                  className="hidden h-full w-full object-cover object-center md:block"
+                />
+              )}
+              {slide.backgroundImageMbl && (
+                <img
+                  src={`/carousel/${slide.backgroundImageMbl}`}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full min-h-[800px] w-full object-cover object-center md:hidden"
+                />
+              )}
+            </div>
+            <SlideArticle
+              badge={slide.badge}
+              title={slide.title}
+              description={slide.description}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
+
       <div
         className={cn(
           'absolute top-0 right-0 flex h-fit w-full items-center justify-center',
@@ -106,7 +112,7 @@ export function FancyCarousel(props: FancyCarouselProps) {
       >
         <div className={cn('swiper-pagination z-10 flex gap-6 md:flex-col')} />
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -118,18 +124,16 @@ const SlideArticle = ({
   title: string;
   description: string;
   badge: string;
-}) => {
-  return (
-    <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-5 pb-6.5 md:max-w-sm md:px-7 md:pb-9 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
-      <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
-        <Kicker text={badge} variant="full" />
-        <div className="bg-transparent pr-20">
-          <Heading as="h3" size="l" className="pb-6">
-            {title}
-          </Heading>
-          <BodyText>{description}</BodyText>
-        </div>
+}) => (
+  <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-5 pb-6.5 md:max-w-sm md:px-7 md:pb-9 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
+    <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
+      <Kicker text={badge} variant="full" />
+      <div className="bg-transparent pr-20">
+        <Heading as="h3" size="l" className="pb-6">
+          {title}
+        </Heading>
+        <BodyText>{description}</BodyText>
       </div>
-    </article>
-  );
-};
+    </div>
+  </article>
+);
