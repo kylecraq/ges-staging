@@ -85,7 +85,7 @@ export const HomePageNextChargeAppSection = () => {
           className="aspect-[491/736] object-contain object-center"
         />
         <div className="flex flex-col items-center justify-center gap-6 md:gap-7 lg:items-start">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7">
+          <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7">
             {cards.map((data, index) => {
               return (
                 <Card

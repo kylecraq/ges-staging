@@ -41,8 +41,8 @@ export default function GlobalNotFound() {
       className={cn(robotoSans.variable, robotoMono.variable)}
     >
       <body>
-        <main className="flex h-dvh flex-col items-center justify-center gap-10">
-          <Heading as="h2" size="xl" className="heading">
+        <main className="flex h-dvh flex-col items-center justify-center gap-10 px-wide">
+          <Heading as="h2" size="xl" className="heading text-center">
             {title}
           </Heading>
           <Button
