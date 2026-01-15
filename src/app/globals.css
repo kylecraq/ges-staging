@@ -29,6 +29,19 @@
 
   --breakpoint-xxs: 20.1rem;
   --breakpoint-xs: 25rem;
+
+  @keyframes accordion-down {
+    from { height: 0 }
+    to { height: var(--radix-accordion-content-height) }
+  }
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+
+
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height) }
+    to { height: 0 }
+  }
+  --animate-accordion-up: accordion-down 0.2s ease-out;
 }
 
 @theme inline {

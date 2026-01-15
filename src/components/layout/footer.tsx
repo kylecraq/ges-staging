@@ -14,7 +14,7 @@ export const Footer = () => {
       itemType="https://schema.org/Organization"
     >
       <div className="flex h-full flex-col justify-between rounded-t-4xl bg-neutral-100 px-5 pt-20 pb-5 md:px-24 xl:px-28">
-        <Logo />
+        <Logo variant={"primary"}/>
 
         <div className="flex flex-col">
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">

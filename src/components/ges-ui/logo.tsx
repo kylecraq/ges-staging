@@ -6,7 +6,7 @@ const logoVariants = cva('flex items-center text-sm font-medium', {
   variants: {
     variant: {
       default: 'text-neutral-100',
-      primary: 'text-primary',
+      primary: 'text-neutral-0',
     },
   },
   defaultVariants: {
