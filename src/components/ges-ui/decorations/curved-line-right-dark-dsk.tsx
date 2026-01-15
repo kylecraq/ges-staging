@@ -3,6 +3,7 @@ import { ComponentProps, useRef } from 'react';
 import { gsap } from '@/lib/gsap';
 import { useGSAP } from '@gsap/react';
 import { getTotalCirclePath } from '@/lib/utils';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -11,12 +12,15 @@ export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
   useGSAP(() => {
     if (pathRef.current && svgRef.current) {
       const svg = svgRef.current;
-      gsap.to(svg, {
-        opacity: 1,
+
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: svg,
           start: 'top bottom',
         },
+      });
+      tl.to(svg, {
+        opacity: 1,
       });
 
       const path = pathRef.current;
@@ -24,20 +28,23 @@ export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
 
       const frictionSlower = 2400;
 
-      gsap.set(path, {
-        strokeDasharray: length,
-        strokeDashoffset: length / 2 + frictionSlower,
-      });
-
-      gsap.to(path, {
-        strokeDashoffset: length * 2 - frictionSlower,
-        ease: 'none',
+      const tlPath = gsap.timeline({
         scrollTrigger: {
           trigger: svg,
           start: 'top 130%',
           end: 'top 10%',
           scrub: true,
         },
+      });
+
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length / 2 + frictionSlower,
+      });
+
+      tlPath.to(path, {
+        strokeDashoffset: length * 2 - frictionSlower,
+        ease: 'none',
       });
     }
   }, []);

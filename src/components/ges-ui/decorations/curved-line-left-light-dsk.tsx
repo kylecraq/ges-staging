@@ -12,8 +12,8 @@ export const CurvedLineLeftLightDsk = (props: ComponentProps<'svg'>) => {
   useGSAP(() => {
     if (pathRef.current && svgRef.current) {
       const svg = svgRef.current;
-      gsap.to(svg, {
-        opacity: 1,
+
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: svg,
           start: 'top bottom',
@@ -21,24 +21,31 @@ export const CurvedLineLeftLightDsk = (props: ComponentProps<'svg'>) => {
         },
       });
 
+      tl.to(svg, {
+        opacity: 1,
+      });
+
       const path = pathRef.current;
       const frictionSlower = 124;
       const length = getTotalCirclePath(path);
 
-      gsap.set(path, {
-        strokeDasharray: length,
-        strokeDashoffset: length / 2 + frictionSlower,
-      });
-
-      gsap.to(path, {
-        strokeDashoffset: frictionSlower,
-        ease: 'none',
+      const tlPath = gsap.timeline({
         scrollTrigger: {
           trigger: path,
           start: 'top 140%',
           end: 'top top',
           scrub: true,
         },
+      });
+
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length / 2 + frictionSlower,
+      });
+
+      tlPath.to(path, {
+        strokeDashoffset: frictionSlower,
+        ease: 'none',
       });
     }
   }, []);

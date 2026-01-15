@@ -12,32 +12,37 @@ export const CurvedLineLeftLightMbl = (props: ComponentProps<'svg'>) => {
   useGSAP(() => {
     if (pathRef.current && svgRef.current) {
       const svg = svgRef.current;
-      gsap.to(svg, {
-        opacity: 1,
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: svg,
           start: 'top bottom',
           end: 'top bottom',
         },
       });
+      tl.to(svg, {
+        opacity: 1,
+      });
 
       const path = pathRef.current;
       const frictionSlower = 124;
       const length = getTotalCirclePath(path);
 
-      gsap.set(path, {
-        strokeDasharray: length,
-        strokeDashoffset: length / 2 + frictionSlower,
-      });
-
-      gsap.to(path, {
-        strokeDashoffset: frictionSlower,
+      const tlPath = gsap.timeline({
         scrollTrigger: {
           trigger: svgRef.current,
           start: 'top 80%',
           end: 'top 20%',
           scrub: true,
         },
+      });
+
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length / 2 + frictionSlower,
+      });
+
+      tlPath.to(path, {
+        strokeDashoffset: frictionSlower,
       });
     }
   }, []);

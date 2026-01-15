@@ -25,8 +25,8 @@ export const HomePageFaqSection = () => {
         className="pb-16"
       />
       <Accordion type="single" collapsible className="mx-auto w-full">
-        {faqNumbers.map((_,index)=>{
-          const currentNumber = index + 1
+        {faqNumbers.map((_, index) => {
+          const currentNumber = index + 1;
           return (
             <AccordionItem
               key={index}
@@ -37,10 +37,12 @@ export const HomePageFaqSection = () => {
                 {t(`question-${currentNumber}`)}
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-6">
-                <BodyText variant="caption">{t(`answer-${currentNumber}`)}</BodyText>
+                <BodyText variant="caption">
+                  {t(`answer-${currentNumber}`)}
+                </BodyText>
               </AccordionContent>
             </AccordionItem>
-          )
+          );
         })}
       </Accordion>
     </article>
