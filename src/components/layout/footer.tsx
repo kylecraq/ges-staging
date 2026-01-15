@@ -4,9 +4,11 @@ import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { BodyText } from '@/components/ges-ui/typography';
 import { useMemo } from 'react';
+import { useLocale } from 'use-intl';
 
 export const Footer = () => {
   const t = useTranslations('Footer');
+  const locale = useLocale();
   return (
     <footer
       className="text-neutral-0 mt-32 h-[353px] px-3 md:mt-36 md:px-9 lg:text-sm xl:text-base"
@@ -20,7 +22,7 @@ export const Footer = () => {
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">
             <div className="flex gap-4">
               <FooterGesLink href="/privacy" label={t('terms')} />
-              <FooterGesLink href="/b2b" label={t('b2b')} />
+              <FooterGesLink   href={`https://nextcharge-staging.vercel.app/${locale}`} label={t('b2c')} />
             </div>
             <Copyright />
           </div>
