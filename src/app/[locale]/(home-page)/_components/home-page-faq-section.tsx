@@ -12,6 +12,7 @@ import { BodyText } from '@/components/ges-ui/typography';
 
 export const HomePageFaqSection = () => {
   const t = useTranslations('HomePage.SectionFaq');
+  const faqNumbers = Array.from({ length: 6 });
 
   return (
     <article
@@ -24,39 +25,23 @@ export const HomePageFaqSection = () => {
         className="pb-16"
       />
       <Accordion type="single" collapsible className="mx-auto w-full">
-        <AccordionItem
-          value="item-1"
-          className="bg-neutral-20 border-neutral-40 border"
-        >
-          <AccordionTrigger className="font-normal">
-            {t('question-1')}
-          </AccordionTrigger>
-          <AccordionContent className="flex flex-col gap-6">
-            <BodyText variant="caption">{t('answer-1')}</BodyText>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem
-          value="item-2"
-          className="bg-neutral-20 border-neutral-40 border"
-        >
-          <AccordionTrigger className="font-normal">
-            {t('question-2')}
-          </AccordionTrigger>
-          <AccordionContent className="flex flex-col gap-6">
-            <BodyText variant="caption">{t('answer-2')}</BodyText>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem
-          value="item-3"
-          className="bg-neutral-20 border-neutral-40 border"
-        >
-          <AccordionTrigger className="font-normal">
-            {t('question-3')}
-          </AccordionTrigger>
-          <AccordionContent className="flex flex-col gap-6">
-            <BodyText variant="caption">{t('answer-3')}</BodyText>
-          </AccordionContent>
-        </AccordionItem>
+        {faqNumbers.map((_,index)=>{
+          const currentNumber = index + 1
+          return (
+            <AccordionItem
+              key={index}
+              value={`item-${currentNumber}`}
+              className="bg-neutral-20 border-neutral-40 border"
+            >
+              <AccordionTrigger className="font-normal">
+                {t(`question-${currentNumber}`)}
+              </AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-6">
+                <BodyText variant="caption">{t(`answer-${currentNumber}`)}</BodyText>
+              </AccordionContent>
+            </AccordionItem>
+          )
+        })}
       </Accordion>
     </article>
   );

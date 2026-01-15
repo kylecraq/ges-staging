@@ -19,11 +19,7 @@ export const HomePageFeatureSection = () => {
     {
       badge: t('chips.badge-2'),
       description: t('chips.description-2'),
-    },
-    {
-      badge: t('chips.badge-3'),
-      description: t('chips.description-3'),
-    },
+    }
   ];
 
   return (

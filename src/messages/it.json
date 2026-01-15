@@ -4,84 +4,90 @@
       "title": "Entra anche tu nella community NextCharge",
       "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito NextCharge. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio."
     },
-    "title": "The future is electric: let's embark on a wonderful journey together.",
-    "description": "Oltre 200.000 punti di ricarica indicizzati. Trova la stazione di ricarica, controlla lo stato, organizza un itinerario, leggi i commenti e guarda le foto.",
-    "SectionCards": {
-      "button": "contattaci",
-      "Cards1": {
-        "title": "Maps",
-        "description": "An overview of your stations, highlighting their real time status."
-      },
-      "Cards2": {
-        "title": "Maps",
-        "description": "An overview of your stations, highlighting their real time status."
-      },
-      "Cards3": {
-        "title": "Maps",
-        "description": "An overview of your stations, highlighting their real time status."
-      },
-      "Cards4": {
-        "title": "Maps",
-        "description": "An overview of your stations, highlighting their real time status."
-      },
-      "Cards5": {
-        "title": "Maps",
-        "description": "An overview of your stations, highlighting their real time status."
-      },
-      "Cards6": {
-        "title": "Maps",
-        "description": "An overview of your stations, highlighting their real time status."
+    "Hero": {
+      "title": "Il futuro è elettrico: iniziamo insieme questo viaggio straordinario.",
+      "description": "Esplora una rete di oltre 200.000 punti di ricarica sempre aggiornati. Trova la stazione ideale, verifica la disponibilità in tempo reale e pianifica il tuo itinerario perfetto, affidandoti ai commenti e alle foto della nostra community per viaggiare in totale sicurezza.",
+      "Buttons": {
+        "cpm-backend": "GESTIONE CPO ",
+        "fleet-management": "GESTIONE FLOTTA",
+        "nextcharge": "nextcharge APP"
       }
     },
     "SectionChargeSystem": {
       "kicker": "Sistemi di ricarica",
-      "title": "Un’unica rete, una sola esperienza di ricarica, un’unica <primary>app</primary>.",
+      "title": "Un sistema di gestione unico per la tua rete.",
       "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici.",
       "Carousel": {
         "slide-1": {
-          "badge": "Your identity on NextCharge",
-          "title": "NextCharge for CPOs",
-          "description": "Create your profile on NextCharge and manage your network just like your own app."
+          "badge": "Il tuo brand su NextCharge",
+          "title": "NextCharge per CPOs",
+          "description": "Crea il tuo profilo su NextCharge e gestisci la tua rete.\nPersonalizza la tua presenza e rendi la tua infrastruttura immediatamente riconoscibile per migliaia di utenti."
         },
         "slide-2": {
-          "badge": "Nuovo",
-          "title": "",
-          "description": "Soluzioni di ricarica ideali per l'uso quotidiano in città e aree urbane."
+          "badge": "metodi di pagamento",
+          "title": "Dalla carta al Plug&Charge: libertà totale",
+          "description": "Con NextCharge puoi abilitare pagamenti tramite POS fisico, app o autorizzazione diretta. Rendiamo ogni esperienza di ricarica fluida, intelligente e priva di ostacoli."
         },
         "slide-3": {
-          "badge": "Nuovo",
-          "title": "",
-          "description": "Stazioni di ricarica per la comodità di ricaricare il tuo veicolo a casa."
+          "badge": "MONITORAGGIO E ANALISI",
+          "title": "Gestione completa, \nsempre aggiornata",
+          "description": "Monitora stazioni, sessioni, utenti e tariffe da un'unica piattaforma centralizzata. Tutto ciò di cui hai bisogno per il controllo operativo della tua rete è a portata di clic."
         },
         "slide-4": {
-          "badge": "Nuovo",
-          "title": "",
-          "description": "Soluzioni di ricarica per dipendenti e flotte aziendali."
+          "badge": "METODI AUTORIZZATIVI",
+          "title": "Sicurezza e flessibilità nei pagamenti",
+          "description": "Gestiamo ogni transazione tramite sistemi di autorizzazione sicura. Che tu scelga il wallet prepagato, la carta di credito o l'autorizzazione diretta (Plug&Charge), il processo è immediato, protetto e trasparente."
         }
+      }
+    },
+    "SectionCards": {
+      "button": "contattaci",
+      "Cards1": {
+        "title": "MAPPE",
+        "description": "Una panoramica completa delle tue stazioni con lo stato della disponibilità in tempo reale."
+      },
+      "Cards2": {
+        "title": "Analisi delle Ricariche",
+        "description": "Report dettagliati e analisi dei dati transazionali per monitorare ogni kWh."
+      },
+      "Cards3": {
+        "title": "Diagnostica",
+        "description": "Ricevi i log di errore e i messaggi di sistema per ottimizzare gli interventi di manutenzione."
+      },
+      "Cards4": {
+        "title": "Gestione DA Remoto",
+        "description": "Modifica le impostazioni e conduci la manutenzione a distanza: il tuo tempo è prezioso."
+      },
+      "Cards5": {
+        "title": "NextCharge",
+        "description": "Personalizza le tue stazioni con loghi, foto e tariffe per attirare i driver della community."
+      },
+      "Cards6": {
+        "title": "Soluzione \nAll-in-One",
+        "description": "Il controllo totale sui tuoi ricavi unito alla potenza dell'app di ricarica più usata sul mercato."
       }
     },
     "SectionNextChargeApp": {
       "kicker": "rete di ricarica",
-      "title": "NextCharge mobile application",
-      "description": "We developed the Management System with a very clear goal: make everything that a charging point operator – CPO – needs to control simple.",
-      "caption": "<important>Let’s charge</important> Bastano pochi passaggi per iniziare la tua prima ricarica.",
+      "title": "NextCharge App",
+      "description": "NextCharge è il partner tecnologico che garantisce l'interoperabilità tra infrastrutture e driver su scala globale. Un ecosistema consolidato per assicurare massima visibilità e una gestione integrata della tua rete di ricarica.",
       "button": "Vai al sito di nextcharge",
       "Cards": {
         "Card1": {
-          "title": "Maps",
-          "description": "An overview of your stations, highlighting their real time status."
+          "title": "700.000+",
+          "description": "Punti di ricarica in tutto il mondo"
         },
         "Card2": {
-          "title": "Maps",
-          "description": "An overview of your stations, highlighting their real time status."
+          "title": "800+",
+          "description": "CPO & Partners "
         },
         "Card3": {
-          "title": "Maps",
-          "description": "An overview of your stations, highlighting their real time status."
+          "title": "1ML+",
+          "description": "Utenti attivi"
         },
         "Card4": {
-          "title": "Maps",
-          "description": "An overview of your stations, highlighting their real time status."
+          "title": "250K+",
+          "description": "Foto & recensioni verificate"
         }
       }
     },
@@ -94,7 +100,7 @@
     "SectionDownload": {
       "kicker": "compatibilità",
       "title": "Una piattaforma, infinite possibilità di integrazione",
-      "description": "Lorem ipsum dolor sit ametorem ipsum dolor sit amet Lorem ipsum \ndolor sit ametorem ipsum dolor sit amet"
+      "description": "Supportiamo i principali protocolli internazionali come OCPP e OCPI per garantirti la massima interoperabilità. Connettiamo le tue stazioni ai circuiti di roaming mondiali e ai partner leader del settore."
     },
     "SectionFaq": {
       "kicker": "faq",
@@ -108,20 +114,20 @@
       "question-4": "4. Se non fosse possibile terminare la ricarica da App, ad esempio perche il tuo telefonino e' scarico, \u2028puoi usare la card NextCharge",
       "answer-4": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
       "question-5": "5. Posso ricaricare sia con carta Rfid che con App?",
-      "answer-5": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting."
+      "answer-5": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
+      "question-6": "6. Posso ricaricare sia con carta Rfid che con App?",
+      "answer-6": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting."
     },
     "SectionFeature": {
-      "title": "Borsellino elettronico ricaricabile per monitorare la tua spesa",
-      "kicker": "Fleet Management",
-      "button": "Contact us",
+      "kicker": "Controllo delle flotte",
+      "title": "Controllo totale sull'attività di ricarica della tua flotta",
       "chips": {
-        "badge-1": "Smartphone",
-        "description-1": "Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni. Connesso sempre al tuo smartphone, ricarica in modo semplice e consulta le tue transazioni.",
-        "badge-2": "Smartcard Rfid",
-        "description-2": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone.",
-        "badge-3": "Plug&charge",
-        "description-3": "La carta Rfid NextCharge è sempre connessa al tuo wallet e ti permette di ricaricare anche senza smartphone."
-      }
+        "badge-1": "Analisi & reportistica",
+        "description-1": "Monitora ogni sessione, l'energia erogata e i costi attraverso report visivi e mappe interattive. Filtra per data, visualizza l'utilizzo delle stazioni ed esporta tutto in Excel o PDF per una rendicontazione rapida e precisa.",
+        "badge-2": "GESTIONE INTEGRATA",
+        "description-2": "Gestisci utenti, card, credito e operatori con estrema facilità. Traccia ogni singola transazione e ricevi fatture mensili chiare per mantenere la tua flotta sempre operativa e monitorata."
+      },
+      "button": "CONTATTACI"
     },
     "Buttons": {
       "cpm-backend": "CPM Backend",

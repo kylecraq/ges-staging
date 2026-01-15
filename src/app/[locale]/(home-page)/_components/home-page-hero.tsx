@@ -5,7 +5,7 @@ import { ArrowRightIcon } from 'lucide-react';
 import { LinkPrimaryProps } from '@/components/ges-ui/links/primary-link';
 
 export const HomePageHero = () => {
-  const t = useTranslations('HomePage');
+  const t = useTranslations('HomePage.Hero');
   const buttons: LinkPrimaryProps[] = [
     {
       icon: <ArrowRightIcon />,
