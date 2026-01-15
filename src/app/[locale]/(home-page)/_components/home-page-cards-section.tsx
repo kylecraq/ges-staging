@@ -7,44 +7,50 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { ArrowRightIcon, MapIcon } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
 import { PrimaryLink } from '@/components/ges-ui/links/primary-link';
 import { CardType } from '@/types/Card';
 import { useTranslations } from 'next-intl';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { gsap } from '@/lib/gsap';
+import { MapsIcon } from '@/components/ges-ui/icons/maps-icon';
+import { StatsIcon } from '@/components/ges-ui/icons/stats-icon';
+import { DiagnosticsIcon } from '@/components/ges-ui/icons/diagnostics-icon';
+import { FilterIcon } from '@/components/ges-ui/icons/filter-icon';
+import { MedalIcon } from '@/components/ges-ui/icons/medal-icon';
+import { IphoneIcon } from '@/components/ges-ui/icons/iphone-icon';
 
 export const HomePageCardsSection = () => {
   const t = useTranslations('HomePage.SectionCards');
   const cards: CardType[] = [
     {
-      icon: <MapIcon className="size-10" />,
+      icon: <MapsIcon className="size-10" />,
       title: t('Cards1.title'),
       description: t('Cards1.description'),
     },
     {
-      icon: <MapIcon className="size-10" />,
+      icon: <StatsIcon className="size-10" />,
       title: t('Cards2.title'),
       description: t('Cards2.description'),
     },
     {
-      icon: <MapIcon className="size-10" />,
+      icon: <DiagnosticsIcon className="size-10" />,
       title: t('Cards3.title'),
       description: t('Cards3.description'),
     },
     {
-      icon: <MapIcon className="size-10" />,
+      icon: <FilterIcon className="size-10" />,
       title: t('Cards4.title'),
       description: t('Cards4.description'),
     },
     {
-      icon: <MapIcon className="size-10" />,
+      icon: <IphoneIcon className="size-10" />,
       title: t('Cards5.title'),
       description: t('Cards5.description'),
     },
     {
-      icon: <MapIcon className="size-10" />,
+      icon: <MedalIcon className="size-10" />,
       title: t('Cards6.title'),
       description: t('Cards6.description'),
     },
