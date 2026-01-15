@@ -3,7 +3,7 @@ import { Logo } from '@/components/ges-ui/logo';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { BodyText } from '@/components/ges-ui/typography';
-import { useMemo } from 'react';
+import { HTMLAttributeAnchorTarget, useMemo } from 'react';
 import { useLocale } from 'use-intl';
 
 export const Footer = () => {
@@ -16,13 +16,17 @@ export const Footer = () => {
       itemType="https://schema.org/Organization"
     >
       <div className="flex h-full flex-col justify-between rounded-t-4xl bg-neutral-100 px-5 pt-20 pb-5 md:px-24 xl:px-28">
-        <Logo variant={"primary"}/>
+        <Logo variant={'primary'} />
 
         <div className="flex flex-col">
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">
             <div className="flex gap-4">
               <FooterGesLink href="/privacy" label={t('terms')} />
-              <FooterGesLink   href={`https://nextcharge-staging.vercel.app/${locale}`} label={t('b2c')} />
+              <FooterGesLink
+                href={`https://nextcharge-staging.vercel.app/${locale}`}
+                label={t('b2c')}
+                target="_blank"
+              />
             </div>
             <Copyright />
           </div>
@@ -49,11 +53,20 @@ export const Footer = () => {
   );
 };
 
-const FooterGesLink = ({ href, label }: { href: string; label: string }) => {
+const FooterGesLink = ({
+  href,
+  label,
+  target,
+}: {
+  href: string;
+  label: string;
+  target?: HTMLAttributeAnchorTarget;
+}) => {
   return (
     <Link
       href={href}
       className="hover:decoration-primary-variant shrink-0 underline underline-offset-4 transition-all duration-500"
+      target={target}
     >
       {label}
     </Link>
