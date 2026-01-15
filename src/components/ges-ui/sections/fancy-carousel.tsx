@@ -47,7 +47,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
       'text-neutral-900 focus:outline-offset-0 outline-2 outline-offset-3 outline-primary-variant',
     renderBullet: (index, className) => {
       const iconHtml = renderToStaticMarkup(slides[index].icon);
-      return `<button type="button" aria-label="Go to slide ${index + 1}" class='${className} focus:outline-offset-0 focus:outline-2 focus:outline-primary-variant text-neutral-40 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>
+      return `<button type="button" aria-label="Go to slide ${index + 1}" class='${className} focus:outline-offset-0 focus:outline-2 focus:outline-primary-variant text-neutral-60/50 transition-all duration-200 ease-slow bg-neutral-0 min-w-4 cursor-pointer p-2 rounded-full [&_svg]:size-5'>
         ${iconHtml}
       </button>`;
     },
@@ -82,7 +82,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
                   src={`/carousel/${slide.backgroundImageDsk}`}
                   alt=""
                   aria-hidden="true"
-                  className="hidden h-full w-full object-cover object-center md:block"
+                  className="hidden h-full w-full object-cover object-right md:block"
                 />
               )}
               {slide.backgroundImageMbl && (
@@ -90,7 +90,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
                   src={`/carousel/${slide.backgroundImageMbl}`}
                   alt=""
                   aria-hidden="true"
-                  className="h-full min-h-[800px] w-full object-cover object-center md:hidden"
+                  className="h-full aspect-3/4 min-h-[800px] xxs:min-h-[700px] w-full object-cover object-top md:hidden"
                 />
               )}
             </div>
@@ -128,7 +128,7 @@ const SlideArticle = ({
   <article className="lg:px-wide absolute bottom-0 left-0 z-10 px-5 pb-6.5 md:max-w-sm md:px-7 md:pb-9 lg:max-w-lg xl:pr-0 xl:pb-16 xl:pl-20">
     <div className="flex flex-col items-start gap-4 text-neutral-100 lg:gap-6">
       <Kicker text={badge} variant="full" />
-      <div className="bg-transparent pr-20">
+      <div className="bg-transparent">
         <Heading as="h3" size="l" className="pb-6">
           {title}
         </Heading>

@@ -22,10 +22,6 @@ export const useBlockContentAnimations = (args: HookArgs) => {
       let descriptionSplit: SplitText | undefined;
 
       const tl = gsap.timeline({
-        onComplete: () => {
-          headingSplit?.revert();
-          descriptionSplit?.revert();
-        },
         scrollTrigger: removeScrollTrigger
           ? null
           : {
