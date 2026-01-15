@@ -36,7 +36,7 @@ export const HomePageFeatureSection = () => {
         imgDsk="/fleet-management.png"
         button={{
           label: t('button'),
-          href: '#',
+          href: 'mailTo:info@goelectricstations.it',
           icon: <ArrowRightIcon />,
         }}
       />

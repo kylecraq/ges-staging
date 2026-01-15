@@ -51,7 +51,7 @@ export function Header() {
           <PrimaryLink
             icon={<ArrowRightIcon />}
             label={t('contact-us')}
-            href={'https://apps.apple.com/it/app/nextcharge/id614946715'}
+            href={'mailTo:info@goelectricstations.it'}
             target={'_blank'}
           />
         </div>

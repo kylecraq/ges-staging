@@ -112,7 +112,11 @@ export const HomePageCardsSection = () => {
         })}
       </article>
       <div className="item">
-        <PrimaryLink icon={<ArrowRightIcon />} label={t('button')} href={'#'} />
+        <PrimaryLink
+          icon={<ArrowRightIcon />}
+          label={t('button')}
+          href={'mailTo:info@goelectricstations.it'}
+        />
       </div>
     </section>
   );
