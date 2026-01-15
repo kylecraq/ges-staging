@@ -18,16 +18,16 @@ export function Header() {
 
   const headerClassname = cn(
     { '-translate-y-20': scrollDirection === 'down' },
-    'pl-wide md:px-wide fixed top-4 z-50 flex h-14 w-full max-w-7xl items-center justify-between transition duration-700'
+    'pointer-events-none pl-wide md:px-wide fixed top-4 z-50 flex h-14 w-full max-w-7xl items-center justify-between transition duration-700'
   );
 
   const navbarClassname = cn(
-    'border-neutral-40 bg-neutral-0 py-navbar-3 md:pr-navbar-3 md:px-wide flex h-full items-center justify-end gap-6 rounded-l-full border pr-3 pl-6 font-medium text-neutral-100 uppercase transition duration-700 md:rounded-full'
+    'pointer-events-auto border-neutral-40 bg-neutral-0 py-navbar-3 md:pr-navbar-3 md:px-wide flex h-full items-center justify-end gap-6 rounded-l-full border pr-3 pl-6 font-medium text-neutral-100 uppercase transition duration-700 md:rounded-full'
   );
 
   return (
     <header className={headerClassname}>
-      <Logo />
+      <Logo className="pointer-events-auto"/>
       <nav className={navbarClassname}>
         <Button
           onClick={(e) => {
