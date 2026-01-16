@@ -17,7 +17,7 @@ export const HomePageDecorations = () => {
         <CurvedLineLeftLightMbl />
       </span>
       {/*FAQ*/}
-      <span className="absolute top-[96%] -right-20 scale-75 md:hidden">
+      <span className="absolute top-[96%] -right-28 scale-75 md:hidden">
         <CurvedLineRightDarkDsk />
       </span>
 
