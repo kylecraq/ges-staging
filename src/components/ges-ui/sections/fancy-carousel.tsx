@@ -73,6 +73,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
           prevSlideMessage: 'Previous slide',
           nextSlideMessage: 'Next slide',
         }}
+        slidesPerView={1}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="relative h-full w-full">
