@@ -24,7 +24,7 @@ export const FeatureListWithImage = (props: FeatureListWithImageProps) => {
   const { chips, imgDsk, imgMbl, imgAlt, button } = props;
   return (
     <section className="px-wide md:px-main lg:pl-main xl:pl-main xl:pr-wide grid grid-cols-1 md:gap-0 lg:grid-cols-[auto_60%] lg:gap-8 lg:pr-0 xl:grid-cols-[auto_65%]">
-      <div className="mx-auto flex flex-col items-center gap-10 lg:items-start">
+      <div className="mx-auto flex flex-col items-center gap-10 lg:items-start overflow-hidden">
         {chips.map((chip, index) => (
           <Chip key={index} badge={chip.badge} description={chip.description} />
         ))}
