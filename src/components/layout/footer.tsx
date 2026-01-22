@@ -21,7 +21,6 @@ export const Footer = () => {
         <div className="flex flex-col">
           <div className="mb-3 flex w-full flex-col items-start justify-between gap-5 lg:flex-row">
             <div className="flex gap-4">
-              <FooterGesLink href="/privacy" label={t('terms')} />
               <FooterGesLink
                 href={`https://nextcharge-staging.vercel.app/${locale}`}
                 label={t('b2c')}
@@ -32,8 +31,8 @@ export const Footer = () => {
           </div>
           <hr />
           <div className="mt-2 flex flex-col items-center justify-between gap-4 text-center md:flex-row">
-            <FooterGesLink href={'/status'} label={t('status')} />
-            <cite className="text-xs md:text-sm">
+            {/*<FooterGesLink href={'/status'} label={t('status')} />*/}
+            <cite className="ml-auto text-xs md:text-sm">
               {t.rich('craq-tag-crafted', {
                 strong: (chunks) => (
                   <Link
