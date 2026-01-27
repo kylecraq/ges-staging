@@ -1,4 +1,59 @@
+# Next.js Project with next-intl
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## 🌍 Internationalization (i18n)
+
+This project uses [**next-intl**](https://next-intl.dev/) to manage multi-language support.
+
+### Localization Structure
+All translation files are located in the `/messages` directory at the root of the project, as shown below:
+
+* `messages/en.json`: English translations (Default).
+* `messages/it.json`: Italian translations.
+* `messages/en.d.json.ts`: TypeScript definitions for messages to ensure type-safety across the app.
+
+### JSON Structure Example
+The translation files follow a nested structure. Here is a snippet of how the data is organized in `messages/it.json`:
+```json
+{
+  "HomePage": {
+    "Hero": {
+      "title": "Entra anche tu nella community <primary>NextCharge</primary>",
+      "description": "Ricarica in modo semplice e flessibile attraverso il circuito NextCharge.",
+      "button": "Scarica l’app"
+    },
+    "SectionDownload": {
+      "title": "SCARICA ORA",
+      "buttons": {
+        "apple-store": "App Store",
+        "google-play": "Google Play"
+      }
+    }
+  },
+  "Footer": {
+    "copyright": "© Copyright {year}. Go Electric Stations SRLS"
+  }
+}
+```
+
+### Usage Example
+To use translations within a Server or Client Component, you can use the `getTranslations(server)` or `useTranslations(client)` hook:
+
+```tsx
+import {useTranslations} from 'next-intl';
+
+export default function HomePage() {
+    const t = useTranslations('HomePage');
+
+    return (
+        <section>
+            <h1>{t('title')}</h1>
+            <p>{t('description')}</p>
+        </section>
+    );
+}
+```
 
 ## Getting Started
 
