@@ -1,4 +1,5 @@
 import { ComponentProps } from 'react';
+
 export const GesCompleteLogo = (props: ComponentProps<'svg'>) => {
   return (
     <svg

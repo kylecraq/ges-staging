@@ -4,13 +4,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import * as React from 'react';
 import { startTransition, useEffect, useState } from 'react';
 import { useLocale } from 'use-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { ChevronDownIcon } from 'lucide-react';
-import * as React from 'react';
 
 export const LanguageSelector = () => {
   const locale = useLocale();

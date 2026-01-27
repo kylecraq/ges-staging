@@ -1,7 +1,7 @@
 'use client';
 import './globals.css';
 import { usePathname } from 'next/navigation';
-import { routing } from '@/i18n/routing';
+import { Locales, routing } from '@/i18n/routing';
 import { Roboto, Roboto_Mono } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { HomeIcon } from 'lucide-react';
@@ -19,6 +19,11 @@ const robotoMono = Roboto_Mono({
   variable: '--font-mono',
 });
 
+const translations: Record<string, any> = {
+  en: require('@/messages/en.json'),
+  it: require('@/messages/it.json'),
+};
+
 // This page renders when a route like `/unknown.txt` is requested.
 // In this case, the layout at `app/[locale]/layout.tsx` receives
 // an invalid value as the `[locale]` param and calls `notFound()`.
@@ -26,14 +31,13 @@ export default function GlobalNotFound() {
   const pathname = usePathname();
   const segments = pathname.split('/').filter(Boolean);
 
-  const locale = segments[0] ?? routing.defaultLocale;
-
-  const title =
-    locale === routing.defaultLocale
-      ? 'Ops page not found! 😕'
-      : 'Ops pagina non trovata! 😕';
-
-  const buttonLabel = 'Home';
+  const localeFromPathname = segments.length > 1 ? segments[0] : '';
+  const locale = routing.locales.includes(localeFromPathname as Locales)
+    ? segments[0]
+    : routing.defaultLocale;
+  const t = translations[locale]?.NotFound;
+  const title = t?.title;
+  const buttonLabel = t?.button;
 
   return (
     <html
@@ -41,10 +45,12 @@ export default function GlobalNotFound() {
       className={cn(robotoSans.variable, robotoMono.variable)}
     >
       <body>
-        <main className="flex h-dvh flex-col items-center justify-center gap-10 px-wide">
-          <Heading as="h2" size="xl" className="heading text-center">
-            {title}
-          </Heading>
+        <main className="px-wide flex h-dvh flex-col items-center justify-center gap-10">
+          {title ? (
+            <Heading as="h2" size="xl" className="heading text-center">
+              {title}
+            </Heading>
+          ) : null}
           <Button
             asChild
             className="group border-primary hover:bg-primary h-fit cursor-pointer rounded-full border-1 px-0.5 py-0.5 text-neutral-900 uppercase focus-visible:border-inherit focus-visible:ring-0 [&_svg:not([class*='size-'])]:size-5.5"

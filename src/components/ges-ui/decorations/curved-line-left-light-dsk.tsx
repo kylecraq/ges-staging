@@ -1,8 +1,8 @@
 'use client';
+import * as React from 'react';
 import { ComponentProps, useRef } from 'react';
 import { gsap } from '@/lib/gsap';
 import { useGSAP } from '@gsap/react';
-import * as React from 'react';
 import { getTotalCirclePath } from '@/lib/utils';
 
 export const CurvedLineLeftLightDsk = (props: ComponentProps<'svg'>) => {

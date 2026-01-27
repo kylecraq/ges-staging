@@ -3,11 +3,11 @@
 import { ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
+  A11y,
   EffectFade,
+  Keyboard,
   Navigation,
   Pagination,
-  Keyboard,
-  A11y,
 } from 'swiper/modules';
 
 import 'swiper/css';
@@ -91,7 +91,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
                   src={slide.backgroundImageMbl}
                   alt=""
                   aria-hidden="true"
-                  className="h-full aspect-3/4 min-h-[800px] xxs:min-h-[700px] w-full object-cover object-top md:hidden"
+                  className="xxs:min-h-[700px] aspect-3/4 h-full min-h-[800px] w-full object-cover object-top md:hidden"
                 />
               )}
             </div>

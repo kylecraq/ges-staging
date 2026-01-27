@@ -150,5 +150,10 @@
     "status": "Status servizio",
     "copyright": "© Copyright {year}. Go Electric Stations SRLS - All Rights Reserved",
     "craq-tag-crafted": "Crafted with love by <strong>CRAQ DESIGN STUDIO</strong>"
+  },
+  "NotFound": {
+    "title": "Pagina non trovata",
+    "description": "",
+    "button": "Home page"
   }
 }

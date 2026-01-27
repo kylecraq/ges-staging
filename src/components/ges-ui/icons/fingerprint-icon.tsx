@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ComponentProps } from 'react';
+
 export const FingerprintIcon = (props: ComponentProps<'svg'>) => (
   <svg
     width={19}

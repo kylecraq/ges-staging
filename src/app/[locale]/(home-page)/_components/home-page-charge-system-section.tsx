@@ -34,7 +34,8 @@ export const HomePageChargeSystemSection = () => {
       title: t('Carousel.slide-4.title'),
       description: t('Carousel.slide-4.description'),
       backgroundImageDsk: '/images/common/carousel/authorization-methods.png',
-      backgroundImageMbl: '/images/common/carousel/authorization-methods-mbl.png',
+      backgroundImageMbl:
+        '/images/common/carousel/authorization-methods-mbl.png',
       icon: <FingerprintIcon />,
     },
     {

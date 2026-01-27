@@ -7,14 +7,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 This project uses [**next-intl**](https://next-intl.dev/) to manage multi-language support.
 
 ### Localization Structure
+
 All translation files are located in the `/messages` directory at the root of the project, as shown below:
 
-* `messages/en.json`: English translations (Default).
-* `messages/it.json`: Italian translations.
-* `messages/en.d.json.ts`: TypeScript definitions for messages to ensure type-safety across the app.
+- `messages/en.json`: English translations (Default).
+- `messages/it.json`: Italian translations.
+- `messages/en.d.json.ts`: TypeScript definitions for messages to ensure type-safety across the app.
 
 ### JSON Structure Example
+
 The translation files follow a nested structure. Here is a snippet of how the data is organized in `messages/it.json`:
+
 ```json
 {
   "HomePage": {
@@ -38,20 +41,21 @@ The translation files follow a nested structure. Here is a snippet of how the da
 ```
 
 ### Usage Example
+
 To use translations within a Server or Client Component, you can use the `getTranslations(server)` or `useTranslations(client)` hook:
 
 ```tsx
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 export default function HomePage() {
-    const t = useTranslations('HomePage');
+  const t = useTranslations('HomePage');
 
-    return (
-        <section>
-            <h1>{t('title')}</h1>
-            <p>{t('description')}</p>
-        </section>
-    );
+  return (
+    <section>
+      <h1>{t('title')}</h1>
+      <p>{t('description')}</p>
+    </section>
+  );
 }
 ```
 

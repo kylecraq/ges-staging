@@ -1,5 +1,5 @@
 'use client';
-import { Heading, BodyText, MenuLabel } from '@/components/ges-ui/typography';
+import { BodyText, Heading, MenuLabel } from '@/components/ges-ui/typography';
 import { PrimaryButton } from '@/components/ges-ui/buttons/primary-button';
 import { DownloadIcon } from 'lucide-react';
 import { notFound } from 'next/navigation';
