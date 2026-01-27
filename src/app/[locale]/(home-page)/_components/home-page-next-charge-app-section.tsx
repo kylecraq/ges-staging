@@ -80,7 +80,7 @@ export const HomePageNextChargeAppSection = () => {
       />
       <div className="px-wide md:px-main grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
         <img
-          src="/ges-app-section.png"
+          src="/images/it/ges-app-section.png"
           alt="Nextcharge app mobile"
           className="aspect-[491/736] object-contain object-center"
         />

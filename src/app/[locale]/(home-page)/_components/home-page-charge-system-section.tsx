@@ -15,8 +15,8 @@ export const HomePageChargeSystemSection = () => {
       badge: t('Carousel.slide-1.badge'),
       title: t('Carousel.slide-1.title'),
       description: t('Carousel.slide-1.description'),
-      backgroundImageDsk: 'identity.png',
-      backgroundImageMbl: 'identity-mbl.png',
+      backgroundImageDsk: '/images/common/carousel/identity.png',
+      backgroundImageMbl: '/images/common/carousel/identity-mbl.png',
       icon: <CrosshairIcon />,
     },
     {
@@ -24,8 +24,8 @@ export const HomePageChargeSystemSection = () => {
       badge: t('Carousel.slide-2.badge'),
       title: t('Carousel.slide-2.title'),
       description: t('Carousel.slide-2.description'),
-      backgroundImageDsk: 'payment-methods.png',
-      backgroundImageMbl: 'payment-methods-mbl.png',
+      backgroundImageDsk: '/images/common/carousel/payment-methods.png',
+      backgroundImageMbl: '/images/common/carousel/payment-methods-mbl.png',
       icon: <CreditCardIcon />,
     },
     {
@@ -33,8 +33,8 @@ export const HomePageChargeSystemSection = () => {
       badge: t('Carousel.slide-4.badge'),
       title: t('Carousel.slide-4.title'),
       description: t('Carousel.slide-4.description'),
-      backgroundImageDsk: 'authorization-methods.png',
-      backgroundImageMbl: 'authorization-methods-mbl.png',
+      backgroundImageDsk: '/images/common/carousel/authorization-methods.png',
+      backgroundImageMbl: '/images/common/carousel/authorization-methods-mbl.png',
       icon: <FingerprintIcon />,
     },
     {
@@ -42,8 +42,8 @@ export const HomePageChargeSystemSection = () => {
       badge: t('Carousel.slide-3.badge'),
       title: t('Carousel.slide-3.title'),
       description: t('Carousel.slide-3.description'),
-      backgroundImageDsk: 'analyzer.png',
-      backgroundImageMbl: 'analyzer-mbl.png',
+      backgroundImageDsk: '/images/common/carousel/analyzer.png',
+      backgroundImageMbl: '/images/common/carousel/analyzer-mbl.png',
       icon: <GesSystemIcon />,
     },
   ];

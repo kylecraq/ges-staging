@@ -60,9 +60,9 @@ export const HomePageHero = () => {
   return (
     <section className="text-neutral-0">
       <Hero
-        imgSrcDsk="/hero/ges-hero-dsk.png"
-        imgSrcMbl={'/hero/ges-hero-mbl.png'}
-        imgSrcTbl={'/hero/ges-hero-tbl.png'}
+        imgSrcDsk="/images/common/hero/ges-hero-dsk.png"
+        imgSrcMbl="/images/common/hero/ges-hero-mbl.png"
+        imgSrcTbl="/images/common/hero/ges-hero-tbl.png"
         title={t.rich('title', {
           primary: (chunks) => <span className="text-primary">{chunks}</span>,
         })}

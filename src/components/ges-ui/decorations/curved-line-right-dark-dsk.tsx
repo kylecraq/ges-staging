@@ -3,7 +3,6 @@ import { ComponentProps, useRef } from 'react';
 import { gsap } from '@/lib/gsap';
 import { useGSAP } from '@gsap/react';
 import { getTotalCirclePath } from '@/lib/utils';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -43,7 +42,8 @@ export const CurvedLineRightDarkDsk = (props: ComponentProps<'svg'>) => {
       });
 
       tlPath.to(path, {
-        strokeDashoffset: length * 2 - frictionSlower,
+        //200 need to be rounded at the end
+        strokeDashoffset: length * 2 - (frictionSlower + 200),
         ease: 'none',
       });
     }

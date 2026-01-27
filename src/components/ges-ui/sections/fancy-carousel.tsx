@@ -80,7 +80,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
             <div className="bg-neutral-0 h-full w-full">
               {slide.backgroundImageDsk && (
                 <img
-                  src={`/carousel/${slide.backgroundImageDsk}`}
+                  src={slide.backgroundImageDsk}
                   alt=""
                   aria-hidden="true"
                   className="hidden h-full w-full object-cover object-right md:block"
@@ -88,7 +88,7 @@ export function FancyCarousel({ slides, className }: FancyCarouselProps) {
               )}
               {slide.backgroundImageMbl && (
                 <img
-                  src={`/carousel/${slide.backgroundImageMbl}`}
+                  src={slide.backgroundImageMbl}
                   alt=""
                   aria-hidden="true"
                   className="h-full aspect-3/4 min-h-[800px] xxs:min-h-[700px] w-full object-cover object-top md:hidden"

@@ -32,8 +32,8 @@ export const HomePageFeatureSection = () => {
       <FeatureListWithImage
         chips={chips}
         imgAlt="Management"
-        imgMbl="/fleet-management.png"
-        imgDsk="/fleet-management.png"
+        imgMbl="/images/common/fleet-management.png"
+        imgDsk="/images/common/fleet-management.png"
         button={{
           label: t('button'),
           href: 'mailTo:info@goelectricstations.it',
