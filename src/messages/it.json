@@ -2,11 +2,11 @@
   "HomePage": {
     "Seo": {
       "title": "Entra anche tu nella community NextCharge",
-      "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito NextCharge. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio."
+      "description": "Valorizza la tua rete di ricarica con dati precisi e visibilità globale. Unisciti ad una piattaforma che integra oltre 200.000 punti di ricarica, offrendo strumenti avanzati per il monitoraggio della disponibilità in tempo reale e l'ottimizzazione dell'esperienza utente."
     },
     "Hero": {
       "title": "Il futuro è elettrico: iniziamo insieme questo viaggio straordinario.",
-      "description": "Esplora una rete di oltre 200.000 punti di ricarica sempre aggiornati. Trova la stazione ideale, verifica la disponibilità in tempo reale e pianifica il tuo itinerario perfetto, affidandoti ai commenti e alle foto della nostra community per viaggiare in totale sicurezza.",
+      "description": "Valorizza la tua rete di ricarica con dati precisi e visibilità globale. Unisciti ad una piattaforma che integra oltre 200.000 punti di ricarica, offrendo strumenti avanzati per il monitoraggio della disponibilità in tempo reale e l'ottimizzazione dell'esperienza utente.",
       "Buttons": {
         "cpm-backend": "GESTIONE CPO ",
         "fleet-management": "GESTIONE FLOTTA",
@@ -21,7 +21,7 @@
         "slide-1": {
           "badge": "Il tuo brand su NextCharge",
           "title": "NextCharge per CPOs",
-          "description": "Crea il tuo profilo su NextCharge e gestisci la tua rete.\nPersonalizza la tua presenza e rendi la tua infrastruttura immediatamente riconoscibile per migliaia di utenti."
+          "description": "Massimizza la visibilità della tua rete. Integra le tue stazioni nel nostro ecosistema per raggiungere migliaia di utenti ogni giorno. Potenzia il tuo brand sulla mappa e attira nuovi driver verso le tue colonnine."
         },
         "slide-2": {
           "badge": "metodi di pagamento",
@@ -30,7 +30,7 @@
         },
         "slide-3": {
           "badge": "MONITORAGGIO E ANALISI",
-          "title": "Gestione completa, \nsempre aggiornata",
+          "title": "Gestione completa, sempre aggiornata",
           "description": "Monitora stazioni, sessioni, utenti e tariffe da un'unica piattaforma centralizzata. Tutto ciò di cui hai bisogno per il controllo operativo della tua rete è a portata di clic."
         },
         "slide-4": {
@@ -100,7 +100,7 @@
     "SectionDownload": {
       "kicker": "compatibilità",
       "title": "Una piattaforma, infinite possibilità di integrazione",
-      "description": "Supportiamo i principali protocolli internazionali come OCPP e OCPI per garantirti la massima interoperabilità. Connettiamo le tue stazioni ai circuiti di roaming mondiali e ai partner leader del settore."
+      "description": "Garantiamo un’interoperabilità totale supportando i protocolli OCPP e OCPI, integrando lo standard ISO 15118 per abilitare tecnologie avanzate come il Plug & Charge. \nConnettiamo le tue stazioni ai circuiti di roaming globali e ai partner leader del settore, offrendo un’esperienza senza frizioni."
     },
     "SectionFaq": {
       "kicker": "faq",
