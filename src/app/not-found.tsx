@@ -19,9 +19,12 @@ const robotoMono = Roboto_Mono({
   variable: '--font-mono',
 });
 
-const translations: Record<string, any> = {
-  en: require('@/messages/en.json'),
-  it: require('@/messages/it.json'),
+import en from '@/messages/en.json';
+import it from '@/messages/it.json';
+type Messages = typeof en;
+const translations: Record<string, Messages> = {
+  en: en as Messages,
+  it: it as Messages
 };
 
 // This page renders when a route like `/unknown.txt` is requested.
