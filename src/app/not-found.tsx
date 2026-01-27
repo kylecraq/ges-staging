@@ -19,17 +19,47 @@ const robotoMono = Roboto_Mono({
   variable: '--font-mono',
 });
 
+
 import en from '@/messages/en.json';
 import it from '@/messages/it.json';
+
+/**
+ * The shape of the translation messages is inferred from the default locale (`en.json`),
+ * ensuring type safety across all locales.
+ */
 type Messages = typeof en;
+/**
+ * A static registry of translation messages for all supported locales.
+ *
+ * We use `Record<string, Messages>` here to map locale codes to their messages.
+ * - `en` and `it` are explicitly typed as `Messages` for compile-time safety.
+ * - This ensures all locales share the same structure of messages.
+ *
+ * Why we define it this way:
+ * - Compatible with Next.js static exports (`output: "export"`), where all locales
+ *   must be known at build time.
+ * - Allows type-safe access to messages in components, e.g. `translations[locale]?.NotFound`.
+ */
 const translations: Record<string, Messages> = {
   en: en as Messages,
   it: it as Messages
 };
 
-// This page renders when a route like `/unknown.txt` is requested.
-// In this case, the layout at `app/[locale]/layout.tsx` receives
-// an invalid value as the `[locale]` param and calls `notFound()`.
+/**
+ * @see https://nextjs.org/docs/app/guides/static-exports#unsupported-features
+ *
+ * ⚠️ Development note:
+ * When running `next dev`, requesting an unknown route (e.g., `/unknown.txt`)
+ * may throw an error instead of rendering the 404 page.
+ *
+ * This happens because Next.js tries to resolve the route as
+ * `app/[locale]/layout.tsx`, passing the invalid segment as the `[locale]` param.
+ * If the locale is not recognized, `notFound()` is called in the layout,
+ * but in dev mode this surfaces as an error rather than a static 404.
+ *
+ * In production (static export), the invalid route does not exist and the pre-generated
+ * `404.html` file is served instead.
+ */
 export default function GlobalNotFound() {
   const pathname = usePathname();
   const segments = pathname.split('/').filter(Boolean);
