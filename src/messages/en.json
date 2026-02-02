@@ -1,133 +1,133 @@
 {
   "HomePage": {
     "Seo": {
-      "title": "Entra anche tu nella community NextCharge",
-      "description": "Ricarica in modo semplice e flessibile attraverso la rete del circuito NextCharge. Una rete interoperabile per agevolare gli spostamenti su tutto il territorio."
+      "title": "Join the NextCharge community",
+      "description": "Enhance your charging network with precise data and global visibility. Join a platform that integrates over 200,000 charging points, offering advanced tools for real-time availability monitoring and user experience optimization."
     },
     "Hero": {
-      "title": "Il futuro è elettrico: iniziamo insieme questo viaggio straordinario.",
-      "description": "Esplora una rete di oltre 200.000 punti di ricarica sempre aggiornati. Trova la stazione ideale, verifica la disponibilità in tempo reale e pianifica il tuo itinerario perfetto, affidandoti ai commenti e alle foto della nostra community per viaggiare in totale sicurezza.",
+      "title": "The future is electric: let's start this extraordinary journey together.",
+      "description": "Enhance your charging network with precise data and global visibility. Join a platform that integrates over 200,000 charging points, offering advanced tools for real-time availability monitoring and user experience optimization.",
       "Buttons": {
-        "cpm-backend": "GESTIONE CPO ",
-        "fleet-management": "GESTIONE FLOTTA",
+        "cpm-backend": "CPO MANAGEMENT",
+        "fleet-management": "FLEET MANAGEMENT",
         "nextcharge": "nextcharge APP"
       }
     },
     "SectionChargeSystem": {
-      "kicker": "Sistemi di ricarica",
-      "title": "Un sistema di gestione unico per la tua rete.",
-      "description": "Libertà di movimento. Zero pensieri. Un network aperto e interoperabile per tutti i veicoli elettrici.",
+      "kicker": "Charging systems",
+      "title": "A unique management system for your network.",
+      "description": "Freedom of movement. Zero worries. An open and interoperable network for all electric vehicles.",
       "Carousel": {
         "slide-1": {
-          "badge": "Il tuo brand su NextCharge",
-          "title": "NextCharge per CPOs",
-          "description": "Crea il tuo profilo su NextCharge e gestisci la tua rete.\nPersonalizza la tua presenza e rendi la tua infrastruttura immediatamente riconoscibile per migliaia di utenti."
+          "badge": "Your brand on NextCharge",
+          "title": "NextCharge for CPOs",
+          "description": "Maximize your network's visibility. Integrate your stations into our ecosystem to reach thousands of users every day. Boost your brand on the map and attract new drivers to your charging points."
         },
         "slide-2": {
-          "badge": "metodi di pagamento",
-          "title": "Dalla carta al Plug&Charge: libertà totale",
-          "description": "Con NextCharge puoi abilitare pagamenti tramite POS fisico, app o autorizzazione diretta. Rendiamo ogni esperienza di ricarica fluida, intelligente e priva di ostacoli."
+          "badge": "payment methods",
+          "title": "From card to Plug&Charge: total freedom",
+          "description": "With NextCharge, you can enable payments via physical POS, app, or direct authorization. We make every charging experience fluid, intelligent, and obstacle-free."
         },
         "slide-3": {
-          "badge": "MONITORAGGIO E ANALISI",
-          "title": "Gestione completa, \nsempre aggiornata",
-          "description": "Monitora stazioni, sessioni, utenti e tariffe da un'unica piattaforma centralizzata. Tutto ciò di cui hai bisogno per il controllo operativo della tua rete è a portata di clic."
+          "badge": "MONITORING AND ANALYSIS",
+          "title": "Complete management, always updated",
+          "description": "Monitor stations, sessions, users, and tariffs from a single centralized platform. Everything you need for operational control of your network is just a click away."
         },
         "slide-4": {
-          "badge": "METODI AUTORIZZATIVI",
-          "title": "Sicurezza e flessibilità nei pagamenti",
-          "description": "Gestiamo ogni transazione tramite sistemi di autorizzazione sicura. Che tu scelga il wallet prepagato, la carta di credito o l'autorizzazione diretta (Plug&Charge), il processo è immediato, protetto e trasparente."
+          "badge": "AUTHORIZATION METHODS",
+          "title": "Security and flexibility in payments",
+          "description": "We manage every transaction through secure authorization systems. Whether you choose the prepaid wallet, credit card, or direct authorization (Plug&Charge), the process is immediate, protected, and transparent."
         }
       }
     },
     "SectionCards": {
-      "button": "contattaci",
+      "button": "contact us",
       "Cards1": {
-        "title": "MAPPE",
-        "description": "Una panoramica completa delle tue stazioni con lo stato della disponibilità in tempo reale."
+        "title": "MAPS",
+        "description": "A complete overview of your stations with real-time availability status."
       },
       "Cards2": {
-        "title": "Analisi delle Ricariche",
-        "description": "Report dettagliati e analisi dei dati transazionali per monitorare ogni kWh."
+        "title": "Charging Analysis",
+        "description": "Detailed reports and transactional data analysis to monitor every kWh."
       },
       "Cards3": {
-        "title": "Diagnostica",
-        "description": "Ricevi i log di errore e i messaggi di sistema per ottimizzare gli interventi di manutenzione."
+        "title": "Diagnostics",
+        "description": "Receive error logs and system messages to optimize maintenance interventions."
       },
       "Cards4": {
-        "title": "Gestione DA Remoto",
-        "description": "Modifica le impostazioni e conduci la manutenzione a distanza: il tuo tempo è prezioso."
+        "title": "Remote Management",
+        "description": "Change settings and conduct maintenance remotely: your time is precious."
       },
       "Cards5": {
         "title": "NextCharge",
-        "description": "Personalizza le tue stazioni con loghi, foto e tariffe per attirare i driver della community."
+        "description": "Customize your stations with logos, photos, and tariffs to attract community drivers."
       },
       "Cards6": {
-        "title": "Soluzione \nAll-in-One",
-        "description": "Il controllo totale sui tuoi ricavi unito alla potenza dell'app di ricarica più usata sul mercato."
+        "title": "All-in-One \nSolution",
+        "description": "Total control over your revenue combined with the power of the most used charging app on the market."
       }
     },
     "SectionNextChargeApp": {
-      "kicker": "rete di ricarica",
+      "kicker": "charging network",
       "title": "NextCharge App",
-      "description": "NextCharge è il partner tecnologico che garantisce l'interoperabilità tra infrastrutture e driver su scala globale. Un ecosistema consolidato per assicurare massima visibilità e una gestione integrata della tua rete di ricarica.",
-      "button": "Vai al sito di nextcharge",
+      "description": "NextCharge is the technological partner that guarantees interoperability between infrastructure and drivers on a global scale. A consolidated ecosystem to ensure maximum visibility and integrated management of your charging network.",
+      "button": "Go to NextCharge website",
       "Cards": {
         "Card1": {
-          "title": "700.000+",
-          "description": "Punti di ricarica in tutto il mondo"
+          "title": "700,000+",
+          "description": "Charging points worldwide"
         },
         "Card2": {
           "title": "800+",
-          "description": "CPO & Partners "
+          "description": "CPOs & Partners"
         },
         "Card3": {
-          "title": "1ML+",
-          "description": "Utenti attivi"
+          "title": "1M+",
+          "description": "Active users"
         },
         "Card4": {
           "title": "250K+",
-          "description": "Foto & recensioni verificate"
+          "description": "Verified photos & reviews"
         }
       }
     },
     "SectionMap": {
-      "title": "Diversi operatori per un solo sistema di autenticazione",
-      "kicker": "rete di ricarica",
+      "title": "Different operators for a single authentication system",
+      "kicker": "charging network",
       "description": "We developed the Management System with a very clear goal: make everything that a charging point operator – CPO – needs to control simple.",
-      "caption": "<span class='heading-l'>Let’s charge</span> </br> Bastano pochi passaggi per iniziare la tua prima ricarica."
+      "caption": "<span class='heading-l'>Let’s charge</span> </br> Just a few steps to start your first charge."
     },
     "SectionDownload": {
-      "kicker": "compatibilità",
-      "title": "Una piattaforma, infinite possibilità di integrazione",
-      "description": "Supportiamo i principali protocolli internazionali come OCPP e OCPI per garantirti la massima interoperabilità. Connettiamo le tue stazioni ai circuiti di roaming mondiali e ai partner leader del settore."
+      "kicker": "compatibility",
+      "title": "One platform, infinite integration possibilities",
+      "description": "We guarantee total interoperability by supporting OCPP and OCPI protocols, integrating the ISO 15118 standard to enable advanced technologies such as Plug & Charge. \nWe connect your stations to global roaming circuits and industry-leading partners, offering a frictionless experience."
     },
     "SectionFaq": {
       "kicker": "faq",
-      "title": "Domande Frequenti",
-      "question-1": "1. Come ricaricare?",
+      "title": "Frequently Asked Questions",
+      "question-1": "1. How to recharge?",
       "answer-1": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
-      "question-2": "2. Posso ricaricare sia con carta Rfid che con App?",
+      "question-2": "2. Can I recharge with both an RFID card and the App?",
       "answer-2": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
-      "question-3": "3. Che cosa faccio se non riesco a fermare la ricarica da App?",
+      "question-3": "3. What do I do if I can't stop the charging from the App?",
       "answer-3": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
-      "question-4": "4. Se non fosse possibile terminare la ricarica da App, ad esempio perche il tuo telefonino e' scarico, \u2028puoi usare la card NextCharge",
+      "question-4": "4. If it's not possible to end the charging from the App (e.g., phone is dead), can I use the NextCharge card?",
       "answer-4": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
-      "question-5": "5. Posso ricaricare sia con carta Rfid che con App?",
+      "question-5": "5. Can I recharge with both an RFID card and the App?",
       "answer-5": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.",
-      "question-6": "6. Posso ricaricare sia con carta Rfid che con App?",
+      "question-6": "6. Can I recharge with both an RFID card and the App?",
       "answer-6": "Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting.\n              Monitor charging sessions, energy delivered, and costs through visual reports and maps. Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting. Monitor charging sessions, energy delivered, and costs through visual reports and maps.\n              Filter by date, view station usage, and export everything in Excel or PDF for fast, accurate reporting."
     },
     "SectionFeature": {
-      "kicker": "Controllo delle flotte",
-      "title": "Controllo totale sull'attività di ricarica della tua flotta",
+      "kicker": "Fleet control",
+      "title": "Total control over your fleet's charging activity",
       "chips": {
-        "badge-1": "Analisi & reportistica",
-        "description-1": "Monitora ogni sessione, l'energia erogata e i costi attraverso report visivi e mappe interattive. Filtra per data, visualizza l'utilizzo delle stazioni ed esporta tutto in Excel o PDF per una rendicontazione rapida e precisa.",
-        "badge-2": "GESTIONE INTEGRATA",
-        "description-2": "Gestisci utenti, card, credito e operatori con estrema facilità. Traccia ogni singola transazione e ricevi fatture mensili chiare per mantenere la tua flotta sempre operativa e monitorata."
+        "badge-1": "Analysis & reporting",
+        "description-1": "Monitor every session, energy delivered, and costs through visual reports and interactive maps. Filter by date, view station usage, and export everything to Excel or PDF for quick and accurate reporting.",
+        "badge-2": "INTEGRATED MANAGEMENT",
+        "description-2": "Manage users, cards, credit, and operators with extreme ease. Track every single transaction and receive clear monthly invoices to keep your fleet always operational and monitored."
       },
-      "button": "CONTATTACI"
+      "button": "CONTACT US"
     },
     "Buttons": {
       "cpm-backend": "CPM Backend",
@@ -141,18 +141,18 @@
       "it": "Italiano (IT)"
     },
     "Buttons": {
-      "contact-us": "Contattaci"
+      "contact-us": "Contact Us"
     }
   },
   "Footer": {
     "terms": "Terms & Conditions",
-    "b2c": "Sito B2C",
-    "status": "Status servizio",
+    "b2c": "B2C Site",
+    "status": "Service status",
     "copyright": "© Copyright {year}. Go Electric Stations SRLS - All Rights Reserved",
     "craq-tag-crafted": "Crafted with love by <strong>CRAQ DESIGN STUDIO</strong>"
   },
   "NotFound": {
-    "title": "Pagina non trovata",
+    "title": "Page not found",
     "description": "",
     "button": "Home page"
   }
