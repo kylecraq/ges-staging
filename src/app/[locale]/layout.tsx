@@ -24,7 +24,7 @@ const VERCEL_HOST = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
 const BASE_URL = VERCEL_HOST
   ? `https://${VERCEL_HOST}`
   : 'https://goelectricstations.it';
-const ogImage = `${BASE_URL}/hero/ges-hero-dsk.png`;
+const ogImage = `${BASE_URL}/images/common/hero/ges-hero-dsk.png`;
 
 export const metadata: Metadata = {
   title: {
