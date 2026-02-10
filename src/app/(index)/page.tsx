@@ -22,8 +22,8 @@ export default function RootPage() {
   return (
     <main
       style={{
-        backgroundColor: '#1c1e1c',
-        color: '#ffffff',
+        backgroundColor: '#ffffff',
+        color: '#1c1e1c',
         margin: 0,
         height: '100dvh',
         width: '100dvw',
