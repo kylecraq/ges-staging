@@ -31,8 +31,6 @@ export default function RootPage() {
         placeContent: 'center',
         placeItems: 'center',
       }}
-    >
-      Redirecting...
-    </main>
+    />
   );
 }
