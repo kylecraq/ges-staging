@@ -37,9 +37,7 @@ export const HomePageFaqSection = () => {
                 {t(`question-${currentNumber}`)}
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-6">
-                <BodyText variant="caption">
-                  {t(`answer-${currentNumber}`)}
-                </BodyText>
+                <BodyText variant="caption" dangerouslySetInnerHTML={{__html: t.raw(`answer-${currentNumber}`)}} />
               </AccordionContent>
             </AccordionItem>
           );

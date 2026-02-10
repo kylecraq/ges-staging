@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     template: 'Go Electric Stations - %s',
     default: 'Go Electric Stations - Charging stations for electric vehicles',
   },
+  alternates: {
+    canonical: BASE_URL,
+    languages: {
+      'en': `${BASE_URL}/en`,
+      'it': `${BASE_URL}/it`,
+      'x-default': `${BASE_URL}/en`
+    },
+  },
   openGraph: {
     title: 'Go Electric Stations',
     description:
