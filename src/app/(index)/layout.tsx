@@ -1,4 +1,25 @@
 import { ReactNode } from 'react';
+import { Metadata } from 'next';
+
+const VERCEL_HOST = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
+const BASE_URL = VERCEL_HOST
+  ? `https://${VERCEL_HOST}`
+  : 'https://nextcharge.app';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: BASE_URL,
+    languages: {
+      'en': `${BASE_URL}/en`,
+      'it': `${BASE_URL}/it`,
+      'x-default': `${BASE_URL}/en`
+    },
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 // Since we have a root `not-found.tsx` page, a layout file
 // is required, even if it's just passing children through.
