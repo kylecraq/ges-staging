@@ -13,63 +13,74 @@ import { cn } from '@/lib/utils';
 const robotoSans = Roboto({
   subsets: ['latin'],
   variable: '--font-sans',
+  weight: ['400', '500', '700'],
 });
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
+  weight: ['400', '700'],
 });
 
+const isProduction = process.env.VERCEL_ENV === 'production';
 const VERCEL_HOST = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
 const BASE_URL = VERCEL_HOST
   ? `https://${VERCEL_HOST}`
-  : 'https://goelectricstations.it';
+  : 'https://www.goelectricstations.it';
+
 const ogImage = `${BASE_URL}/images/common/hero/ges-hero-dsk.png`;
-
-export const metadata: Metadata = {
-  title: {
-    template: 'Go Electric Stations - %s',
-    default: 'Go Electric Stations - Charging stations for electric vehicles',
-  },
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      'en': `${BASE_URL}/en`,
-      'it': `${BASE_URL}/it`,
-      'x-default': `${BASE_URL}/en`
-    },
-  },
-  openGraph: {
-    title: 'Go Electric Stations',
-    description:
-      'Go Electric Stations - Charging stations for electric vehicles',
-    images: {
-      url: ogImage,
-      alt: 'Go Electric Stations',
-    },
-  },
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 
 type Props = Readonly<{
   children: ReactNode;
   params: Promise<{ locale: string }>;
 }>;
 
+export async function generateMetadata({ params }: Omit<Props, 'children'>): Promise<Metadata> {
+  const { locale } = await params;
+
+  const languages = routing.locales.reduce((acc, l) => {
+    acc[l] = `/${l}`;
+    return acc;
+  }, {} as Record<string, string>);
+
+  languages['x-default'] = `/${routing.defaultLocale}`;
+
+  return {
+    metadataBase: new URL(BASE_URL),
+    title: {
+      template: 'Go Electric Stations - %s',
+      default: 'Go Electric Stations - Charging stations for electric vehicles',
+    },
+    openGraph: {
+      title: 'Go Electric Stations',
+      description: 'Go Electric Stations - Charging stations for electric vehicles',
+      images: {
+        url: ogImage,
+        alt: 'Go Electric Stations',
+      },
+    },
+    robots: {
+      index: isProduction,
+      follow: isProduction,
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages,
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // Enable static rendering
   setRequestLocale(locale);
 
   return (
@@ -81,13 +92,13 @@ export default async function RootLayout({ children, params }: Props) {
         'scroll-pt-6 scroll-smooth'
       )}
     >
-      <body className="mx-auto w-full max-w-7xl antialiased">
-        <NextIntlClientProvider>
-          <Header />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
+    <body className="mx-auto w-full max-w-7xl antialiased">
+    <NextIntlClientProvider>
+      <Header />
+      {children}
+      <Footer />
+    </NextIntlClientProvider>
+    </body>
     </html>
   );
 }
