@@ -60,8 +60,8 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       },
     },
     robots: {
-      index: isProduction,
-      follow: isProduction,
+      index: false,
+      follow: false,
     },
     alternates: {
       canonical: `/${locale}`,
